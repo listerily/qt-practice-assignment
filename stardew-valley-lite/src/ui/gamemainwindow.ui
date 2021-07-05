@@ -3,7 +3,7 @@
  <comment/>
  <exportmacro/>
  <class>GameMainWindow</class>
- <widget name="GameMainWindow" class="QDialog">
+ <widget class="QDialog" name="GameMainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -15,7 +15,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget name="buttonBox" class="QDialogButtonBox">
+  <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
      <x>30</x>

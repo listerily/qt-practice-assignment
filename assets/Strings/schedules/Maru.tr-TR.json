@@ -1,0 +1,28 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "marriage_Mon.002": "Umarım Penny bir gün evlenmeye karar verir.",
+        "winter_16.000": "Vay canına, bu şeydeki teknoloji harika!",
+        "marriageJob.000": "İşteyim tatlım! Doktor bilmesin.",
+        "marriageJob.002": "İşim bitmek üzere...",
+        "marriage_Mon.001": "Babam deneyinde ilerleme kat ediyormuş.",
+        "summer.000": "Evrenimizin büyüklüğünü kavramak gerçekten çok güç.$8",
+        "marriage_Mon.000": "Merhaba! Annem yardımım olmadan idare ediyor gibi. Çok sıkı kadın ya.",
+        "marriageJob.001": "Beni ziyaret etmen ne kadar hoş.$h"
+    }
+}

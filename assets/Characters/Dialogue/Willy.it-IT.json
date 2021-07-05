@@ -1,0 +1,34 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Introduction": "Ohilà! Dà gusto vedere gente giovane che si trasferisce nella valle. Non è molto comune, di questi tempi.",
+        "Mon": "Ohilà, figliolo.^Ohilà, ragazza.#$b#Tempo buono per pescare, eh?",
+        "Mon4": "C'hai avuto fortuna nelle acque locali? Dai l'impressione che saresti un acchiappa-pesci coi fiocchi se ti ci mettessi di buona lena.",
+        "Tue": "Un vero acchiappa-pesci porta rispetto all'acqua... Non te lo scordare.",
+        "Tue6": "'Sto vecchiaccio è stato un pescatore, sai? Sono cresciuto veleggiando tra le isole Felce, vivendo di pesca in pesca.#$e#È una vita tosta, e però c'ha qualcosa che ti fa andare avanti.",
+        "Wed": "Certi pesci vanno e vengono con le stagioni. Altri scappano fuori solo di notte o con la pioggia.",
+        "Thu": "*borbotta* *borbotta* ...Eh? Te li direi, i pensieri che c'ho, ma sono segreti da pescatore.",
+        "Thu2": "Gira voce di certi pesci rarissimi da queste parti... ma soltanto un acchiappa-pesci d'esperienza potrebbe sperare di farcela con loro.#$e#Ti serviranno le esche migliori di sempre, se vuoi che abbocchi un pesce raro.",
+        "Fri": "Se ci tieni davvero che i pesci abbocchino, vedi di metterci l'esca, sull'amo.",
+        "Sat": "Se il mercato locale della pesca si facesse un po' più vivace, potrei espandere la selezione del negozio.",
+        "Sat8": "Come ti va la vita da acchiappa-pesci?#$e#Io ci provo a pescare il più possibile, ma non è facile quando c'hai un negozio da gestire.",
+        "Sun": "Se ti compri una canna da pesca di qualità, puoi attaccare l'esca e l'attrezzatura alla lenza.#$b#L'esca fa abboccare i pesci più in fretta. L'attrezzatura ti può semplificare parecchio la vita quando stai tirando su il pesce.#$e#Ci sono un botto di attrezzature, ognuna coi suoi vantaggi. Di solito sono un po' fragili, quindi non stupirti se la tua attrezzatura si spacca dopo un po'.",
+        "Sun10": "Ehi, è il mio skipper, @!$h#$e#Ti farei lo sconto sulle esche, ma non me lo posso permettere.$s",
+        "FullCrabPond": "*annusa*... Ah... Lo conosco, 'sto vecchio odore. Stai ad alleva' granchi, eh?#$b#Sei 'n tipo che mi va proprio a genio, @. Hah!$h^Sei 'na tipa che mi va proprio a genio, @. Hah!$h#$b#Toh, piglia qua. L'ho trovato sulla spiaggia... Me lo stavo a tene' penn'occasione speciale. Non capita tutti i giorni di scopri' qualcun altro che va matto per i granchi! [797]"
+    }
+}

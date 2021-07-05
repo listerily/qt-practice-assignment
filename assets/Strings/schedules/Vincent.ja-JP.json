@@ -1,0 +1,24 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "winter_16.000": "あの船に 乗りたい！",
+        "spring_11.001": "（ゴクリ）…おかあさん、やだよう。$s",
+        "spring_11.002": "ねえ、ボクとっても勇気出したから、ペロペロキャンディもらっていい？",
+        "spring_11.000": "グスッ…きょうはお注射の日なんだ。$s"
+    }
+}

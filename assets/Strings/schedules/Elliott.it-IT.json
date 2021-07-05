@@ -1,0 +1,24 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "winter_17.000": "Una flotta di mercantili esotici, che viaggiano per il mondo in cerca di ricchezze inimmaginabili... Quale avventura!",
+        "marriage_Mon.000": "Salve, @. Sto solo scrutando le onde da qui.",
+        "summer_9.001": "Di recente mi duole la schiena, dottore... Sa, a furia di stare ingobbito sul mio romanzo.",
+        "summer_9.000": "Ehilà. Cosa ti conduce in questo orribile luogo?"
+    }
+}

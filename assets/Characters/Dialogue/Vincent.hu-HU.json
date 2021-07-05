@@ -1,0 +1,34 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Introduction": "Ó, egy idegen! A nevem Vincent.#$b#Anyukám azt mondta, hogy ne álljak szóba idegenekkel... De te jónak tűnsz.",
+        "Mon": "Ha felnövök, olyan akarok lenni, mint a bátyám!$h#$e#Oké! Szia!",
+        "Mon4": "$d kent#Örülök, hogy Apu visszatért... de más, mint amilyenre emlékszem...$s|Apu nincs olyan sokat itt... Hiányzik a vele való játszás.$s",
+        "Tue": "*sóhaj*... Anyu nem hagyja, hogy ma több gumicukrot egyek.$s",
+        "Tue6": "Bácsi, tudsz titkot tartani?^Néni, tudsz titkot tartani?$u#$b#Feleségül akarom venni Miss Pennyt, ha felnövök.#$e#De ezt senkinek se mondd el, oké?$u",
+        "Wed": "Bogarakat akarok keresni, de Anyu mérges lesz rám, ha piszkos leszek.$u#$b#Nehéz választás.",
+        "Thu": "Éhes vagyok... hol van Anyu?$s",
+        "Thu2": "Te nem vagy olyan uncsi, mint a többi felnőtt!",
+        "Fri": "#$c .3#Fúj, már megint főtt cékla van...$s#$e#Jaj ne... Anyu estére lencselevest készít.$s",
+        "Sat_1": "Apu hamarosan hazatér!#$b#Remélem hoz nekem valamilyen játékot.$u",
+        "Sat": "Miss Penny minden héten új könyvet olvastat velem.$s#$b#Legalább néha hagyja, hogy én válasszak!",
+        "Sat8": "$d kent#Apu elég fura, mióta hazatért. Vajon mi történhetett vele?$s#$b#Többé már nem játszik velem.$s|Vajon Apu haza fog jönni valaha...$s",
+        "Sun": "Szia, bácsi!^Szia, néni.",
+        "Sun10": "Üdv @ bácsi!^Üdv @ néni!#$e#Ne mondd el Anyunak... de te vagy a kedvenc felnőttem.$h"
+    }
+}

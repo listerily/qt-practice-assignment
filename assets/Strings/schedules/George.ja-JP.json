@@ -1,0 +1,26 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "23.000": "はあああぁぁ…きょうは家内に病院へつれてこられた。",
+        "23.001": "ブツブツ…医者なんぞなんにもならん…ブツブツ…",
+        "winter_17.000": "ここには 無料の コーヒー目当てで 来てるだけじゃ。",
+        "Sun.000": "信心なぞもったことはないさ、だがな…わしも年をとったな。",
+        "23.002": "それで、あとどれくらいかかるんだね、先生？",
+        "Sun.001": "ヘへへ...ここに来るために教会をスキップしてきた！ヨーバが腹を立てすぎないことを願ってる。$h"
+    }
+}

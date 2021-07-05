@@ -1,0 +1,42 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "RandomNegativeItemNoun": "çöp#yararsız#önemsiz#dökük#ıvır zıvır",
+        "RandomPositiveAdjective_Child": "havalı#eğlenceli#düzgün#güzel#şık#süper",
+        "RandomPositiveAdjective_AdultMale": "ilginç#heyecanlı#düzgün#eğlenceli#harika#müthiş",
+        "RandomPositiveAdjective_AdultFemale": "harika#şaşırtıcı#açıcı#büyülü#inanılmaz#güzel#canlandırıcı#keyifli",
+        "RandomPositiveAdjective_PlaceOrEvent": "harika#şaşırtıcı#açıcı#büyülü#inanılmaz#güzel#canlandırıcı#keyifli",
+        "RandomNegativeAdjective_Child": "aptalca#salakça#eksik#sıkıcı",
+        "RandomNegativeAdjective_AdultMale": "korkunç#iğrenç#tatsız#sıkıcı#depresif#aşağılık#gülünç ",
+        "RandomNegativeAdjective_AdultFemale": "üzücü#sıkıcı#acınası#çocukça#aşağılık#karartıcı#stresli#sıkıcı\n",
+        "RandomNegativeAdjective_PlaceOrEvent": "üzücü#sıkıcı#acınası#çocukça#aşağılık#stresli#sıkıcı\n",
+        "RandomDeliciousAdjective": "lezzetli#leziz#harika#tatmin edici#keyifli#nefis#şahane#tatlı",
+        "RandomDeliciousAdjective_Child": "çok lezzetli",
+        "RandomNegativeFoodAdjective_Child": "iğrenç",
+        "RandomNegativeFoodAdjective_Polite": "...ilginç#...olağandışı#...farklı#...alışılmamış",
+        "RandomNegativeFoodAdjective": "pis#berbat#iğrenç#aşağılık#tiksindirici#bıktırıcı#korkunç#itici#bayıltıcı#rezalet#kokuşmuş#korkunç ",
+        "RandomSlightlyPositiveFoodAdjective": "yeterli#iyi#yenilebilir",
+        "ChildTerm_Male": "oğlan",
+        "ChildTerm_Female": "kız",
+        "QuestionDialogue_Yes": "Evet",
+        "QuestionDialogue_No": "Hayır",
+        "GenericPlayerTerm": "çiftçi",
+        "Pronoun_Female": "Ona",
+        "Pronoun_Male": "Ona"
+    }
+}

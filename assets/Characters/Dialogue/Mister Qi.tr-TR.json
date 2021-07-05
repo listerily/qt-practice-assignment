@@ -1,0 +1,27 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Mon": "Çalışmaya devam et evlat. İlerde yıldız olacaksın.#$e#Bir şeye ihtiyacın olursa bana gel.",
+        "Tue": "Bir gün buraya geleceğini biliyordum. Elbette işini zorlaştırdım. Yapmak için motive olmanı istedim.",
+        "Wed": "Sıradan bir çocukluk geçirirken, verdiğim bir karar beni sıra dışı yaptı.",
+        "Thu": "Hey, buradan kimseye bahsetme, tamam mı? Bana özel olmasını istiyorum.#$e#Dostun Mr. Qi'nin sırrını tutarsın, değil mi?",
+        "Fri": "Mükemmelliğe ulaşmayı istemekten vazgeçme.#$e#Yaptığın her şeyde mükemmelliği hedefle.",
+        "Sat": "Ne zaman rahatlamak istersen uğra.",
+        "Sun": "Sıkı çalışmaya devam edersen belki bir gün benim gibi olabilirsin."
+    }
+}

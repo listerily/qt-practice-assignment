@@ -1,0 +1,33 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "UnderConstruction": "- 工事中 -",
+        "DismountBeforeEntering": "入るまえにウマからおりてください",
+        "PiecesOfHay": "たくわえたほし草：{0}/{1}",
+        "MillFull": "場所がありません",
+        "CantMill": "ウスにかけられません",
+        "AddedHay": "ほし草を{0}つサイロに入れた。",
+        "NeedSilo": "サイロが必要です",
+        "CantEnter": "今は入れない",
+        "NoFish": "この池に魚を投入することができます。",
+        "WrongFishTypeCoral": "{0}は{0}池にのみ配置が可能です。",
+        "WrongFishType": "あなたの{0}は{1}池に住みたくありません。",
+        "CantPutInPonds": "{0}はそこでは幸せみはなれないでしょう。",
+        "PondFull": "この池はいっぱいです。"
+    }
+}

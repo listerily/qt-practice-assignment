@@ -1,0 +1,24 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "fall_4.000": "Ver al doctor me pone algo nervioso... ¿Y si solo me quedan un par de años de vida? ¡Aún no estoy en paz con el mundo!",
+        "fall_4.001": "Es el hígado... ¿Verdad, doctor? Puedo verlo en su rostro. *Sigh...* Necesito dejar de tomar tanto dulce y delicioso vino de Stardew Valley.$s",
+        "Mon.000": "He venido a por suministros para el Salón. En Pierre's calidad ante todo.$h",
+        "Sun.000": "Hey @. Lo siento... el bar está cerrado hasta que acabe el partido."
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "summer_18.001": "Rien à signaler, Docteur. Je me sens en pleine forme !",
+        "summer_18.000": "Qu'est-ce qu'une jeune personne en pleine forme comme toi vient faire ici ?",
+        "Tue.000": "On se voit toutes les semaines pour s'encourager à rester en forme.",
+        "winter_16.000": "J’adore admirer les bateaux. Le craquement du bois est étrangement réconfortant pour moi."
+    }
+}

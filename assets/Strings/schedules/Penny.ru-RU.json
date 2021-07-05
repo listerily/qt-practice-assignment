@@ -1,0 +1,28 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "winter_4.001": "Эй! Это личное!$a",
+        "marriage_Mon.002": "Интересно, Мару когда-нибудь выйдет замуж?",
+        "marriageJob.000": "Привет, радость. Я рада, что ты навещаешь меня на работе.$h",
+        "marriage_Mon.001": "Не волнуйся, это всe на мои деньги.",
+        "marriage_Mon.000": "Привет! Я просто вышла за покупками.",
+        "winter_15.000": "*принюхивается* Чувствуете? Воздух здесь такой пряный...",
+        "winter_4.000": "Мне нужно на приeм сегодня днeм",
+        "rain2.000": "Я сейчас пойду обратно в дом. Просто хотелось немного тишины."
+    }
+}

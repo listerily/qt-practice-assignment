@@ -1,0 +1,26 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "23.000": "Hmmpph... A feleségem azt akarja, hogy ma menjek a klinikára.",
+        "23.001": "*morog*... Semmirekellő orvosok... *morog*",
+        "winter_17.000": "Én csak az ingyen kávéért jöttem.",
+        "Sun.000": "Sose voltam vallásos, de hé... Öreg vagyok már.",
+        "23.002": "Nos, Doki, mennyi időm van még hátra?",
+        "Sun.001": "Hehehe... Kihagytam a templomot, hogy ide jöhessek! Remélem Yoba nem túl mérges rám.$h"
+    }
+}

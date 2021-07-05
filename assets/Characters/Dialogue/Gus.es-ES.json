@@ -1,0 +1,41 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Introduction": "¡Guau, hola! Soy Gus, chef y propietario del Salón Fruta Estelar.#$e#Pásate si necesitas algún tentempié. Siempre tengo café caliente y cerveza fría a punto.$h",
+        "Mon": "Sí, sé mucho de los habitantes de por aquí.#$e#Es una de las ventajas de ser camarero.$h#$e#A veces oigo demasiado...",
+        "Saloon": "Buenas tardes. ¿Qué puedo ofrecerte?",
+        "Saloon4": "Buenas tardes. Como si estuvieras en tu casa.",
+        "SeedShop_Entry": "¡Hola, Pierre!/Bueno, a ver qué necesito.../¡Ah, eso tiene buena pinta!/¡Esta noche voy a preparar mi salsa especial!/¡Pierre! ¿Qué es lo más fresco que tienes?/¡Pierre! ¿Qué me puedes ofrecer hoy?",
+        "Saloon8": "Hola, @. ¡Me alegro de verte! Aquí siempre te recibimos encantados.",
+        "Saloon_Tue": "¡Hola, @! Por favor, relájate y disfruta.",
+        "Saloon_Thu": "Ey, tienes pinta de necesitar una bebida.",
+        "Saloon_Fri": "El negocio ha ido muy bien esta noche. Me alegro.",
+        "Tue": "Vendo platos diferentes cada semana, ¡así que pásate de vez en cuando!#$e#Podrías probar algo espectacular.$h#$e#Eso sí, dime si tienes alguna alergia.$s#$e#Bueno, ya nos veremos.",
+        "Wed": "Emily lleva un tiempo trabajando aquí. ¡No sé qué haría sin ella!#$e#No soportaría tener que limpiar todas esas ollas yo solo.$s",
+        "Thu": "Pam y Clint vienen al Salón casi cada noche.#$e#Me arruinaría si dejaran de venir.$h#$e#¡Así que más te vale no alejarlos de aquí!",
+        "Thu6": "Clint viene casi cada noche y se sienta solo en la misma mesa.#$e#De vez en cuando lanza miradas nerviosas a Emily. Hmmm.#$e#Igual por eso viene tan a menudo. Pero bueno, más negocio para mí.",
+        "Thu8": "Pam viene al Salón casi cada noche y bebe demasiada cerveza.#$e#Pero bueno, no debería juzgar a mis clientes.",
+        "Fri": "Hola, @. Si alguna vez tienes sed, el Salón es el lugar adecuado.",
+        "Fri4": "Yo en realidad no bebo mucho. Hago esto para ganarme la vida.#$e#Aunque me gusta tomar un poco de añejo de Stardew Valley de vez en cuando.",
+        "Sat": "¿Te gusta cocinar, @?#$e#Con una cocina y recetas puedes cocinar algunos platos muy prácticos.#$e#Y un plato hecho en casa siempre es un buen regalo.",
+        "Sun": "El negocio va bien gracias a mis clientes habituales.",
+        "willyCrabs": "Creo que son las mejores tartas de cangrejo que he hecho en mi vida...",
+        "pamHouseUpgrade": "Hola. Me han dicho lo que has hecho por Pam. ¡Ha sido muy amable por tu parte!$h#$e#Por desgracia, no creo que esto la anime a dejar el bebercio...",
+        "pamHouseUpgradeAnonymous": "Me he encontrado con Pam antes... ¡no veas qué sonrisa tenía de oreja a oreja! ¡Dice que alguien le compró una casa nueva!#$e#No sé quién sería, ¡pero se merece lo mejor del mundo!$h"
+    }
+}

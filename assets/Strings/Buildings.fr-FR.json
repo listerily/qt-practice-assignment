@@ -1,0 +1,33 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "UnderConstruction": "En construction.",
+        "DismountBeforeEntering": "Mettre pied à terre avant d’entrer",
+        "PiecesOfHay": "Meules de foin : {0}/{1}",
+        "AddedHay": "{0} meules de foin ajoutées dans le silo.",
+        "MillFull": "Plus d'espace libre",
+        "CantMill": "Ne peut pas être moulu",
+        "NeedSilo": "Silo requis",
+        "CantEnter": "Impossible d’entrer pour l'instant",
+        "NoFish": "Des poissons peuvent vivre dans cet étang.",
+        "WrongFishTypeCoral": "{0} ne peut pas vivre dans l’étang {0}.",
+        "WrongFishType": "{0} ne veut pas habiter dans l’étang {1}.",
+        "PondFull": "Cet étang est plein.",
+        "CantPutInPonds": "{0} ne serait pas heureux ici."
+    }
+}

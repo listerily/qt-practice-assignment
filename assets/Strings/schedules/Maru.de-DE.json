@@ -1,0 +1,28 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "marriage_Mon.002": "Ich hoffe, Penny wird sich irgendwann zu einer Heirat entscheiden.",
+        "winter_16.000": "Wow, die Technologie hier ist der Hammer!",
+        "marriageJob.000": "Ich bin beim Arbeiten, Liebling! Lass es den Doktor nicht sehen.",
+        "marriageJob.002": "Fast fertig mit der Arbeit...",
+        "marriage_Mon.001": "Vater macht bei seinem Experiment gute Fortschritte.",
+        "summer.000": "Es ist schwer, die Größe des Universums zu begreifen.$8",
+        "marriage_Mon.000": "Hey! Mutter scheint auch ohne meine Hilfe zurechtzukommen. Sie ist eine zähe Frau.",
+        "marriageJob.001": "Es ist echt nett, dass du mich besuchen kommst.$h"
+    }
+}

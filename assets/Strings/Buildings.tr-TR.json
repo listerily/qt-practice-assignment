@@ -1,0 +1,33 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "UnderConstruction": "Yapılıyor.",
+        "DismountBeforeEntering": "Girmeden önce inmelisin.",
+        "PiecesOfHay": "Saman Balyası: {0}/{1}",
+        "AddedHay": "Siloya {0} tane saman balyası eklendi.",
+        "MillFull": "Yer yok.",
+        "CantMill": "Öğütülemez.",
+        "NeedSilo": "Silo gerekiyor.",
+        "CantEnter": "Şu anda giremezsin.",
+        "NoFish": "Havuza balık konulabilir.",
+        "WrongFishTypeCoral": "{0} yalnızca {0} havuzuna konulabilir.",
+        "WrongFishType": "{0}, {1} havuzunda yaşamak istemiyor.",
+        "CantPutInPonds": "{0} burada mutlu olmayacaktır.",
+        "PondFull": "Havuz dolu."
+    }
+}

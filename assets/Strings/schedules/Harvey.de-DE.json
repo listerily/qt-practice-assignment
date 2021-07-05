@@ -1,0 +1,27 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Fri.000": "Diese Dinge können definitiv in eine gesunde Ernährung eingebaut werden.",
+        "marriageJob.000": "Hallo, Liebling. Was machst du in der Klinik?#$e#Ah, du wolltest mich sehen. Das ist nett.$h",
+        "Fri.001": "Ich räume nur diese Lebensmittel weg.",
+        "marriage_Mon.001": "Das Geräusch von laufendem Wasser wirkt immer beruhigend auf mich.",
+        "marriage_Mon.000": "Hi! Ich besorge nur ein paar Zutaten, damit ich weiter gesund für uns kochen kann.",
+        "Sat.000": "Ich räume nur diese Lebensmittel weg.",
+        "winter_15.000": "Der Winter ist manchmal sehr trostlos, aber Veranstaltungen wie diese, machen ihn erträglich."
+    }
+}

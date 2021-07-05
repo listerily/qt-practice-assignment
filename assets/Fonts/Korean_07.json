@@ -1,0 +1,18 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.Texture2DReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "format": 0,
+        "export": "Korean_07.png"
+    }
+}

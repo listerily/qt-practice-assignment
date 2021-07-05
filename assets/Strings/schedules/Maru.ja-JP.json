@@ -1,0 +1,28 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "marriage_Mon.002": "ペニーもいつか、だれかと結婚してくれたらいいのにな。",
+        "winter_16.000": "わー、これすごく ハイテクだね！",
+        "marriageJob.000": "ねえハニー、わたし仕事中だよ！こんなとこドクターに見られたらやだからね。",
+        "marriageJob.002": "仕事、あと少しでおわるから…",
+        "marriage_Mon.001": "パパの実験はうまく進んでるみたい。",
+        "summer.000": "宇宙のスケールを把握するのってむずかしいな。$8",
+        "marriage_Mon.000": "ちょっと！ママはわたしが手伝わなくても大丈夫そう。さすが、タフだよね。",
+        "marriageJob.001": "会いにきてくれたの？うれしいな。$h"
+    }
+}

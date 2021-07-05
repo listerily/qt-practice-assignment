@@ -1,0 +1,27 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Mon": "Csak így tovább, kölyök. Azt hiszem sztár lesz belőled.#$e#Csak szólj, ha szükséged lenne valamire.",
+        "Tue": "Tudtam, hogy egy napon ide fogsz kerülni. Persze egy kicsit nehezítenem kellett, hogy legyen mivel buzdítanom téged a tökéletességért való megküzdéshez.",
+        "Wed": "Átlagos fiúnak születtem, de egészen fiatal koromban határoztam el, hogy rendkívüli fogok lenni.",
+        "Thu": "Hé. Ne beszélj senkinek se erről a helyről, oké? Ezt... exkluzívnak akarom tartani.#$e#Megtartanád ezt a titkot a barátodért, Mr. Qiért, ugye?",
+        "Fri": "Sose hagyd abba a tökéletességért való küzdelmet.#$e#Bármit is csinálsz, ne érd be a tökéletesnél egy picit kevesebbel.",
+        "Sat": "Jöjj bármikor, ha pihenni akarsz.",
+        "Sun": "Dolgozz keményen, és egy napon talán olyan leszel, mint én."
+    }
+}

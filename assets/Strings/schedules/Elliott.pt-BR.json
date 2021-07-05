@@ -1,0 +1,24 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "winter_17.000": "Uma frota de comerciantes exóticos, viajando pelo mundo em busca de riquezas inimagináveis... isso que é uma aventura!",
+        "marriage_Mon.000": "Olá, @. Só estou aqui observando as ondas.",
+        "summer_9.001": "As minhas costas estão doendo, doutor... de tanto ficar curvado para escrever o meu livro.",
+        "summer_9.000": "Olá! O que traz você a este lugar terrível?"
+    }
+}

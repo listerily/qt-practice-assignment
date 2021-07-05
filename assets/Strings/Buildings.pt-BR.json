@@ -1,0 +1,33 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "UnderConstruction": "Em construção.",
+        "DismountBeforeEntering": "Desmonte antes de entrar",
+        "PiecesOfHay": "Pedaços de feno: {0}/{1}",
+        "MillFull": "Não há mais espaço",
+        "CantMill": "Não pode ser moído",
+        "AddedHay": "{0} pedaços de feno adicionados ao silo.",
+        "NeedSilo": "Silo necessário",
+        "CantEnter": "Não é possível entrar agora",
+        "NoFish": "Peixes podem ser colocados neste lago.",
+        "WrongFishTypeCoral": "{0} só pode ser colocado em um lago {0}.",
+        "WrongFishType": "Seu peixe {0} não quer viver em um lago de {1}.",
+        "CantPutInPonds": "{0} não ficaria feliz aqui.",
+        "PondFull": "O lago está cheio."
+    }
+}

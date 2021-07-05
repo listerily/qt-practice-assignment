@@ -1,0 +1,30 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Fri.000": "Ce métier à tisser est magnifique. Je suis au paradis en ce moment.",
+        "marriage_Mon.002": "Gus semble avoir des difficultés à s’organiser sans moi.",
+        "winter_11.000": "La plupart d’entre nous rendent visite au médecin pour un bilan de santé annuel.",
+        "marriage_Fri.001": "Je viens ici pour sentir l’odeur des fruits.",
+        "winter_11.001": "Docteur, j’aimerais utiliser un \"remède naturel\".",
+        "marriage_Mon.001": "J’essaie de prendre le temps de faire une bonne promenade aujourd’hui. Mes jambes ressemblent à des cannellonis. Elles sont toute ramollies.",
+        "marriage_Fri.000": "Je cherche des sirènes.",
+        "marriage_Mon.000": "C'est sympa de visiter la vieille maison. Ça me rappelle de vieux souvenirs.",
+        "marriage_Fri.002": "C'est bondé le vendredi soir, alors je lui donne un coup de main en souvenir du bon vieux temps. C’est sympa !$h",
+        "winter_15.000": "Je pense que ce bateau est mon préféré. Il est tellement unique !"
+    }
+}

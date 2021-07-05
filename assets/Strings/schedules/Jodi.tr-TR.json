@@ -1,0 +1,28 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "spring_11.003": "Bugün Vincent muayenede hiç korkmadı, onunla gurur duyuyorum.",
+        "winter_17.000": "Dünyayı gezmek çok eğlenceli olmalı... *iç çeker*...",
+        "spring_11.001": "Cesur ol, Vincent. Babanı düşün.",
+        "Tue.000": "Ah... Kollarım aynı jelatin gibi... $s",
+        "spring.000": "Şşşş... Uyuyor.",
+        "spring_18.000": "Hey! Özel bir randevuya bu şekilde dalamazsın.$u",
+        "spring_11.002": "Doktor Harvey, Vincent'in boyu için endişeleniyorum, yaşına göre kısa değil mi?",
+        "spring_11.000": "Vincent doktora gitmekten nefret ediyor. Buna alışması gerekiyor."
+    }
+}

@@ -1,0 +1,56 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Int32[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.Int32Reader",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.ArrayReader`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        }
+    ],
+    "content": {
+        "800": [
+            2,
+            3,
+            2,
+            1
+        ],
+        "1100": [
+            0,
+            3,
+            3,
+            2,
+            0,
+            1,
+            1
+        ],
+        "1600": [
+            3,
+            2,
+            3,
+            0,
+            1,
+            1,
+            1,
+            1
+        ],
+        "1900": [
+            3,
+            0,
+            2,
+            2,
+            2
+        ]
+    }
+}

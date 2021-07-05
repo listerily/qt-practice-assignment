@@ -1,0 +1,27 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "winter_9.000": "Semmi komoly... Csak az éves vizsgálat miatt vagyok itt.",
+        "winter_9.001": "Nos... az orrom kissé folyt manapság, Doktor úr. De egyébként remekül vagyok!",
+        "winter.000": "Túl hideg van ahhoz, hogy kikeljek az ágyból.",
+        "marriage_Mon.000": "Szia édes! Csak azért vagyok itt, hogy meglátogassam Emilyt.",
+        "rain.000": "Ma túl rossz az idő, hogy kikeljek az ágyból.",
+        "winter_16.001": "Brrr.... Nem vagyok túl jól felöltözve ehhez...$s",
+        "winter_16.000": "Túl hideg van ahhoz, hogy kikeljek az ágyból."
+    }
+}

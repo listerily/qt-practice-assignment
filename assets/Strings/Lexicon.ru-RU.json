@@ -1,0 +1,42 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "RandomNegativeItemNoun": "мусор#отбросы#дрянь#ерунда#помои",
+        "RandomPositiveAdjective_Child": "крутой#хороший#классный#замечательный#клeвый#здоровский#отличный",
+        "RandomPositiveAdjective_AdultMale": "интересный#замечательный#хороший#прекрасный#отличный#потрясающий",
+        "RandomPositiveAdjective_AdultFemale": "чудесная#удивительная#приятная#волшебная#невероятная#чудная#головокружительная#дивная",
+        "RandomPositiveAdjective_PlaceOrEvent": "чудесная#удивительная#приятная#волшебная#невероятная#чудная#головокружительная#дивная",
+        "RandomNegativeAdjective_Child": "глупый#идиотский#жалкий#скучный#тупой",
+        "RandomNegativeAdjective_AdultMale": "ужасный#никудышный#безвкусный#скучный#унылый#жалкий#смехотворный",
+        "RandomNegativeAdjective_AdultFemale": "унылый#скучный#напрягающий#унылый#жалкий#ребяческий#отвратительный",
+        "RandomNegativeAdjective_PlaceOrEvent": "унылый#скучный#напрягающий#унылый#жалкий#ребяческий#отвратительный",
+        "RandomDeliciousAdjective": "бесподобно#вкусно#чудесно#хорошо#сытно#отменно#аппетитно#чудно",
+        "RandomDeliciousAdjective_Child": "вкусно",
+        "RandomNegativeFoodAdjective_Child": "гадость",
+        "RandomNegativeFoodAdjective_Polite": "... интересно#... необычно#... уникально#... нестандартно",
+        "RandomNegativeFoodAdjective": "противно#мерзко#отвратительно#жалко#омерзительно#тошнотворно#ужасно#гадко#мерзостно#премерзко#ужасно#зловонно",
+        "RandomSlightlyPositiveFoodAdjective": "неплохо#хорошо#съедобно",
+        "ChildTerm_Male": "мальчик",
+        "ChildTerm_Female": "девочка",
+        "QuestionDialogue_Yes": "Да",
+        "QuestionDialogue_No": "Нет",
+        "GenericPlayerTerm": "фермер",
+        "Pronoun_Female": "ее",
+        "Pronoun_Male": "его"
+    }
+}

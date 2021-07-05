@@ -1,0 +1,26 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "winter_17.000": "Láttad a sellős műsort? Az a kedvencem...",
+        "marriage_Mon.000": "Itt fogok lógni egész nap. A nagyszüleim nem lesznek fiatalabbak...",
+        "summer_16.000": "Üdv. Eh, pont most bicsaklott ki a bokám. Meg akarom tudni, hogy be lehet-e rendesen kötözni.",
+        "summer_16.001": "Igen, igen... Jól vagyok, doki. Csak kötözze be, rendben?",
+        "Sun.000": "%Alexet teljesen leköti a játék. Nem veszi észre a jelenlétedet.",
+        "Sun.000_married": "Hé, @! Ha akarod nézhetjük együtt a meccset, de nem baj, ha elfoglalt vagy."
+    }
+}

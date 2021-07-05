@@ -1,0 +1,17 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.EffectReader, MonoGame.Framework, Version=3.8.0.848, Culture=neutral, PublicKeyToken=null",
+            "version": 0
+        }
+    ],
+    "content": {
+        "export": "ShadowRemove.cso"
+    }
+}

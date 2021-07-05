@@ -1,0 +1,27 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Mon": "Continue comme ça. Je pense que tu deviendras une star.#$e#Demande-moi si tu as besoin de quoi que ce soit.",
+        "Tue": "Je savais que tu finirais par venir ici un jour. Bien sûr, j'ai rendu les choses un peu difficiles pour t'inciter à atteindre l'excellence.",
+        "Wed": "Je suis né tout à fait ordinaire, mais j'ai pris très tôt la décision de rendre ma vie extraordinaire.",
+        "Thu": "Hé. Ne parle à personne de cet endroit, d’accord ? Je veux que ça reste un endroit... unique.#$e#Tu saurais garder un secret pour ton ami M. Qi, n'est-ce pas ?",
+        "Fri": "Ne renonce jamais à atteindre la perfection.#$e#Ne cherche rien de moins que l'excellence dans tout ce que tu fais.",
+        "Sat": "Tu peux venir ici chaque fois que tu as envie de te détendre un peu.",
+        "Sun": "Continue à travailler dur et tu finiras peut-être comme moi un jour."
+    }
+}

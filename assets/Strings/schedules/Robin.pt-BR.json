@@ -1,0 +1,24 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "summer_18.001": "Nada ruim a relatar, doutor. Sinto-me mais saudável que nunca.",
+        "summer_18.000": "O que uma pessoa saudável como você está fazendo aqui?",
+        "Tue.000": "Nos encontramos toda semana para incentivar um ao outro a nos cuidarmos.",
+        "winter_16.000": "Olhar os barcos é minha coisa favorita. O som da madeira rangendo é estranhamente reconfortante."
+    }
+}

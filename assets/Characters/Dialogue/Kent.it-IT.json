@@ -1,0 +1,36 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Mon": "Ehilà.#$e#Manco da così tanto tempo... che mi sento un estraneo.",
+        "Mon4": "Non so se m'abituerò mai ad essere di nuovo a casa.#$e#La pace del paese mi sembra una maschera. Ma probabilmente sono solo io.",
+        "Tue": "Le cose non sono cambiate molto da quando sono partito.#$e#Beh, a parte il fatto che ora ci sei tu.",
+        "Tue2": "Le cose non sono cambiate molto da quando sono partito.#$e#Con l'eccezione che la vecchia fattoria è tornata in funzione.$h",
+        "Wed6": "...Ho perduto molti amici in battaglia.$s#$e#La cosa triste è che non mi ricordo nemmeno i loro volti.#$e#...",
+        "Wed": "Sei qui da un po' ormai, vero? La tua fattoria andrà a pieno regime.",
+        "Thu6": "#$1 Kent1#Sono in piedi dalle 4... a volte mi chiedo se recupererò mai dei ritmi normali.$k#$e#Sam è cresciuto davvero tanto dalla mia partenza. Ormai è un uomo.#$e#Vorrei esserci stato per lui.$s",
+        "Thu": "Tu e mio figlio siete amici?#$e#Probabilmente lo conosci meglio di me...$s",
+        "Thu_inlaw_Sam": "Ehi, @. Ti stai godendo la vita coniugale?",
+        "Fri": "Non sembra una brutta giornata per pescare, vero?",
+        "Sat": "Jodi mi dice che ormai sei una parte importante della comunità. Mi fa piacere sentirlo.",
+        "Sat8": "Faccio fatica a dormire, quindi scusami se ho l'aria stanca.#$e#Sono certo che mi capisci.",
+        "Sun": "Non so cosa fare di me stesso ora che sono tornato.#$e#Sono abituato ad avere giornate più programmate.",
+        "event_popcorn1": "Taci! Smettila di provare a farmi litigare con mia moglie.$u",
+        "event_popcorn2": "...$s#$b#Hai assolutamente ragione, @.$s",
+        "event_popcorn3": "Non mentirmi! Le menzogne sono la cosa che odio di più!$u"
+    }
+}

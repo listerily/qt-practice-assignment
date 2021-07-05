@@ -1,0 +1,33 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "UnderConstruction": "Im Bau",
+        "DismountBeforeEntering": "Vor dem Eintreten absteigen",
+        "PiecesOfHay": "Heuballen: {0}/{1}",
+        "MillFull": "Kein Platz übrig",
+        "CantMill": "Kann nicht gemahlen werden",
+        "AddedHay": "{0} Heuballen zum Silo hinzugefügt.",
+        "NeedSilo": "Benötigt Silo",
+        "CantEnter": "Betreten jetzt nicht möglich",
+        "NoFish": "In diesem Teich können Fische platziert werden.",
+        "WrongFishTypeCoral": "{0} kann nur in einem {0} Teich platziert werden.",
+        "WrongFishType": "Dein {0} will nicht in einem {1} Teich leben.",
+        "CantPutInPonds": "Der {0} wäre da drin nicht glücklich.",
+        "PondFull": "Dieser Teich ist voll."
+    }
+}

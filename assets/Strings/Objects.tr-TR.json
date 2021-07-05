@@ -1,0 +1,42 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Bookcase_Menu": "Hangi kitap okunsun",
+        "Bookcase_Basics": "Temeller",
+        "Bookcase_MakingFriends": "Arkadaş Edinmek",
+        "Bookcase_Improvements": "Geliştirmeler",
+        "TV_Menu": "İzleyeceğin programı seç:",
+        "TV_Weather": "Hava Durumu",
+        "AncientFruitPot": "Kökleri çok derine büyür... burada mutlu olamaz.",
+        "TV_Fortune": "Falcı",
+        "CaskNoCellar": "Sadece kilerde çalışır.",
+        "DarkTalisman": "Kara Tılsım",
+        "MagicInk": "Büyülü Mürekkep",
+        "MagnifyingGlass": "Büyüteç",
+        "BearPaw": "Ayı'nın Bilgeliği",
+        "SpringOnionBugs": "Yeşil Soğan Ustalığı",
+        "SpecialCharm": "Özel Efsun",
+        "CatalogueDescription": "Evinize uygun tüm duvar kağıtları ve zeminlere sınırsız erişim sağlar!",
+        "FurnitureCatalogueDescription": "Evinize uygun neredeyse her mobilya ürününe sınırsız erişim sağlar!",
+        "DarkTalismanDescription": "{0} bulundu! Balçıkla ile kaplanmış...",
+        "MagicInkDescription": "Büyücüye ait {0} bulundu! Ona geri verilse iyi olur.",
+        "MagnifyingGlassDescription": "{0} alındı! Artık 'Gizli Not' bulma yeteneğine sahipsin. Bu notlar ender ve yararlı bilgileri ortaya çıkarır. Koleksiyon sekmesinden incelenebilirler.",
+        "SpecialCharmDescription": "{0} alındı! Kişinin çevresinde şans ortamı oluşturur (şans kalıcı olarak artar)!",
+        "ParsnipSeedPackage_SomeoneElse": "Bu paket başkasına ait."
+    }
+}

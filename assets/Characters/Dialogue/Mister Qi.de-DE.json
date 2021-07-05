@@ -1,0 +1,27 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Mon": "Mach weiter so, Kind. Du wirst noch ein Star.#$e#Frag mich einfach, falls du irgendwas brauchst.",
+        "Tue": "Ich wusste, du würdest hier irgendwann enden. Natürlich musste ich es ein wenig komplizierter gestalten, um dir einen Anreiz dafür zu geben, nach Exzellenz zu streben.",
+        "Wed": "Ich wurde als ein gewöhnlicher Junge geboren, aber ich habe früh in meinem Leben die Entscheidung getroffen, dass ich außergewöhnlich werden würde.",
+        "Thu": "Hey. Erzähl niemandem von diesem Ort, okay? Ich will ihn exklusiv halten.#$e#Du würdest für deinen Freund Mr. Qi doch ein Geheimnis wahren, nicht?",
+        "Fri": "Hör niemals auf, nach Perfektion zu streben.#$e#Gib dich mit nichts weniger als Exzellenz zufrieden, egal was du machst.",
+        "Sat": "Komm vorbei, wenn dir nach Entspannung ist.",
+        "Sun": "Arbeite immer hart und vielleicht wirst du eines Tages so wie ich sein."
+    }
+}

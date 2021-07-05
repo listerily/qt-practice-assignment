@@ -1,0 +1,33 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "UnderConstruction": "Construcción en curso.",
+        "DismountBeforeEntering": "Desmonta antes de entrar.",
+        "PiecesOfHay": "Cantidad de heno: {0}/{1}",
+        "MillFull": "No queda espacio.",
+        "CantMill": "No se puede moler.",
+        "AddedHay": "Has añadido {0} montones de heno al silo.",
+        "NeedSilo": "Necesitas un silo.",
+        "CantEnter": "No se puede entrar ahora mismo.",
+        "WrongFishType": "Tu {0} no quiere vivir en un estanque de {1}.",
+        "WrongFishTypeCoral": "{0} solo puede ser colocado en un estanque de {0}.",
+        "CantPutInPonds": "El {0} no sería feliz aquí.",
+        "NoFish": "Puedes colocar peces en este estanque.",
+        "PondFull": "Este estanque está lleno."
+    }
+}

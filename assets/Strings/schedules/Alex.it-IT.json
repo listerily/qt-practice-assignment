@@ -1,0 +1,26 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "winter_17.000": "Hai visto lo spettacolo della sirena? È il mio preferito...",
+        "marriage_Mon.000": "Passerò tutto il giorno qui. I miei nonni non sono più dei ragazzini...",
+        "summer_16.000": "Ciao. Eh, ho preso una storta alla caviglia. Vedo se posso farmela fasciare.",
+        "summer_16.001": "Sì, sì... sto bene, doc. Fasciamela e basta, ok?",
+        "Sun.000": "%Alex è completamente assorbito dalla partita. Non fa caso alla tua presenza.",
+        "Sun.000_married": "Ehi, @! Puoi guardare la partita con noi, se ti va. Ma se hai da fare non c'è problema."
+    }
+}

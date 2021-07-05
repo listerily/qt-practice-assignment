@@ -1,0 +1,42 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Bookcase_Menu": "Welches Buch lesen?",
+        "Bookcase_Basics": "Basiswissen",
+        "Bookcase_MakingFriends": "Freunde finden",
+        "Bookcase_Improvements": "Verbesserungen",
+        "TV_Menu": "Wähle einen Sender aus:",
+        "TV_Weather": "Wetter",
+        "TV_Fortune": "Wahrsagen",
+        "CaskNoCellar": "Funktioniert nur im Keller.",
+        "DarkTalisman": "Dunkler Talisman",
+        "MagicInk": "Magische Tinte",
+        "CatalogueDescription": "Bringt dir unlimitierten Zugriff auf alle Tapeten und Böden... bequem von deinem Haus aus!",
+        "FurnitureCatalogueDescription": "Bringt dir unlimitierten Zugriff auf fast alle Möbel... bequem von deinem Haus aus!",
+        "DarkTalismanDescription": "Du hast den Gegenstand '{0}' gefunden! Er von Käferschleim umhüllt...",
+        "MagicInkDescription": "Du hast die verlorene {0} des Zauberers gefunden! Bring sie besser zu ihm zurück.",
+        "AncientFruitPot": "Ihre Wurzeln reichen sehr tief ... Sie wäre da drinnen nicht glücklich.",
+        "MagnifyingGlass": "Lupe",
+        "BearPaw": "Wissen des Bärs",
+        "SpringOnionBugs": "Frühlingszwiebel-Meisterschaft",
+        "SpecialCharm": "Besonderes Amulett",
+        "MagnifyingGlassDescription": "Du hast die {0} erhalten! Jetzt bist du in der Lage, 'Geheime Notizen' zu finden. Diese Notizen enthalten seltene und nützliche Informationen. Du findest sie im Kollektions-Tab.",
+        "SpecialCharmDescription": "Du hast das {0} erhalten! Du spürst eine Glücksaura um dich herum (dein Glück wird dauerhaft erhöht)!",
+        "ParsnipSeedPackage_SomeoneElse": "Das Paket gehört jemand anderem."
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Sun.000": "Wir verstecken uns hier, damit wir mit niemandem reden müssen.",
+        "marriage_Mon.002": "Urgh... Alleine kann ich es immer noch nicht schlagen.$s",
+        "spring_4.000": "Ugh... Ich habe später einen Arzttermin.$s",
+        "marriage_Fri.001": "Es ist schön, die alte Gang wieder zu treffen. Nichts hat sich verändert.$h",
+        "spring_4.002": "Wie lang brauchst du noch, Doc? Ich bin hungrig.$s",
+        "marriage_Mon.001": "Hey, @. Ich entspanne mich hier gern... Es ist so friedlich.",
+        "marriage_Fri.000": "Was gibt's, @? Ich sag nur der Mutter Hallo.",
+        "marriage_Mon.000": "Vater scheint es auch ohne mich ganz gut zu gehen.",
+        "winter_15.000": "Das ist alles so mysteriös ... Ich liebe es!",
+        "spring_4.001": "Ich bin nur für die jährliche Kontrolluntersuchung hier. Keine Sorge, ich bin nicht schwan... Ich meine, ich bin nicht krank! Heh.$9"
+    }
+}

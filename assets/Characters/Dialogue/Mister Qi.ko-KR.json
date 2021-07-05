@@ -1,0 +1,27 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Mon": "잘하고 있어, 꼬마야. 내 생각엔 넌 언젠가 스타가 될 거야.#$e#필요한 게 있으면 언제든 나한테 물어봐.",
+        "Tue": "네가 언젠간 여기 올 거란 걸 알고 있었어. 물론, 내가 좀 어렵게 만들어야 엄청난 걸 이루고 싶은 동기부여가 되었겠지.",
+        "Wed": "난 평범한 아이로 태어났지만, 일찍이 비범한 사람이 되겠다고 결정했지.",
+        "Thu": "야. 아무한테도 이곳에 대해 얘기하지 마, 알았지? 여길... 특별한 곳으로 남겨두고 싶어.#$e#네 친구 미스터 치를 위해 비밀 하나는 지켜줄 수 있지, 안 그래?",
+        "Fri": "완벽함을 이루려면 멈추지 않고 분투해야 해.#$e#네가 하는 모든 일을 최고의 수준으로만 하겠다고 다짐해야 해.",
+        "Sat": "쉬고 싶을 땐 언제든지 방문해.",
+        "Sun": "계속 열심히 노력하면 언젠간 나처럼 될 수 있을지도 몰라."
+    }
+}

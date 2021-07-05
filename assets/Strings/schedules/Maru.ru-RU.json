@@ -1,0 +1,28 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "marriage_Mon.002": "Надеюсь, Пенни тоже когда-нибудь выйдет замуж.",
+        "winter_16.000": "Обалдеть, вот это технология!",
+        "marriageJob.000": "Я на работе, дорогуша! Смотри, чтобы врач не заметил.",
+        "marriageJob.002": "Я почти закончила...",
+        "marriage_Mon.001": "Папины эксперименты тоже идут хорошо.",
+        "summer.000": "Масштабы вселенной очень сложно осознать.$8",
+        "marriage_Mon.000": "Эй! Мама, кажется, неплохо без меня управляется. Она - сильная женщина.",
+        "marriageJob.001": "Мне приятно, что ты сюда заходишь.$h"
+    }
+}

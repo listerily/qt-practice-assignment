@@ -1,0 +1,27 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "winter_9.000": "Ничего серьeзного... Я просто пришла на ежегодный осмотр.",
+        "winter_9.001": "Ну... Нос немного течeт, доктор. Но всe остальное в порядке!",
+        "winter_16.001": "Брррр... Одежка у меня неподходящая...$s",
+        "marriage_Mon.000": "Привет! Я пришла повидаться с Эмили.",
+        "rain.000": "Погода такая ужасная, не хочу вылазить из постели.",
+        "winter.000": "Слишком холодно, чтобы вылезать из-под одеяла.",
+        "winter_16.000": "Слишком холодно, чтобы встать с кровати."
+    }
+}

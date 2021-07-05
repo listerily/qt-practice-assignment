@@ -1,0 +1,28 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "fall_9.000": "Izé... Dr. Harvey? Ez teljesen bizalmas, ugye?",
+        "15.000": "Szeretném megnézni a helyi üzleteket, hogy mégis hogyan boldogulnak.",
+        "6.000": "Azért vagyok itt, hogy begyűjtsem Clint üzleti adóját.",
+        "1.000": "Nos, a halak az idei szezonban valóban frissnek érződnek.",
+        "Tue.000": "Minden bevásárlásomat itt végzem.$h",
+        "3.000": "Én csak azért vagyok itt, hogy biztosítsam Marnie minden üzleti szükségességét.",
+        "6.001": "A könyvtár Pelikán Város egyik legnagyobb jellegzetessége. Ezt a helyi üzletekből beszedett adóból tartjuk fent.",
+        "winter_16.000": "Tudod, a kedvenc tárgyaim közül párat innen a piacról szereztem be..."
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "RandomNegativeItemNoun": "Müll#Schrott#Gerümpel#Krempel#Mist",
+        "RandomPositiveAdjective_Child": "cool#lustig#toll#nett#goldig#super#großartig",
+        "RandomPositiveAdjective_AdultMale": "interessant#aufregend#toll#lustig#großartig#fantastisch",
+        "RandomPositiveAdjective_AdultFemale": "wundervoll#prima#herzerwärmend#magisch#unglaublich#bezaubernd#unterhaltsam#hinreißend",
+        "RandomPositiveAdjective_PlaceOrEvent": "wundervoll#prima#herzerwärmend#magisch#unglaublich#bezaubernd#unterhaltsam#hinreißend",
+        "RandomNegativeAdjective_Child": "dumm#idiotisch#albern#langweilig#dämlich",
+        "RandomNegativeAdjective_AdultMale": "schrecklich#furchtbar#geschmacklos#langweilig#deprimierend#abscheulich#lächerlich",
+        "RandomNegativeAdjective_AdultFemale": "traurig#langweilig#stressig#deprimierend#bemitleidenswert#kindisch#abscheulich",
+        "RandomNegativeAdjective_PlaceOrEvent": "traurig#langweilig#stressig#deprimierend#bemitleidenswert#kindisch#abscheulich",
+        "RandomDeliciousAdjective": "köstlich#lecker#wundervoll#zufriedenstellend#füllend#fabelhaft#appetitlich#herrlich",
+        "RandomDeliciousAdjective_Child": "lecker",
+        "RandomNegativeFoodAdjective_Child": "eklig",
+        "RandomNegativeFoodAdjective_Polite": "... interessant#... ungewöhnlich#... anders#... eigenwillig",
+        "RandomNegativeFoodAdjective": "scheußlich#ekelhaft#widerlich#abscheulich#unappetitlich#zum Kotzen#furchtbar#abstoßend#ekelerregend#schauderhaft#entsetzlich#verdorben",
+        "RandomSlightlyPositiveFoodAdjective": "ordentlich#gut#essbar",
+        "ChildTerm_Male": "Junge",
+        "ChildTerm_Female": "Mädchen",
+        "QuestionDialogue_Yes": "Ja",
+        "QuestionDialogue_No": "Nein",
+        "GenericPlayerTerm": "du",
+        "Pronoun_Female": "ihr",
+        "Pronoun_Male": "ihm"
+    }
+}

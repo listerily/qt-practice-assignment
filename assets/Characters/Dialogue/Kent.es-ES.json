@@ -1,0 +1,36 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Mon": "Hola.#$e#He estado tanto tiempo fuera que... Me siento como un extraño.",
+        "Mon4": "No sé si conseguiré acostumbrarme a estar en casa.#$e#La tranquilidad del pueblo me parece una pantomima. Aunque probablemente solo sean cosas mías.",
+        "Tue": "Las cosas no han cambiado mucho desde que me fui.#$e#Bueno, excepto que tú has venido.",
+        "Tue2": "Las cosas no han cambiado mucho desde que me fui.#$e#Bueno, excepto que la granja vuelve a estar habitada.$h",
+        "Wed6": "... He perdido a muchos amigos en el frente.$s#$e#Lo triste es que ya ni siquiera recuerdo sus caras.#$e#...",
+        "Wed": "Ya llevas aquí un tiempo, ¿no? Tu granja debe de estar prosperando.",
+        "Thu6": "#$1 Kent1#Llevo despierto desde las 04:00... A veces me pregunto si volveré a tener una rutina normal.$k#$e#Sam ha crecido mucho desde que me fui. Ahora es todo un hombre.#$e#Me hubiera gustado poder estar a su lado.$s",
+        "Thu": "¿Te llevas bien con mi hijo?#$e#Seguramente lo conoces mejor que yo...$s",
+        "Thu_inlaw_Sam": "Ey, @. ¿Disfrutando de tu matrimonio?",
+        "Fri": "Parece un buen día para pescar, ¿no?",
+        "Sat": "Jodi me ha dicho que ya formas parte de la comunidad. Me alegra saberlo.",
+        "Sat8": "Me cuesta dormir, así que disculpa mi aspecto cansado.#$e#Seguro que lo comprendes.",
+        "Sun": "No sé qué hacer con mi vida ahora que he vuelto.#$e#Estoy acostumbrado a tener días más estructurados.",
+        "event_popcorn1": "¡Tú cierra el pico! Deja de ponerme en contra de mi mujer.$u",
+        "event_popcorn2": "...$s#$b#Tienes toda la razón, @.$s",
+        "event_popcorn3": "¡No me mientas! ¡Odio las mentiras más que nada en el mundo!$u"
+    }
+}

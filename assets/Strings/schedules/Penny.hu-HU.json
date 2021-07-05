@@ -1,0 +1,28 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "winter_4.001": "Hé! Kérhetnék egy kis magányt?$a",
+        "marriage_Mon.002": "Vajon Maru meg fog valaha is házasodni?",
+        "marriageJob.000": "Szia édes. Kedves tőled, hogy munka közben látogatsz meg.$h",
+        "marriage_Mon.001": "Ne aggódj, mindezt a saját pénzemből veszem.",
+        "marriage_Mon.000": "Szia édes! Épp csak bevásárolgatok.",
+        "winter_15.000": "Érzed ezt az illatot? Olyan fűszeres itt a levegő...",
+        "winter_4.000": "Ma délután van egy találkozóm a klinikánál.",
+        "rain2.000": "Be fogok menni, csak egy nyugodt pillanatra vágyok."
+    }
+}

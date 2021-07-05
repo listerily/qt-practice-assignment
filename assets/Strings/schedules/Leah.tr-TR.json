@@ -1,0 +1,24 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "spring_16.001": "Sağlıklı görünüyor muyum, Doktor Harvey?",
+        "marriage_Mon.000": "Merhaba, @. temiz havanın tadını çıkarıyorum. Evde durmaktan bunalmıştım.",
+        "winter_15.000": "Hım... Lupini'nin çalışmalarından biri. Hiç fena değil...",
+        "spring_16.000": "Merhaba. Doktora mı geldin? "
+    }
+}

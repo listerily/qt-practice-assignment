@@ -1,0 +1,28 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "fall_9.000": "Erm... ¿Doctor Harvey? Esto es totalmente confidencial, ¿verdad?",
+        "15.000": "Me gusta pasar por los negocios locales y ver cómo les va.",
+        "6.000": "Estoy aquí para recaudar el impuesto comercial de Clint.",
+        "1.000": "La verdad es que el pescado de temporada huele muy fresco.",
+        "Tue.000": "Siempre hago la compra aquí.$h",
+        "3.000": "Estoy aquí para asegurarme de que las necesidades comerciales de Marnie están cubiertas.",
+        "6.001": "La biblioteca es de lo mejor que tiene Pueblo Pelícano. Se financia con los impuestos que recaudamos de los negocios locales.",
+        "winter_16.000": "Lo cierto es que he comprado muchos de mis objetos favoritos en este mercado..."
+    }
+}

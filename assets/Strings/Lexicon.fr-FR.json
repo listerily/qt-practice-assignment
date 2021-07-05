@@ -1,0 +1,42 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "RandomNegativeItemNoun": "ordure#poubelle#vieillerie#cochonnerie#camelote",
+        "RandomPositiveAdjective_Child": "cool#drôle#soigné#sympa#habile#chouette#génial",
+        "RandomPositiveAdjective_AdultMale": "intéressant#excitant#soigné#drôle#sympa#chouette",
+        "RandomPositiveAdjective_AdultFemale": "merveilleuse#incroyable#réconfortante#irrésistible#incroyable#charmante#excitante#agréable",
+        "RandomPositiveAdjective_PlaceOrEvent": "merveilleux#incroyable#réconfortant#féerique#incroyable#charmant#exaltant#agréable",
+        "RandomNegativeAdjective_Child": "stupide#idiot#ringard#ennuyeux#bête",
+        "RandomNegativeAdjective_AdultMale": "horrible#épouvantable#dégoûtant#ennuyeux#déprimant#méprisable#risible",
+        "RandomNegativeAdjective_AdultFemale": "triste#ennuyeuse#stressante#déprimante#pitoyable#enfantine#méprisable",
+        "RandomNegativeAdjective_PlaceOrEvent": "triste#ennuyeux#stressant#déprimant#pitoyable#enfantin#méprisable",
+        "RandomDeliciousAdjective": "délicieux#savoureux#merveilleux#satisfaisant#exquis#succulent#appétissant#goûteux",
+        "RandomDeliciousAdjective_Child": "délicieux",
+        "RandomNegativeFoodAdjective_Child": "dégoûtant",
+        "RandomNegativeFoodAdjective_Polite": "... intéressant# ... inhabituel#... différent# ... atypique",
+        "RandomNegativeFoodAdjective": "mauvais#dégoûtant#ignoble#révoltant#écoeurant#horrible#répugnant#affreux#odieux#infect#horrible#nauséabond ",
+        "RandomSlightlyPositiveFoodAdjective": "décent#bon#comestible",
+        "ChildTerm_Male": "garçon",
+        "ChildTerm_Female": "fille",
+        "QuestionDialogue_Yes": "Oui",
+        "QuestionDialogue_No": "Non",
+        "GenericPlayerTerm": "Fermier",
+        "Pronoun_Female": "elle",
+        "Pronoun_Male": "lui"
+    }
+}

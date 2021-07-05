@@ -1,0 +1,22 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "winter_15.000": "Ces gens sont des voyageurs, comme moi... Je ressens un lien entre nous. Mais je peux aussi bien rester ici rien que pour regarder et écouter.",
+        "winter.000": "Même quelqu'un comme moi a besoin de se réchauffer à l'intérieur de temps en temps."
+    }
+}

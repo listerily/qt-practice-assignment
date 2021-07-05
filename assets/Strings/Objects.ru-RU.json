@@ -1,0 +1,42 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Bookcase_Menu": "Какую книгу вы хотите достать?",
+        "Bookcase_Basics": "Основы",
+        "Bookcase_MakingFriends": "Как завести друзей",
+        "Bookcase_Improvements": "Благоустройство",
+        "TV_Menu": "Выберите передачу:",
+        "TV_Weather": "Прогноз погоды",
+        "TV_Fortune": "Предсказатель",
+        "CaskNoCellar": "Работает только в подвале.",
+        "DarkTalisman": "Темный талисман",
+        "MagicInk": "Волшебные чернила",
+        "CatalogueDescription": "Предоставляет неограниченный доступ ко всем видам обоев и напольных покрытий... прямо у вас дома!",
+        "FurnitureCatalogueDescription": "Предоставляет неограниченный доступ почти ко всем видам мебели... прямо у вас дома!",
+        "DarkTalismanDescription": "Вы нашли {0}! Он весь в жучиной слизи...",
+        "MagicInkDescription": "Вы нашли {0}! Верните их волшебнику.",
+        "AncientFruitPot": "Корни у него глубоко растут... Здесь ему будет тесновато.",
+        "MagnifyingGlass": "Лупа",
+        "BearPaw": "Медвежья мудрость",
+        "SpringOnionBugs": "Золотой лук-батун",
+        "SpecialCharm": "Особый оберег",
+        "MagnifyingGlassDescription": "Вы получаете {0}! Теперь вы можете находить «Секретные заметки». В них содержится редкая и полезная информация. Посмотреть их можно на вкладке «Коллекции».",
+        "SpecialCharmDescription": "Вы получаете {0}! Вы чувствуете, как вас окружает аура удачи (удача увеличивается навсегда!)",
+        "ParsnipSeedPackage_SomeoneElse": "Этот пакет чей-то еще."
+    }
+}

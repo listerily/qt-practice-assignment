@@ -1,0 +1,36 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Mon": "Hallo.#$e#Ich war so lange weg... Ich fühle mich wie ein Fremder.",
+        "Mon4": "Ich weiß nicht, ob ich mich je wieder daran gewöhnen kann, zurück zu sein.#$e#Die friedliche Atmosphäre der Stadt fühlt sich an wie eine Maske. Dabei geht es aber vermutlich nur mir so.",
+        "Tue": "Die Dinge haben sich nicht wirklich verändert, seit ich weg war.#$e#Außer der Tatsache, dass du hier bist.",
+        "Tue2": "Die Dinge haben sich nicht wirklich verändert, seit ich weg war.#$e#Außer, dass wir einen neuen Bauern im Ort haben.$h",
+        "Wed6": "... Ich habe viele Freunde im Kampf verloren.$s#$e#Das Traurige ist, dass ich mich nicht mal an ihre Gesichter erinnern kann.#$e#...",
+        "Wed": "Du bist schon eine ganze Weile hier, nicht? Dein Hof läuft wohl gut.",
+        "Thu6": "#$1 Kent1#Ich bin schon seit 4 Uhr wach... Manchmal frage ich mich, ob ich jemals wieder einen normalen Schlafrhythmus haben werde.$k#$e#Sam ist in meiner Abwesenheit wirklich groß geworden. Er ist jetzt erwachsen.#$e#Ich wünschte, ich hätte für ihn da sein können.$s",
+        "Thu": "Du bist mit meinem Sohn befreundet?#$e#Du kennst ihn vermutlich besser als ich...$s",
+        "Thu_inlaw_Sam": "Hey, @. Genießt du dein Eheleben?",
+        "Fri": "Sieht nach einem guten Tag zum Fischen aus, nicht?",
+        "Sat": "Jodi sagt mir, dass du wirklich ein Teil dieser Gemeinde geworden bist. Ich bin froh, das zu hören.",
+        "Sat8": "Ich habe Schlafprobleme, also entschuldige bitte, wenn ich müde aussehe.#$e#Ich bin mir sicher, dass du das verstehst.",
+        "Sun": "Ich weiß nicht, was ich mit mir anfangen soll, seit ich zurück bin.#$e#Ich bin an mehr Struktur in meinem Alltag gewöhnt.",
+        "event_popcorn1": "Du bleibst ruhig! Hör auf, mich gegen meine Frau auszuspielen.$u",
+        "event_popcorn2": "...$s#$b#Du hast absolut Recht, @.$s",
+        "event_popcorn3": "Lüg mich nicht an! Ich hasse Lügen mehr als alles andere!$u"
+    }
+}

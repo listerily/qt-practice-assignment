@@ -1,0 +1,30 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Fri.000": "Ettől a sok sós haltól igazán megszomjaztam.",
+        "spring_9.001": "Eh, beszorult egy kampó az ujjamba... A Doktor majd ki fogja vágni.",
+        "winter_17.000": "Ah, semmi sem jobb, mint egy forró ital, hogy lecsillapodjak ilyen hideg, sötét nap után...",
+        "spring_9.002": "Aúúú! Ez fájt, Doki!$s",
+        "spring_9.000": "Ma találkozóm van az orvossal, szóval ha venni akarsz valamit, akkor jobb, ha sietsz.",
+        "spring_9.003": "Fel kell melegednem egy kicsit, hogy ismét kész legyek egy hideg óceáni éjszakára.$h",
+        "Sat.000": "Ah... Semmi sem jobb, mint egy kis hűsítővel hátradőlni egy nyugtató horgászós nap után.$h",
+        "winter_15.000": "Alig tudok nyugodtan aludni ettől az éjszakai piactól... Eh, de nincs baj. Rugalmas vagyok.",
+        "winter.000": "Fel kell melegednem egy kicsit, hogy ismét kész legyek egy hideg óceáni éjszakára.$h",
+        "winter_16.000": "Voltál már a mélytengeri tengeralattjárón? A kapitány öreg barátom."
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "xTile.Pipeline.TideReader, xTile",
+            "version": 0
+        }
+    ],
+    "content": {
+        "export": "SlimeHutch.tbin"
+    }
+}

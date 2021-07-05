@@ -1,0 +1,30 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Fri.000": "Какая прекрасная комната. Я сейчас на седьмом небе.",
+        "marriage_Mon.002": "Похоже, Гас едва справляется без меня.",
+        "winter_11.000": "Многие из нас ходят к врачу на ежегодный осмотр.",
+        "marriage_Fri.001": "Я пришла сюда понюхать плоды.",
+        "winter_11.001": "Доктор, если можно, я бы предпочла народную медицину.",
+        "marriage_Mon.001": "Хочу сегодня хорошенько пройтись, а то ноги будто каннеллони.",
+        "marriage_Fri.000": "Я просто ищу русалок.",
+        "marriage_Mon.000": "Приятно вернуться в старый дом. Столько воспоминаний…",
+        "marriage_Fri.002": "В пятницу вечером всегда людно, так что я прихожу помочь по старой памяти. Это весело!$h",
+        "winter_15.000": "Эта лодка, пожалуй, моя любимая. Другой такой просто нет!"
+    }
+}

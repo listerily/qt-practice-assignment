@@ -1,0 +1,24 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "fall_4.000": "Idegessé válok, ha orvoshoz kell menni... Mi van akkor, ha már csak pár évem van hátra? Még nem békéltem meg a világgal!",
+        "fall_4.001": "A májam az, ugye, Doktor úr? Látom ám az arcán. *sóhaj*... Tényleg vissza kellene vennem egy kicsit abból az édes, finom Stardew Valley borból.$s",
+        "Mon.000": "Szerzek pár készletet a szalonhoz. Pierrenél jó cuccok vannak.$h",
+        "Sun.000": "Hé @. Elnézést... a bárpult zárva, amíg a játszma tart."
+    }
+}

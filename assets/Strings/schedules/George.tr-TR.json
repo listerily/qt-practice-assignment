@@ -1,0 +1,26 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "23.000": "Hım... Karım bugün beni sağlık ocağına götürüyor.",
+        "23.001": "*homurdanır*... Hiçbir şeye yaramayan doktorlar... *homurdanır*",
+        "winter_17.000": "Ben sadece beleş kahve için geldim.",
+        "Sun.000": "Hiç dindar olmadım ama ne yaparsın... artık genç değilim.",
+        "23.002": "Ne kadar ömrüm kaldı, doktor?",
+        "Sun.001": "Hahaha... Buraya gelmek için ibadet etmeye gitmedim! Umarım Yoba bana kızmaz.$h"
+    }
+}

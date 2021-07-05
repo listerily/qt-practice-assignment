@@ -1,0 +1,27 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Mon": "その調子で がんばりたまえ。君なら スターに なれるだろう。#$e#何か いるなら 私に 言ってくれ。",
+        "Tue": "いつか 君が ここに 来ると 思っていたよ。もちろん、 それまでの 過程を 少々 難しくしたが、 君の 優越感を 満たすための ことさ。",
+        "Wed": "私は 生まれつき ただの 少年だったが、 早いうちに とある 選択をした おかげで 特別な 存在に なれた。",
+        "Thu": "ねぇ、誰にも この場所のことを 言わないで くれたまえ。私は ここを… 排他的な場所に したい。#$e#君なら、 友人の 秘密を 守ってくれるだろう？",
+        "Fri": "完璧を目指す努力を 怠たるでない。#$e#君の 成すこと 全てに 満足 いくまで、 がんばるのだ。",
+        "Sat": "リラックスしたければ いつでも 来るといい。",
+        "Sun": "努力し続ければ いずれ 君も 私みたいに なれるだろう。"
+    }
+}

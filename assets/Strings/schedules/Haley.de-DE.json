@@ -1,0 +1,27 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "winter_9.000": "Es ist nichts Ernstes... Ich bin nur für meine jährliche Kontrolluntersuchung hier.",
+        "winter_9.001": "Nun... meine Nase läuft ein wenig, Doktor. Aber sonst geht's mir gut!",
+        "winter_16.001": "Brrr ... Ich bin echt nicht richtig angezogen ...$s",
+        "marriage_Mon.000": "Hi, Liebling! Ich bin hauptsächlich hier, um Emily zu besuchen.",
+        "rain.000": "Das Wetter ist viel zu furchtbar, um das Bett zu verlassen.",
+        "winter.000": "Es ist zu kalt, um aufzustehen.",
+        "winter_16.000": "Es ist zu kalt, um aufzustehen."
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "header": {
+        "target": "a",
+        "formatVersion": 5,
+        "hidef": false,
+        "compressed": true
+    },
+    "readers": [
+        {
+            "type": "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+            "version": 0
+        },
+        {
+            "type": "Microsoft.Xna.Framework.Content.StringReader",
+            "version": 0
+        }
+    ],
+    "content": {
+        "Mon": "Sigue trabajando duro. Creo que vas a ser una estrella.#$e#Si necesitas algo, pídemelo.",
+        "Tue": "Sabía que acabarías aquí algún día. Por supuesto, te lo he tenido que poner difícil para que tuvieras un incentivo para alcanzar la excelencia.",
+        "Wed": "Yo nací siendo un niño normal, pero pronto decidí que me iba a convertir en alguien extraordinario.",
+        "Thu": "Buenas. No le hables a nadie de este sitio, ¿vale? Quiero que siga siendo... exclusivo.#$e#Guardarás el secreto a tu amigo el Sr. Qi, ¿verdad?",
+        "Fri": "Nunca dejes de medrar para alcanzar la perfección.#$e#No te conformes con menos de la excelencia en todo lo que hagas.",
+        "Sat": "Pásate cuando quieras descansar un poco.",
+        "Sun": "Sigue trabajando duro y quizá algún día llegues a ser como yo."
+    }
+}

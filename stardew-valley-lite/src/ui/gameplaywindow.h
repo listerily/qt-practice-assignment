@@ -13,7 +13,7 @@ class GamePlayWindow : public QWidget
 
 public:
     explicit GamePlayWindow(QWidget *parent = nullptr);
-    ~GamePlayWindow();
+    ~GamePlayWindow() override;
 
 private:
     Ui::GamePlayWindow *ui;

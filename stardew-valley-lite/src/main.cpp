@@ -8,18 +8,24 @@
 
 int main(int argc, char *argv[])
 {
+    bool gameShouldExit = false;
+    bool tickingThreadTerminated = false;
     QApplication a(argc, argv);
     //Startup game Client
     GameClient gameClient(a);
     GamePlayWindow mainWindow;
-    std::thread gameClientThread([&gameClient, &mainWindow](){
-        while(gameClient.isGameShouldExit()) {
+    std::thread([&gameClient, &mainWindow, &gameShouldExit, &tickingThreadTerminated](){
+        while(!gameShouldExit) {
             gameClient.tick();
+            //tick for main window
             std::this_thread::sleep_for(std::chrono::milliseconds(50));
         }
-        mainWindow.close();
-    });
+        tickingThreadTerminated = true;
+    }).detach();
     //Startup UI
     mainWindow.show();
-    return QApplication::exec();
+    int returnValue = QApplication::exec();
+    gameShouldExit = true;
+    while(!tickingThreadTerminated);
+    return returnValue;
 }

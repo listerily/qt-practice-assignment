@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/svl/text/config">
+        <file>static/static_object.json</file>
+    </qresource>
+</RCC>

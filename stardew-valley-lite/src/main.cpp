@@ -5,13 +5,14 @@
 
 #include "ui/gameplaywindow.h"
 #include "game/GameClient.h"
-#include "ResourceLoader.h"
+#include "config/ConfigLoader.h"
 int main(int argc, char *argv[])
 {
     bool gameShouldExit = false;
     QApplication a(argc, argv);
     //Startup game Client
-    //ResourceLoader resourceLoader(a);
+    ConfigLoader configLoader(a);
+    configLoader.initialize();
     GameClient gameClient(a);
     GamePlayWindow mainWindow(*gameClient.getCurrentWorld());
     std::thread([&gameClient, &mainWindow, &gameShouldExit](){

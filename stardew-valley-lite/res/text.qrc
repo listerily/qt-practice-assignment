@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/svl/text/config">
         <file>static/static_object.json</file>
+        <file>dim/dim_manifest.json</file>
+        <file>dim/farm.json</file>
+        <file>dim/home.json</file>
     </qresource>
 </RCC>

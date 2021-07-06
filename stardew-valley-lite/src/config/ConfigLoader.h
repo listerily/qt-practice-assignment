@@ -10,6 +10,7 @@
 #include <unordered_map>
 
 #include "StaticObjectConfig.h"
+#include "DimMapConfig.h"
 
 class QApplication;
 class ConfigLoader
@@ -18,6 +19,7 @@ private:
     QApplication& application;
 
     std::unordered_map<std::string, StaticObjectConfig> staticObjectTexturesLookup;
+    std::unordered_map<std::string, DimMapConfig> dimInitialMapsLookup;
 public:
     explicit ConfigLoader(QApplication&);
 
@@ -26,6 +28,7 @@ public:
     StaticObjectConfig const& getTexturesForStaticObject(const std::string &id) const;
 private:
     void initializeStaticObjectConfig();
+    void initializeDimensionMaps();
 };
 
 

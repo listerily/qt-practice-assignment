@@ -4,17 +4,37 @@
 
 #include "GameClient.h"
 
+#include "world/GameWorld.h"
+
 GameClient::GameClient(QApplication& app): app(app)
 {
     gameShouldExit = false;
+    currentWorld = nullptr;
+
+    createWorld();
 }
 
 void GameClient::tick()
 {
-
 }
 
-bool GameClient::isGameShouldExit() const
+GameWorld *GameClient::getCurrentWorld()
 {
-    return gameShouldExit;
+    return currentWorld;
+}
+
+const GameWorld *GameClient::getCurrentWorld() const
+{
+    return currentWorld;
+}
+
+void GameClient::createWorld()
+{
+    delete currentWorld;
+    currentWorld = new GameWorld;
+}
+
+GameClient::~GameClient()
+{
+    delete currentWorld;
 }

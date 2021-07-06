@@ -1,14 +1,35 @@
 #include "gameplaywindow.h"
 #include "ui_gameplaywindow.h"
 
-GamePlayWindow::GamePlayWindow(QWidget *parent) :
+#include "painter/GamePainter.h"
+
+GamePlayWindow::GamePlayWindow(const GameWorld& world, QWidget *parent) :
     QWidget(parent),
+    currentWorld(world),
     ui(new Ui::GamePlayWindow)
 {
     ui->setupUi(this);
+    paintTickProcessed = false;
 }
 
 GamePlayWindow::~GamePlayWindow()
 {
     delete ui;
+}
+
+void GamePlayWindow::notifyPaintTick()
+{
+    paintTickProcessed = false;
+    update();
+}
+
+bool GamePlayWindow::isPaintTickProcessed() const
+{
+    return paintTickProcessed;
+}
+void GamePlayWindow::paintEvent(QPaintEvent *event)
+{
+    paintTickProcessed = true;
+    GamePainter(currentWorld).paint(*this, width(), height());
+    QWidget::paintEvent(event);
 }

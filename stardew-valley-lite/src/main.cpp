@@ -3,7 +3,7 @@
 
 #include <thread>
 
-#include "ui/gamemainwindow.h"
+#include "ui/gameplaywindow.h"
 #include "game/GameClient.h"
 
 int main(int argc, char *argv[])
@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     //Startup game Client
     GameClient gameClient(a);
-    GameMainWindow mainWindow;
+    GamePlayWindow mainWindow;
     std::thread gameClientThread([&gameClient, &mainWindow](){
         while(gameClient.isGameShouldExit()) {
             gameClient.tick();

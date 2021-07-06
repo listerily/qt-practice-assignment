@@ -10,7 +10,7 @@ set(QT_VERSION 5)
 set(REQUIRED_LIBS Core Gui Widgets)
 set(REQUIRED_LIBS_QUALIFIED Qt5::Core Qt5::Gui Qt5::Widgets)
 
-add_executable(${PROJECT_NAME} src/main.cpp src/ui/gamemainwindow.h src/ui/gamemainwindow.cpp)
+add_executable(${PROJECT_NAME} src/main.cpp src/ui/gamemainwindow.h src/ui/gamemainwindow.cpp src/game/GameClient.cpp src/game/GameClient.h src/game/world/GameWorld.cpp src/game/world/GameWorld.h src/game/world/GameDimension.cpp src/game/world/GameDimension.h src/game/ResourceLoader.cpp src/game/ResourceLoader.h src/game/entity/Entity.cpp src/game/entity/Entity.h src/game/entity/Player.cpp src/game/entity/Player.h src/game/entity/Animal.cpp src/game/entity/Animal.h src/game/world/TileSheet.cpp src/game/world/TileSheet.h src/game/world/tile/Tile.cpp src/game/world/tile/Tile.h)
 
 set(CMAKE_PREFIX_PATH "/usr/lib/cmake/Qt5")
 if (NOT CMAKE_PREFIX_PATH)
@@ -22,4 +22,4 @@ find_package(Qt${QT_VERSION} COMPONENTS ${REQUIRED_LIBS} REQUIRED)
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/src
     ${PROJECT_SOURCE_DIR})
-target_link_libraries(${PROJECT_NAME} ${REQUIRED_LIBS_QUALIFIED})
+target_link_libraries(${PROJECT_NAME} ${REQUIRED_LIBS_QUALIFIED} pthread)

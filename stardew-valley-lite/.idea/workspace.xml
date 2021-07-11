@@ -14,30 +14,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c86275c9-5238-4720-b4c0-25a7e974a34a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/game/world/object/factory/TileObjectFactory.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/world/object/factory/TileObjectFactory.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/world/object/impl/PathLand.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/world/object/impl/PathLand.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/ConfigLoader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/ConfigLoader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/ConfigLoader.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/ConfigLoader.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/StaticObjectConfig.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/StaticObjectConfig.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/GameClient.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameClient.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entity/Entity.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Entity.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entity/Entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Entity.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entity/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Player.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entity/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Player.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/world/GameWorld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/GameWorld.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/world/GameWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/GameWorld.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/ObjectTile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/object/Tile.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/ObjectTile.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/object/Tile.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/StaticObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/object/TileObject.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/StaticObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/object/TileObject.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/factory/StaticObjectFactory.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/factory/StaticObjectFactory.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/tile/Tile.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/tile/Tile.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/gameplaywindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/gameplaywindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/painter/GamePainter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/painter/GamePainter.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +48,7 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager" selected="CMake Application.stardew-valley-lite">
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
@@ -100,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1626007860831</updated>
-      <workItem from="1626007866353" duration="7794000" />
+      <workItem from="1626007866353" duration="8996000" />
     </task>
     <servers />
   </component>

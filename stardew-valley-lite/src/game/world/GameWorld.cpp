@@ -6,7 +6,8 @@
 
 GameWorld::GameWorld(GameClient & client) : client(client)
 {
-
+    currentDimension = nullptr;
+    player = nullptr;
 }
 
 void GameWorld::registerNewDimension(const DimMapConfig & config)
@@ -16,10 +17,20 @@ void GameWorld::registerNewDimension(const DimMapConfig & config)
 
 GameDimension &GameWorld::getCurrentGameDimension()
 {
-    return *dimensions[currentDimensionIndex];
+    return *currentDimension;
 }
 
 const GameDimension &GameWorld::getCurrentGameDimension() const
 {
-    return *dimensions[currentDimensionIndex];
+    return *currentDimension;
+}
+
+Player &GameWorld::getPlayer()
+{
+    return *player;
+}
+
+const Player &GameWorld::getPlayer() const
+{
+    return *player;
 }

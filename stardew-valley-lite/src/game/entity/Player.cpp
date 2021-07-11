@@ -3,3 +3,8 @@
 //
 
 #include "Player.h"
+
+std::string Player::getID() const
+{
+    return "player";
+}

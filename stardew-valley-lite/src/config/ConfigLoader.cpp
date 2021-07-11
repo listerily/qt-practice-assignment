@@ -2,7 +2,7 @@
 // Created by listerily on 2021/7/6.
 //
 
-#include "config/ConfigLoader.h"
+#include "ConfigLoader.h"
 
 #include <QResource>
 #include <QJsonObject>

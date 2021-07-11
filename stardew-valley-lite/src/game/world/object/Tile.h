@@ -2,12 +2,13 @@
 // Created by listerily on 2021/7/6.
 //
 
-#ifndef STARDEW_VALLEY_LITE_OBJECTTILE_H
-#define STARDEW_VALLEY_LITE_OBJECTTILE_H
+#ifndef STARDEW_VALLEY_LITE_TILE_H
+#define STARDEW_VALLEY_LITE_TILE_H
 
-
+#include <string>
+#include <list>
 class Tile;
-class ObjectTile
+class Tile
 {
 public:
     enum class DisplayPriority : int
@@ -15,11 +16,11 @@ public:
         UNDERGROUND, SURFACE_BOTTOM, SURFACE_MEDIUM, SURFACE_TOP, SURFACE_OVERLAY, ON_GROUND, FLOATING, SKY
     };
 
-    Tile* targetTile = nullptr;
+    std::list<std::string> textures;
     bool isSolid = false;
     int offsetX = 0, offsetY = 0;
     DisplayPriority displayPriority = DisplayPriority::UNDERGROUND;
 };
 
 
-#endif //STARDEW_VALLEY_LITE_OBJECTTILE_H
+#endif //STARDEW_VALLEY_LITE_TILE_H

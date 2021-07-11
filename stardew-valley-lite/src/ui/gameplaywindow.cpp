@@ -9,6 +9,7 @@ GamePlayWindow::GamePlayWindow(const GameWorld& world, QWidget *parent) :
     ui(new Ui::GamePlayWindow)
 {
     ui->setupUi(this);
+    setWindowTitle("Stardew Valley Lite");
     paintTickProcessed = false;
 }
 

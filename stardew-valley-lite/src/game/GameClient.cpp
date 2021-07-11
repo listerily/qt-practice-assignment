@@ -31,7 +31,7 @@ const GameWorld *GameClient::getCurrentWorld() const
 void GameClient::createWorld()
 {
     delete currentWorld;
-    currentWorld = new GameWorld;
+    currentWorld = new GameWorld(*this);
 }
 
 GameClient::~GameClient()

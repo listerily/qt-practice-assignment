@@ -1,14 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="stardew-valley-lite" targetName="stardew-valley-lite" />
+      <config projectName="stardew-valley-lite" targetName="stardew-valley-lite_autogen" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
+      <configuration PROFILE_NAME="Release" CONFIG_NAME="Release" ENABLED="true" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c86275c9-5238-4720-b4c0-25a7e974a34a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/game/world/object/factory/TileObjectFactory.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/world/object/factory/TileObjectFactory.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/world/object/impl/PathLand.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/world/object/impl/PathLand.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/ConfigLoader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/ConfigLoader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/ConfigLoader.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/ConfigLoader.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/StaticObjectConfig.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/StaticObjectConfig.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GameClient.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameClient.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/world/GameWorld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/GameWorld.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/world/GameWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/GameWorld.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/world/object/ObjectTile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/object/Tile.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/world/object/ObjectTile.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/object/Tile.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/world/object/StaticObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/object/TileObject.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/world/object/StaticObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/object/TileObject.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/world/object/factory/StaticObjectFactory.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/world/object/factory/StaticObjectFactory.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/world/tile/Tile.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/world/tile/Tile.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/gameplaywindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/gameplaywindow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/painter/GamePainter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/painter/GamePainter.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1vAbUdfre0FFdSrcrf2qKXCDKhg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+  </component>
   <component name="RunManager" selected="CMake Application.stardew-valley-lite">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="stardew-valley-lite" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stardew-valley-lite" TARGET_NAME="stardew-valley-lite" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="stardew-valley-lite" RUN_TARGET_NAME="stardew-valley-lite">
@@ -30,5 +91,31 @@
       <item itemvalue="CMake Application.stardew-valley-lite" />
       <item itemvalue="CMake Application.stardew-valley-lite_autogen" />
     </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c86275c9-5238-4720-b4c0-25a7e974a34a" name="Default Changelist" comment="" />
+      <created>1626007860831</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1626007860831</updated>
+      <workItem from="1626007866353" duration="7794000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

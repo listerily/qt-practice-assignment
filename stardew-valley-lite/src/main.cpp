@@ -6,6 +6,7 @@
 #include "ui/gameplaywindow.h"
 #include "game/GameClient.h"
 #include "config/ConfigLoader.h"
+
 int main(int argc, char *argv[])
 {
     bool gameShouldExit = false;
@@ -18,7 +19,7 @@ int main(int argc, char *argv[])
     std::thread([&gameClient, &mainWindow, &gameShouldExit](){
         while(!gameShouldExit) {
             gameClient.tick();
-            //tick for main window
+            mainWindow.notifyPaintTick();
             std::this_thread::sleep_for(std::chrono::milliseconds(100));
         }
     }).detach();

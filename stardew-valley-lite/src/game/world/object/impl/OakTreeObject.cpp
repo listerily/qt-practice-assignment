@@ -11,7 +11,7 @@ void OakTreeObject::playerInteract(Player &player, Item &item, int x, int y)
 
 bool OakTreeObject::walkable(int x, int y) const
 {
-    return x == positionX && y == positionY;
+    return x != positionX || y != positionY;
 }
 
 OakTreeObject::OakTreeObject(int x, int y) : TileObject("oak_tree", x, y)

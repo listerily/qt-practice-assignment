@@ -2713,5 +2713,10 @@
         <file>items/4_23_33.png</file>
         <file>ui/3_0_0.png</file>
         <file>ui/3_1_0.png</file>
+        <file>ui/logo.png</file>
+        <file>ui/stardewPanorama.png</file>
+        <file>ui/textBox.png</file>
+        <file>ui/selected_slot.png</file>
+        <file>ui/not_selected_slot.png</file>
     </qresource>
 </RCC>

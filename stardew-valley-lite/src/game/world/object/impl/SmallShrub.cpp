@@ -21,6 +21,6 @@ void SmallShrub::playerInteract(Player &player, Item &item, int x, int y)
 
 bool SmallShrub::walkable(int x, int y) const
 {
-    return (x == positionX && y == positionY) ||
-           (x == positionX + 1 && y == positionY);
+    return !((x == positionX && y == positionY) ||
+           (x == positionX + 1 && y == positionY));
 }

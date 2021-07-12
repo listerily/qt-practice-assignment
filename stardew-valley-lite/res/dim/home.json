@@ -3,7 +3,7 @@
   "objects": [
     {
       "id": "path_0",
-      "pos": [1, 1]
+      "pos": [0, 0]
     },
     {
       "id": "water",
@@ -47,7 +47,7 @@
     },
     {
       "id": "oak_tree",
-      "pos": [0, 4]
+      "pos": [5, 4]
     },
     {
       "id": "large_shrub",

@@ -11,9 +11,9 @@ void LargeShrub::playerInteract(Player &player, Item &item, int x, int y)
 
 bool LargeShrub::walkable(int x, int y) const
 {
-    return (x == positionX && y == positionY) ||
+    return !((x == positionX && y == positionY) ||
             (x == positionX + 1 && y == positionY) ||
-            (x == positionX + 2 && y == positionY);
+            (x == positionX + 2 && y == positionY));
 }
 
 LargeShrub::LargeShrub(int x, int y) : TileObject("large_shrub", x, y)

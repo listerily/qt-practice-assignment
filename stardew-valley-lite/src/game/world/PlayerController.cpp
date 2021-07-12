@@ -11,22 +11,27 @@ PlayerController::PlayerController(GameWorld & world) : world(world)
 
 }
 
-void PlayerController::keyUp()
+void PlayerController::moveUp()
 {
-    world.getPlayer().move(0.0, -0.12);
+    world.getPlayer().walk(0.0, -0.12);
 }
 
-void PlayerController::keyDown()
+void PlayerController::moveDown()
 {
-    world.getPlayer().move(0.0, 0.12);
+    world.getPlayer().walk(0.0, 0.12);
 }
 
-void PlayerController::keyLeft()
+void PlayerController::moveLeft()
 {
-    world.getPlayer().move(-0.12, 0.0);
+    world.getPlayer().walk(-0.12, 0.0);
 }
 
-void PlayerController::keyRight()
+void PlayerController::moveRight()
 {
-    world.getPlayer().move(0.12, 0.0);
+    world.getPlayer().walk(0.12, 0.0);
+}
+
+void PlayerController::selectInventorySlot(int)
+{
+
 }

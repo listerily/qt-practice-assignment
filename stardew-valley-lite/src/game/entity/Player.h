@@ -9,11 +9,25 @@
 
 class Player : public Entity
 {
+public:
+    enum class Facing : int{
+        UP, DOWN, LEFT, RIGHT
+    };
 private:
-
+    int movingVariant;
+    Facing facing;
 public:
     Player(GameWorld&, GameDimension&);
     std::string getID() const override;
+    Facing getFacing() const;
+    bool isMoving() const;
+    void move(double, double) override;
+    void tick() override;
+    void walk(double, double);
+private:
+    bool isWalkable(double, double) const;
+    bool isTileWalkable(int, int) const;
+    void renewFacing(double, double);
 };
 
 

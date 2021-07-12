@@ -17,7 +17,7 @@ Entity::~Entity()
 
 void Entity::tick()
 {
-    solveAcceleration();
+
 }
 
 void Entity::move(double deltaX, double deltaY)
@@ -30,21 +30,6 @@ void Entity::moveTo(double _x, double _y)
 {
     x = _x;
     y = _y;
-}
-
-float Entity::getFriction() const
-{
-    return 0.1;
-}
-
-std::pair<double, double> Entity::getAcceleration() const
-{
-    return {ax, ay};
-}
-
-std::pair<double, double> Entity::getVelocity() const
-{
-    return {vx, vy};
 }
 
 void Entity::setDimension(GameDimension & newDimension)
@@ -67,37 +52,6 @@ void Entity::hurt(int hp)
 void Entity::onDeath()
 {
 
-}
-
-void Entity::applyAcceleration(double _ax, double _ay)
-{
-    ax += _ax;
-    ay += _ay;
-}
-
-void Entity::solveAcceleration()
-{
-    vx += ax;
-    vy += ay;
-    ax = ay = 0.0;
-    if(vx > 0 && vx > getFriction())
-        vx -= getFriction();
-    else
-        vx = 0.0;
-    if(vy > 0 && vy > getFriction())
-        vy -= getFriction();
-    else
-        vy = 0.0;
-    if(vx < 0 && vx < -getFriction())
-        vx += getFriction();
-    else
-        vx = 0.0;
-    if(vy < 0 && vy < -getFriction())
-        vy += getFriction();
-    else
-        vy = 0.0;
-    x += vx;
-    y += vy;
 }
 
 std::pair<double, double> Entity::getPosition() const

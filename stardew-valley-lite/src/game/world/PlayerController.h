@@ -13,10 +13,11 @@ private:
 public:
     explicit PlayerController(GameWorld&);
 
-    void keyUp();
-    void keyDown();
-    void keyLeft();
-    void keyRight();
+    void moveUp();
+    void moveDown();
+    void moveLeft();
+    void moveRight();
+    void selectInventorySlot(int);
 };
 
 

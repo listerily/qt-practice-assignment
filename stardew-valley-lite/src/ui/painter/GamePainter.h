@@ -7,15 +7,17 @@
 
 class GameWorld;
 class QWidget;
+class TileObject;
 class GamePainter
 {
 private:
     const GameWorld& gameWorld;
 public:
-    GamePainter(const GameWorld& world);
+    explicit GamePainter(const GameWorld& world);
 
 public:
     void paint(QWidget& widget, int width, int height) const;
+    void paintObjectAt(double, double, const TileObject*);
 };
 
 

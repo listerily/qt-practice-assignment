@@ -29,6 +29,7 @@ public:
     virtual bool walkable(int, int) const;
     virtual void afterNight();
     virtual void tick();
+    virtual std::pair<int, int> getPosition() const;
 };
 
 

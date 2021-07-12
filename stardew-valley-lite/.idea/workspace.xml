@@ -14,24 +14,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c86275c9-5238-4720-b4c0-25a7e974a34a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/game/world/TileSheet.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/world/TileSheet.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/world/object/TileRef.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/world/object/TileRef.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/dim/dim_manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/res/dim/dim_manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/dim/home.json" beforeDir="false" afterPath="$PROJECT_DIR$/res/dim/home.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config/ConfigLoader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/ConfigLoader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/ConfigLoader.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/ConfigLoader.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/GameClient.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameClient.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/GameClient.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameClient.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entity/Entity.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Entity.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entity/Entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Entity.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entity/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Player.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entity/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Player.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/world/GameDimension.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/GameDimension.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/world/GameDimension.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/GameDimension.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/GameWorld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/GameWorld.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/GameWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/GameWorld.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/world/object/TileObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/object/TileObject.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/world/object/TileObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/object/TileObject.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/world/object/factory/TileObjectFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/object/factory/TileObjectFactory.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/world/object/factory/TileObjectFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/object/factory/TileObjectFactory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/painter/GamePainter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/painter/GamePainter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/painter/GamePainter.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/painter/GamePainter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1626007860831</updated>
       <workItem from="1626007866353" duration="9580000" />
-      <workItem from="1626018694181" duration="5422000" />
+      <workItem from="1626018694181" duration="11538000" />
     </task>
     <servers />
   </component>
@@ -119,14 +118,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/game/world/GameWorld.cpp</url>
-          <line>28</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/game/world/GameWorld.cpp</url>
-          <line>48</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/ui/painter/GamePainter.cpp</url>
+          <line>37</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

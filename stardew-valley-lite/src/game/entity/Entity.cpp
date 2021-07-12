@@ -97,3 +97,8 @@ void Entity::solveAcceleration()
     else
         vy = 0.0;
 }
+
+std::pair<double, double> Entity::getPosition() const
+{
+    return {x, y};
+}

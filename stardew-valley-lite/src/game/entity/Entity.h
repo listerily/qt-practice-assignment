@@ -34,7 +34,7 @@ public:
     virtual int getHealth() const;
     virtual void hurt(int);
     virtual void onDeath();
-
+    virtual std::pair<double, double> getPosition() const;
 private:
     void solveAcceleration();
 };

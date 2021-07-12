@@ -8,6 +8,7 @@
 
 #include "../../config/DimMapConfig.h"
 #include "object/factory/TileObjectFactory.h"
+#include "TileSheet.h"
 
 std::list<std::unique_ptr<TileObject>> &GameDimension::getObjects()
 {
@@ -33,6 +34,7 @@ const std::string &GameDimension::getID() const
 
 GameDimension::GameDimension(const DimMapConfig &config) : id(config.id)
 {
+    tileSheet = new TileSheet;
     initialize(config);
 }
 
@@ -47,15 +49,24 @@ void GameDimension::initialize(const DimMapConfig& config)
 
 void GameDimension::addNewObject(std::unique_ptr<TileObject> newObject)
 {
+    tileSheet->onTileObjectAdded(*newObject);
     objects.insert(objects.end(), std::move(newObject));
 }
 
 void GameDimension::removeObject(const TileObject * target)
 {
+    tileSheet->onTileObjectRemoved(*target);
     objects.remove_if([&target](const std::unique_ptr<TileObject>& object){
         return object.get() == target;
     });
 }
 
+const TileSheet &GameDimension::getTileSheet() const
+{
+    return *tileSheet;
+}
+
 GameDimension::~GameDimension()
-= default;
+{
+    delete tileSheet;
+}

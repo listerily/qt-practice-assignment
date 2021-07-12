@@ -37,3 +37,8 @@ void TileObject::tick()
 {
 
 }
+
+std::pair<int, int> TileObject::getPosition() const
+{
+    return {positionX, positionY};
+}

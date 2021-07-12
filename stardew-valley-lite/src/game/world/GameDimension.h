@@ -11,16 +11,17 @@
 
 #include "object/TileObject.h"
 
+class TileSheet;
 class DimMapConfig;
 class GameDimension
 {
 private:
     std::string id;
     std::list<std::unique_ptr<TileObject>> objects;
+    TileSheet* tileSheet;
 public:
     explicit GameDimension(const DimMapConfig& config);
     ~GameDimension();
-
 public:
     std::list<std::unique_ptr<TileObject>>& getObjects();
     const std::list<std::unique_ptr<TileObject>>& getObjects() const;
@@ -28,6 +29,7 @@ public:
     const std::string& getID() const;
     void addNewObject(std::unique_ptr<TileObject>);
     void removeObject(const TileObject*);
+    const TileSheet& getTileSheet() const;
 private:
     void initialize(const DimMapConfig&);
 };

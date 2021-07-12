@@ -7,7 +7,11 @@
 #include <string>
 #include <memory>
 
-std::unique_ptr<TileObject> TileObjectFactory::generateTileObjectByIdAt(std::string id, int x, int y)
-{
+#include "../impl/PathLand.h"
 
+std::unique_ptr<TileObject> TileObjectFactory::generateTileObjectByIdAt(std::string const& id, int x, int y)
+{
+    if(id == "path")
+        return std::make_unique<PathLand>(x, y);
+    return std::make_unique<PathLand>(x, y);
 }

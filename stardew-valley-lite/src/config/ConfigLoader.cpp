@@ -27,7 +27,8 @@ void ConfigLoader::initializeDimensionMaps()
     for(auto const& manifestItem : worldManifestList)
     {
         QResource manifestItemResFile(":/svl/text/config/dim/" + manifestItem.toString());
-        auto manifestObject = QJsonValue(manifestItemResFile.uncompressedData().data());
+        QJsonDocument document_item(QJsonDocument::fromJson(manifestItemResFile.uncompressedData().data()));
+        const auto& manifestObject = document_item;
         DimMapConfig newConfig;
         newConfig.id = manifestObject["id"].toString().toStdString();
         auto objects = manifestObject["objects"].toArray();

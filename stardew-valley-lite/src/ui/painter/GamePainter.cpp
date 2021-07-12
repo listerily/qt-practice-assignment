@@ -18,37 +18,47 @@ GamePainter::GamePainter(const GameWorld &world): gameWorld(world)
 {
 
 }
-#include <iostream>
-void GamePainter::paint(QWidget& widget, int width, int height) const
+
+void GamePainter::paint(QWidget& widget, int width, int height)
 {
-    const int displayBlocksNum = 120;
+    ++paintFrameCount;
+    const int displayBlocksNum = 140;
     const auto& currentDimension = gameWorld.getCurrentGameDimension();
     const auto& player = gameWorld.getPlayer();
     const auto& tileSheet = currentDimension.getTileSheet();
-    auto pixelsCount = width * height;
-    auto displayBlockArea = (double)pixelsCount / displayBlocksNum;
-    auto displayBlockWidth = static_cast<int>(sqrt(displayBlockArea));
-    auto playerPositionX = player.getPosition().first;
-    auto playerPositionY = player.getPosition().second;
-    auto displayStartPointX = fmod((width / 2.0 - (playerPositionX - floor(playerPositionX)) * displayBlockWidth), displayBlockWidth) - displayBlockWidth;
-    auto displayStartPointY = fmod((height / 2.0 - (playerPositionY - floor(playerPositionY)) * displayBlockWidth), displayBlockWidth) - displayBlockWidth;
-    auto screenWorldStartPointX = (int)playerPositionX - (int)ceil((width / 2.0) / displayBlockWidth);
-    auto screenWorldStartPointY = (int)playerPositionY - (int)ceil((height / 2.0) / displayBlockWidth);;
+    const auto pixelsCount = width * height;
+    const auto displayBlockArea = (double)pixelsCount / displayBlocksNum;
+    const auto displayBlockWidth = static_cast<int>(sqrt(displayBlockArea));
+    const auto playerPositionX = player.getPosition().first;
+    const auto playerPositionY = player.getPosition().second;
+    const auto viewPortCenterX = width / 2.0 - (playerPositionX - floor(playerPositionX)) * displayBlockWidth;
+    const auto viewPortCenterY = height / 2.0 - (playerPositionY - floor(playerPositionY)) * displayBlockWidth;
+    const auto viewPortCenterTargetWorldPointX = (int)floor(playerPositionX);
+    const auto viewPortCenterTargetWorldPointY = (int)floor(playerPositionY);
+    const auto halfDisplayCountInWidth = (int)ceil(width / 2.0 / displayBlockWidth);
+    const auto halfDisplayCountInHeight = (int)ceil(height / 2.0 / displayBlockWidth);
+    const auto viewPortStartPointX = viewPortCenterX - displayBlockWidth * halfDisplayCountInWidth;
+    const auto viewPortStartPointY = viewPortCenterY - displayBlockWidth * halfDisplayCountInHeight;
+    const auto worldStartPointX = viewPortCenterTargetWorldPointX - halfDisplayCountInWidth;
+    const auto worldStartPointY = viewPortCenterTargetWorldPointY - halfDisplayCountInHeight;
 
     QPainter painter(&widget);
     QPen pen;
-    for (int currentDrawX = static_cast<int>(displayStartPointX), x = screenWorldStartPointX;
+    for (int currentDrawX = static_cast<int>(viewPortStartPointX), x = worldStartPointX;
          currentDrawX <= width;
          currentDrawX += displayBlockWidth, ++x)
     {
-        for(int currentDrawY = static_cast<int>(displayStartPointY), y = screenWorldStartPointY;
+        for(int currentDrawY = static_cast<int>(viewPortStartPointY), y = worldStartPointY;
             currentDrawY <= height;
             currentDrawY += displayBlockWidth, ++y)
         {
             const auto& tileObjects = tileSheet.getTilesAt(x, y);
             for(const auto& tileRef : tileObjects)
             {
-                painter.drawPixmap(QRect(currentDrawX, currentDrawY, displayBlockWidth, displayBlockWidth), QPixmap(":/svl/textures/tiles/0_1_7.png"));
+                const QRect drawArea(currentDrawX, currentDrawY, displayBlockWidth, displayBlockWidth);
+                const auto& textures = tileRef.tile->textures;
+                const auto texturesSize = textures.size();
+                painter.drawPixmap(drawArea, QPixmap(textures[(paintFrameCount / 30) % texturesSize].c_str()));
             }
         }
     }

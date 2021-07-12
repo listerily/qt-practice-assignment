@@ -10,7 +10,7 @@
 class PathLand : public TileObject
 {
 public:
-    PathLand(int x, int y);
+    PathLand(int x, int y, int aux);
 };
 
 

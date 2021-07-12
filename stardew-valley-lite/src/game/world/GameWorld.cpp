@@ -11,7 +11,7 @@
 #include "../../config/ConfigLoader.h"
 
 
-GameWorld::GameWorld(GameClient & client) : client(client)
+GameWorld::GameWorld(GameClient & client) : client(client), playerController(*this)
 {
     player = 0;
 }
@@ -91,4 +91,9 @@ void GameWorld::tick()
     std::for_each(entities.begin(), entities.end(), [](const std::unique_ptr<Entity>& entity){
         entity->tick();
     });
+}
+
+PlayerController &GameWorld::getPlayerController()
+{
+    return playerController;
 }

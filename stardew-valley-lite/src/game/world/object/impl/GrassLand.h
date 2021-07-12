@@ -5,11 +5,12 @@
 #ifndef STARDEW_VALLEY_LITE_GRASSLAND_H
 #define STARDEW_VALLEY_LITE_GRASSLAND_H
 
+#include "../TileObject.h"
 
-class GrassLand
+class GrassLand : public TileObject
 {
-private:
-
+public:
+    GrassLand(int x, int y, int aux);
 };
 
 

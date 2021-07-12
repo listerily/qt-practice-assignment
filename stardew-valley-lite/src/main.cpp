@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
         while(!gameShouldExit) {
             gameClient.tick();
             mainWindow.notifyPaintTick();
-            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            std::this_thread::sleep_for(std::chrono::milliseconds(20));
         }
     }).detach();
     //Startup UI

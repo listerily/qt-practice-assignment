@@ -2,8 +2,60 @@
   "id": "home",
   "objects": [
     {
-      "id": "path",
-      "pos": [0, 0]
+      "id": "path_0",
+      "pos": [1, 1]
+    },
+    {
+      "id": "water",
+      "pos": [-3, 0]
+    },
+    {
+      "id": "small_stone",
+      "pos": [-3, 1]
+    },
+    {
+      "id": "many_stones",
+      "pos": [-4, 1]
+    },
+    {
+      "id": "pink_flower",
+      "pos": [-4, 0]
+    },
+    {
+      "id": "blue_flower",
+      "pos": [-4, 2]
+    },
+    {
+      "id": "path_0",
+      "pos": [4, 4]
+    },
+    {
+      "id": "grass_0",
+      "pos": [0, 1]
+    },
+    {
+      "id": "grass_1",
+      "pos": [0, 2]
+    },
+    {
+      "id": "grass_2",
+      "pos": [0, 3]
+    },
+    {
+      "id": "grass_3",
+      "pos": [0, 4]
+    },
+    {
+      "id": "oak_tree",
+      "pos": [0, 4]
+    },
+    {
+      "id": "large_shrub",
+      "pos": [-2, -2]
+    },
+    {
+      "id": "small_shrub",
+      "pos": [2, -2]
     }
   ]
 }

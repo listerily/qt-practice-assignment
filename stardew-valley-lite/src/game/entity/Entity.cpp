@@ -96,6 +96,8 @@ void Entity::solveAcceleration()
         vy += getFriction();
     else
         vy = 0.0;
+    x += vx;
+    y += vy;
 }
 
 std::pair<double, double> Entity::getPosition() const

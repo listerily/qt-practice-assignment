@@ -13,10 +13,12 @@
 #include "GameDimension.h"
 
 #include "../entity/Entity.h"
+#include "PlayerController.h"
 
 class GameClient;
 class DimMapConfig;
 class Entity;
+class PlayerController;
 class Player;
 class GameWorld
 {
@@ -26,6 +28,7 @@ private:
     std::vector<std::unique_ptr<Entity>> entities;
     std::string currentDimension;
     std::size_t player;
+    PlayerController playerController;
 public:
     explicit GameWorld(GameClient&);
 
@@ -40,6 +43,7 @@ public:
     GameDimension* getDimensionByID(std::string const& id);
     const GameDimension* getDimensionByID(const std::string& id) const;
     void tick();
+    PlayerController& getPlayerController();
 private:
     void initializePlayer();
     void registerNewDimension(DimMapConfig const&);

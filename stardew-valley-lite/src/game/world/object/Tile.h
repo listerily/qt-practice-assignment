@@ -6,7 +6,7 @@
 #define STARDEW_VALLEY_LITE_TILE_H
 
 #include <string>
-#include <list>
+#include <vector>
 class Tile;
 class Tile
 {
@@ -16,7 +16,7 @@ public:
         UNDERGROUND, SURFACE_BOTTOM, SURFACE_MEDIUM, SURFACE_TOP, SURFACE_OVERLAY, ON_GROUND, FLOATING, SKY
     };
 
-    std::list<std::string> textures;
+    std::vector<std::string> textures;
     bool isSolid = false;
     int offsetX = 0, offsetY = 0;
     DisplayPriority displayPriority = DisplayPriority::UNDERGROUND;

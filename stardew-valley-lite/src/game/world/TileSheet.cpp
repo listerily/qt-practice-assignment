@@ -35,8 +35,8 @@ void TileSheet::removeTileObjectInLookup(const TileObject & target)
     const auto& allTiles = target.getAllTiles();
     for(const auto& tile : allTiles)
     {
-        const auto& posX = tile.offsetX;
-        const auto& posY = tile.offsetY;
+        const auto& posX = target.getPosition().first + tile.offsetX;
+        const auto& posY = target.getPosition().second + tile.offsetY;
         lookup[{posX, posY}].erase(&target);
 
         lookupTiles[{posX, posY}].erase(tile);
@@ -48,8 +48,8 @@ void TileSheet::addTileObjectInLookup(const TileObject & target)
     const auto& allTiles = target.getAllTiles();
     for(const auto& tile : allTiles)
     {
-        const auto& posX = tile.offsetX;
-        const auto& posY = tile.offsetY;
+        const auto& posX = target.getPosition().first + tile.offsetX;
+        const auto& posY = target.getPosition().second + tile.offsetY;
         lookup[{posX, posY}].insert(&target);
 
         lookupTiles[{posX, posY}].insert(tile);

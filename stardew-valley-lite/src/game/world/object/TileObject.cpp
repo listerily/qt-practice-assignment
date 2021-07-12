@@ -6,7 +6,7 @@
 
 #include <utility>
 
-TileObject::TileObject(std::string  id, int x, int y) : id(std::move(id)), positionX(x), positionY(y)
+TileObject::TileObject(std::string id, int x, int y) : id(std::move(id)), positionX(x), positionY(y)
 {
 
 }

@@ -15,12 +15,23 @@
   <component name="ChangeListManager">
     <list default="true" id="c86275c9-5238-4720-b4c0-25a7e974a34a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/dim/dim_manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/res/dim/dim_manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/dim/home.json" beforeDir="false" afterPath="$PROJECT_DIR$/res/dim/home.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/ConfigLoader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/ConfigLoader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/ConfigLoader.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/ConfigLoader.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GameClient.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameClient.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GameClient.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameClient.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entity/Entity.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Entity.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entity/Entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Entity.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entity/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Player.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entity/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/world/GameDimension.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/GameDimension.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/world/GameDimension.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/GameDimension.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/world/GameWorld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/GameWorld.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/world/GameWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/GameWorld.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/world/object/TileObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/object/TileObject.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/world/object/TileObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/object/TileObject.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +62,9 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager" selected="CMake Application.stardew-valley-lite">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="stardew-valley-lite" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stardew-valley-lite" TARGET_NAME="stardew-valley-lite" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="stardew-valley-lite" RUN_TARGET_NAME="stardew-valley-lite">
@@ -84,7 +95,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1626007860831</updated>
-      <workItem from="1626007866353" duration="8996000" />
+      <workItem from="1626007866353" duration="9580000" />
+      <workItem from="1626018694181" duration="5422000" />
     </task>
     <servers />
   </component>
@@ -101,5 +113,22 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/game/world/GameWorld.cpp</url>
+          <line>28</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/game/world/GameWorld.cpp</url>
+          <line>48</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

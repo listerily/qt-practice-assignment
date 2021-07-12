@@ -27,3 +27,13 @@ bool TileObject::walkable(int, int) const
 {
     return true;
 }
+
+void TileObject::afterNight()
+{
+
+}
+
+void TileObject::tick()
+{
+
+}

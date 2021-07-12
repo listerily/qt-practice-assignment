@@ -27,6 +27,8 @@ public:
     virtual std::list<Tile> const& getAllTiles() const;
     virtual void playerInteract(Player &, Item &, int x, int y);
     virtual bool walkable(int, int) const;
+    virtual void afterNight();
+    virtual void tick();
 };
 
 

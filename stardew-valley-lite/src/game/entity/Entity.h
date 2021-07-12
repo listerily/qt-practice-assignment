@@ -13,6 +13,8 @@ class Entity
 {
 protected:
     double x, y;
+    double ax, ay;
+    double vx, vy;
     GameWorld& world;
     GameDimension* dimension;
     int health;
@@ -25,12 +27,16 @@ public:
     virtual void moveTo(double, double);
     virtual float getFriction() const;
     virtual std::pair<double, double> getAcceleration() const;
+    virtual void applyAcceleration(double, double);
     virtual std::pair<double, double> getVelocity() const;
     virtual std::string getID() const = 0;
     virtual void setDimension(GameDimension&);
     virtual int getHealth() const;
     virtual void hurt(int);
     virtual void onDeath();
+
+private:
+    void solveAcceleration();
 };
 
 

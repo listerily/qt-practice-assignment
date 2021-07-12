@@ -12,6 +12,7 @@ class Player : public Entity
 private:
 
 public:
+    Player(GameWorld&, GameDimension&);
     std::string getID() const override;
 };
 

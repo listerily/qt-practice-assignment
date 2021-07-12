@@ -1,4 +1,6 @@
-[
-  "home.json",
-  "farm.json"
-]
+{
+  "dimensions": [
+    "home.json",
+    "farm.json"
+  ]
+}

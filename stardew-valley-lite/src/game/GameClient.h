@@ -7,12 +7,14 @@
 
 class QApplication;
 class GameWorld;
+class ConfigLoader;
 class GameClient
 {
 private:
     QApplication& app;
     bool gameShouldExit;
     GameWorld* currentWorld;
+    ConfigLoader* loader;
 public:
     explicit GameClient(QApplication&);
     ~GameClient();
@@ -20,6 +22,7 @@ public:
     GameWorld* getCurrentWorld();
     const GameWorld* getCurrentWorld() const;
     void createWorld();
+    const ConfigLoader& getConfigLoader() const;
 };
 
 

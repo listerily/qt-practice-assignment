@@ -7,6 +7,7 @@
 #include <QResource>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QJsonDocument>
 
 ConfigLoader::ConfigLoader(QApplication & app) : application(app)
 {
@@ -21,7 +22,8 @@ void ConfigLoader::initialize()
 void ConfigLoader::initializeDimensionMaps()
 {
     QResource resource(":/svl/text/config/dim/dim_manifest.json");
-    auto worldManifestList = QJsonValue(resource.uncompressedData().data()).toArray();
+    QJsonDocument document(QJsonDocument::fromJson(resource.uncompressedData().data()));
+    auto worldManifestList = document["dimensions"].toArray();
     for(auto const& manifestItem : worldManifestList)
     {
         QResource manifestItemResFile(":/svl/text/config/dim/" + manifestItem.toString());
@@ -37,6 +39,11 @@ void ConfigLoader::initializeDimensionMaps()
             newObject.id = objectItem.toObject()["id"].toString().toStdString();
             newConfig.objects.insert(newConfig.objects.end(), std::move(newObject));
         }
-        dimInitialMapsLookup[newConfig.id] = std::move(newConfig);
+        dimInitialMapsList.insert(dimInitialMapsList.end(), std::move(newConfig));
     }
+}
+
+const std::list<DimMapConfig> &ConfigLoader::getDimMaps() const
+{
+    return dimInitialMapsList;
 }

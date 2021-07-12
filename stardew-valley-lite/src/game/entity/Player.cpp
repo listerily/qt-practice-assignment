@@ -8,3 +8,8 @@ std::string Player::getID() const
 {
     return "player";
 }
+
+Player::Player(GameWorld & world, GameDimension & dimension) : Entity(world, dimension)
+{
+
+}

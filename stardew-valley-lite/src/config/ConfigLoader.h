@@ -7,7 +7,6 @@
 
 #include <string>
 #include <list>
-#include <unordered_map>
 
 #include "DimMapConfig.h"
 
@@ -17,11 +16,12 @@ class ConfigLoader
 private:
     QApplication& application;
 
-    std::unordered_map<std::string, DimMapConfig> dimInitialMapsLookup;
+    std::list<DimMapConfig> dimInitialMapsList;
 public:
     explicit ConfigLoader(QApplication&);
 
     void initialize();
+    const std::list<DimMapConfig>& getDimMaps() const;
 private:
     void initializeDimensionMaps();
 };

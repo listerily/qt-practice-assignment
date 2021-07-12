@@ -1,6 +1,9 @@
 {
   "id": "home",
   "objects": [
-
+    {
+      "id": "path",
+      "pos": [0, 0]
+    }
   ]
 }

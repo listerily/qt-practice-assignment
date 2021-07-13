@@ -11,8 +11,6 @@ class SmallStone : public TileObject
 {
 public:
     SmallStone(int, int);
-
-    bool walkable(int, int) const override;
 };
 
 

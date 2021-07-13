@@ -5,8 +5,8 @@
 #include "GameClient.h"
 
 #include "world/GameWorld.h"
-#include "../config/ConfigLoader.h"
-
+#include "config/ConfigLoader.h"
+#include "item/ItemManager.h"
 
 GameClient::GameClient(QApplication& app): app(app)
 {

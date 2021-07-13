@@ -5,6 +5,8 @@
 
 #include "painter/GamePainter.h"
 #include "../game/world/GameWorld.h"
+#include "../game/inventory/Inventory.h"
+#include "../game/item/Item.h"
 
 GamePlayWindow::GamePlayWindow(GameWorld& world, QWidget *parent) :
     QWidget(parent),
@@ -21,12 +23,6 @@ GamePlayWindow::GamePlayWindow(GameWorld& world, QWidget *parent) :
     for(int i = 0; i < 8; ++i)
         connect(pushButtons[i], &QPushButton::clicked, this, [=](){this->slotButtonClicked(i);});
     selectSlot(0);
-
-    QPixmap pixmap(":/svl/textures/items/4_0_3.png");
-    pixmap = pixmap.scaled(64, 64);
-    QIcon ButtonIcon(pixmap);
-    pushButtons[0]->setIcon(ButtonIcon);
-    pushButtons[0]->setIconSize(QSize(50, 50));
 }
 
 GamePlayWindow::~GamePlayWindow()
@@ -38,6 +34,7 @@ GamePlayWindow::~GamePlayWindow()
 void GamePlayWindow::notifyPaintTick()
 {
     paintTickProcessed = false;
+    notifyInventoryUpdated();
     update();
 }
 
@@ -57,13 +54,13 @@ void GamePlayWindow::keyPressEvent(QKeyEvent *event)
     QWidget::keyPressEvent(event);
 
     if(event->key() == Qt::Key_W || event->key() == Qt::Key_Up)
-        currentWorld.getPlayerController().moveUp();
+        currentWorld.getPlayerController().walkUp();
     if(event->key() == Qt::Key_A || event->key() == Qt::Key_Left)
-        currentWorld.getPlayerController().moveLeft();
+        currentWorld.getPlayerController().walkLeft();
     if(event->key() == Qt::Key_S || event->key() == Qt::Key_Down)
-        currentWorld.getPlayerController().moveDown();
+        currentWorld.getPlayerController().walkDown();
     if(event->key() == Qt::Key_D || event->key() == Qt::Key_Right)
-        currentWorld.getPlayerController().moveRight();
+        currentWorld.getPlayerController().walkRight();
 }
 
 void GamePlayWindow::slotButtonClicked(int id)
@@ -77,4 +74,20 @@ void GamePlayWindow::selectSlot(int id)
     currentSlotID = id;
     currentWorld.getPlayerController().selectInventorySlot(0);
     pushButtons[id]->setStyleSheet("QPushButton{border-image: url(:svl/textures/ui/selected_slot.png);}");
+}
+
+void GamePlayWindow::notifyInventoryUpdated()
+{
+    const auto& inv = currentWorld.getPlayerController().getInventory();
+    for(const auto& itemInstance : inv.getItemInstances())
+    {
+        if(!itemInstance.empty())
+        {
+            QPixmap pixmap(itemInstance.item->getTexture().c_str());
+            pixmap = pixmap.scaled(64, 64);
+            QIcon ButtonIcon(pixmap);
+            pushButtons[0]->setIcon(ButtonIcon);
+            pushButtons[0]->setIconSize(QSize(50, 50));
+        }
+    }
 }

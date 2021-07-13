@@ -8,6 +8,7 @@
 class QApplication;
 class GameWorld;
 class ConfigLoader;
+class ItemManager;
 class GameClient
 {
 private:

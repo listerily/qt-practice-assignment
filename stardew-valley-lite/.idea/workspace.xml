@@ -17,60 +17,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c86275c9-5238-4720-b4c0-25a7e974a34a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/game/inventory/Inventory.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/inventory/Inventory.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/inventory/ItemInstance.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/inventory/ItemInstance.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/item/Item.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/item/Item.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/item/ItemManager.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/item/ItemManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/item/impl/WoodItem.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/item/impl/WoodItem.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/object/impl/FloatingPlant.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/object/impl/FloatingPlant.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/object/impl/FlowerPot.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/object/impl/FlowerPot.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/object/impl/FruitsBarrel.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/object/impl/FruitsBarrel.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/object/impl/LilyPad.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/object/impl/LilyPad.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/object/impl/WaterStakes.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/object/impl/WaterStakes.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/dim/dim_manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/res/scenes/scenes_manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/dim/farm.json" beforeDir="false" afterPath="$PROJECT_DIR$/res/scenes/farm.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/dim/home.json" beforeDir="false" afterPath="$PROJECT_DIR$/res/scenes/home.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/text.qrc" beforeDir="false" afterPath="$PROJECT_DIR$/res/text.qrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/ConfigLoader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/ConfigLoader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/ConfigLoader.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/ConfigLoader.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/DimMapConfig.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/SceneMapConfig.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/DimMapConfig.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/SceneMapConfig.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entity/Entity.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Entity.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entity/Entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Entity.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/scenes/home.json" beforeDir="false" afterPath="$PROJECT_DIR$/res/scenes/home.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/ConfigLoader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/config/ConfigLoader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/ConfigLoader.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/config/ConfigLoader.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/SceneMapConfig.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/config/SceneMapConfig.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/SceneMapConfig.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/config/SceneMapConfig.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GameClient.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameClient.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GameClient.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameClient.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entity/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Player.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entity/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Player.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/GameDimension.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/Scene.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/GameDimension.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/Scene.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/inventory/Inventory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/inventory/Inventory.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/inventory/Inventory.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/inventory/Inventory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/object/factory/TileObjectFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/factory/TileObjectFactory.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/object/impl/BlueFlower.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/BlueFlower.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/object/impl/ManyStones.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/ManyStones.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/object/impl/ManyStones.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/ManyStones.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/object/impl/PinkFlower.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/PinkFlower.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/object/impl/SmallStone.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/SmallStone.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/object/impl/SmallStone.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/SmallStone.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/world/GameWorld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/GameWorld.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/GameWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/GameWorld.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/TileSheet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/TileSheet.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/TileSheet.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/TileSheet.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/Tile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/Tile.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/Tile.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/Tile.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/TileObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/TileObject.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/TileObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/TileObject.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/TileRef.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/TileRef.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/TileRef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/TileRef.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/factory/TileObjectFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/factory/TileObjectFactory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/factory/TileObjectFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/factory/TileObjectFactory.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/BlueFlower.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/BlueFlower.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/BlueFlower.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/BlueFlower.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/GrassLand.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/GrassLand.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/GrassLand.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/GrassLand.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/LargeShrub.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/LargeShrub.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/LargeShrub.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/LargeShrub.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/ManyStones.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/ManyStones.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/ManyStones.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/ManyStones.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/OakTreeObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/OakTreeObject.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/OakTreeObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/OakTreeObject.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/PathLand.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/PathLand.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/PathLand.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/PathLand.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/PinkFlower.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/PinkFlower.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/PinkFlower.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/PinkFlower.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/PloughedLand.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/PloughedLand.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/PloughedLand.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/PloughedLand.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/SmallShrub.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/SmallShrub.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/SmallShrub.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/SmallShrub.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/SmallStone.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/SmallStone.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/SmallStone.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/SmallStone.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/WaterObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/WaterObject.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/object/impl/WaterObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/WaterObject.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/world/PlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/PlayerController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/world/PlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/PlayerController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/world/Scene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/Scene.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/gameplaywindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/gameplaywindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/painter/GamePainter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/painter/GamePainter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/gameplaywindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/gameplaywindow.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +143,7 @@
       <option name="presentableId" value="Default" />
       <updated>1626007860831</updated>
       <workItem from="1626007866353" duration="9580000" />
-      <workItem from="1626018694181" duration="37452000" />
+      <workItem from="1626018694181" duration="46799000" />
     </task>
     <servers />
   </component>

@@ -6,7 +6,7 @@
 
 #include <algorithm>
 
-#include "../../config/SceneMapConfig.h"
+#include "../config/SceneMapConfig.h"
 #include "../object/factory/TileObjectFactory.h"
 #include "TileSheet.h"
 

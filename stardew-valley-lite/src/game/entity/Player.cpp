@@ -8,6 +8,7 @@
 
 #include "../world/TileSheet.h"
 #include "../world/Scene.h"
+#include "../inventory/Inventory.h"
 
 std::string Player::getID() const
 {
@@ -18,6 +19,9 @@ Player::Player(GameWorld & world, Scene & dimension) : Entity(world, dimension)
 {
     facing = Facing::DOWN;
     movingVariant = 0;
+    inventory = new Inventory(8);
+
+    addInitialItemsToInventory();
 }
 
 Player::Facing Player::getFacing() const
@@ -81,4 +85,24 @@ void Player::renewFacing(double x, double y)
         facing = Facing::DOWN;
     if(x == 0.0 && y < 0.0)
         facing = Facing::UP;
+}
+
+Inventory &Player::getInventory()
+{
+    return *inventory;
+}
+
+const Inventory &Player::getInventory() const
+{
+    return *inventory;
+}
+
+Player::~Player()
+{
+    delete inventory;
+}
+
+void Player::addInitialItemsToInventory()
+{
+    inventory->addItemInstance(ItemInstance("wood", 1));
 }

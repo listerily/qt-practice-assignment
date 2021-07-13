@@ -10,6 +10,54 @@
       "pos": [-3, 0]
     },
     {
+      "id": "flower_pot_0",
+      "pos": [6, 6]
+    },
+    {
+      "id": "flower_pot_1",
+      "pos": [8, 8]
+    },
+    {
+      "id": "water",
+      "pos": [-4, -1]
+    },
+    {
+      "id": "water",
+      "pos": [-4, -2]
+    },
+    {
+      "id": "water",
+      "pos": [-4, -3]
+    },
+    {
+      "id": "water_stakes",
+      "pos": [-4, -1]
+    },
+    {
+      "id": "lily_pad_0",
+      "pos": [-4, -3]
+    },
+    {
+      "id": "floating_plant_0",
+      "pos": [-5, -3]
+    },
+    {
+      "id": "floating_plant_1",
+      "pos": [-5, -4]
+    },
+    {
+      "id": "water",
+      "pos": [-5, -3]
+    },
+    {
+      "id": "water",
+      "pos": [-5, -4]
+    },
+    {
+      "id": "lily_pad_1",
+      "pos": [-4, -2]
+    },
+    {
       "id": "small_stone",
       "pos": [-3, 1]
     },
@@ -43,6 +91,10 @@
     },
     {
       "id": "grass_3",
+      "pos": [0, 4]
+    },
+    {
+      "id": "fruits_barrel",
       "pos": [0, 4]
     },
     {

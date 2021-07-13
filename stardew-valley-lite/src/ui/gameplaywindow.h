@@ -23,6 +23,7 @@ public:
 
     void paintEvent(QPaintEvent *event) override;
     void notifyPaintTick();
+    void notifyInventoryUpdated();
     bool isPaintTickProcessed() const;
     void keyPressEvent(QKeyEvent *event) override;
 

@@ -6,6 +6,7 @@
 #define STARDEW_VALLEY_LITE_PLAYERCONTROLLER_H
 
 class GameWorld;
+class Inventory;
 class PlayerController
 {
 private:
@@ -13,11 +14,13 @@ private:
 public:
     explicit PlayerController(GameWorld&);
 
-    void moveUp();
-    void moveDown();
-    void moveLeft();
-    void moveRight();
+    void walkUp();
+    void walkDown();
+    void walkLeft();
+    void walkRight();
     void selectInventorySlot(int);
+    Inventory& getInventory();
+    const Inventory& getInventory() const;
 };
 
 

@@ -8,7 +8,7 @@
 
 #include "../entity/Player.h"
 #include "../GameClient.h"
-#include "../../config/ConfigLoader.h"
+#include "../config/ConfigLoader.h"
 
 
 GameWorld::GameWorld(GameClient & client) : client(client), playerController(*this)

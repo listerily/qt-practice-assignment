@@ -17,6 +17,11 @@
 #include "src/game/object/impl/ManyStones.h"
 #include "src/game/object/impl/PinkFlower.h"
 #include "src/game/object/impl/BlueFlower.h"
+#include "src/game/object/impl/FruitsBarrel.h"
+#include "src/game/object/impl/LilyPad.h"
+#include "src/game/object/impl/WaterStakes.h"
+#include "src/game/object/impl/FloatingPlant.h"
+#include "src/game/object/impl/FlowerPot.h"
 
 std::unique_ptr<TileObject> TileObjectFactory::generateTileObjectByIdAt(std::string const& id, int x, int y)
 {
@@ -36,6 +41,22 @@ std::unique_ptr<TileObject> TileObjectFactory::generateTileObjectByIdAt(std::str
         return std::make_unique<PinkFlower>(x, y);
     if(id == "blue_flower")
         return std::make_unique<BlueFlower>(x, y);
+    if(id == "fruits_barrel")
+        return std::make_unique<FruitsBarrel>(x, y);
+    if(id == "lily_pad_0")
+        return std::make_unique<LilyPad>(x, y, 0);
+    if(id == "lily_pad_1")
+        return std::make_unique<LilyPad>(x, y, 1);
+    if(id == "floating_plant_0")
+        return std::make_unique<FloatingPlant>(x, y, 0);
+    if(id == "floating_plant_1")
+        return std::make_unique<FloatingPlant>(x, y, 1);
+    if(id == "flower_pot_0")
+        return std::make_unique<FlowerPot>(x, y, 0);
+    if(id == "flower_pot_1")
+        return std::make_unique<FlowerPot>(x, y, 1);
+    if(id == "water_stakes")
+        return std::make_unique<WaterStakes>(x, y);
 
     if(id == "path_0")
         return std::make_unique<PathLand>(x, y, 0);

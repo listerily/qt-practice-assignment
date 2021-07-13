@@ -9,9 +9,10 @@ class GamePlayWindow;
 class GameWorld;
 class GamePainter;
 class QPushButton;
-class Item;
+class ItemInstance;
 class GameClient;
 class InputHandler;
+class QLabel;
 class GamePlayWindow : public QWidget
 {
     Q_OBJECT
@@ -22,7 +23,7 @@ private:
     bool paintTickProcessed;
     GamePainter* painter;
     int currentSlotID;
-    std::vector<const Item*> inventoryUpdates;
+    std::vector<const ItemInstance*> inventoryUpdates;
 public:
     explicit GamePlayWindow(GameClient&, QWidget *parent = nullptr);
     ~GamePlayWindow() override;
@@ -38,7 +39,8 @@ private:
     void checkInventoryUpdates();
     void slotButtonClicked(int);
     void selectSlot(int);
-    std::array<QPushButton*, 8> pushButtons{};
+    std::array<QPushButton*, 8> buttons{};
+    std::array<QLabel*, 8> labels{};
     Ui::GamePlayWindow *ui;
 };
 

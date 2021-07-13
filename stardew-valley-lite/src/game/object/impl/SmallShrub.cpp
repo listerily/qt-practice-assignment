@@ -14,7 +14,7 @@ SmallShrub::SmallShrub(int x, int y) : TileObject("small_shrub", x, y)
             };
 }
 
-void SmallShrub::playerInteract(Player &player, ItemInstance &item)
+void SmallShrub::playerInteract(Player &player, ItemInstance *item)
 {
     TileObject::playerInteract(player, item);
 }

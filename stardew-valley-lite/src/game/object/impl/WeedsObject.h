@@ -12,7 +12,7 @@ class WeedsObject : public TileObject
 public:
     WeedsObject(int, int, int);
 
-    void playerInteract(Player &, ItemInstance &) override;
+    void playerInteract(Player &, ItemInstance *) override;
     bool walkable(int, int) const override;
 };
 

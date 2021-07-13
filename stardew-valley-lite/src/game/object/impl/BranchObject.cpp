@@ -16,7 +16,7 @@ bool BranchObject::walkable(int, int) const
     return false;
 }
 
-void BranchObject::playerInteract(Player & player, ItemInstance &item)
+void BranchObject::playerInteract(Player & player, ItemInstance *item)
 {
     TileObject::playerInteract(player, item);
 }

@@ -32,6 +32,7 @@ public:
     const Inventory& getInventory() const;
     std::pair<int, int> getFacingPosition() const;
     std::list<std::pair<int, int>> getFacingPositions() const;
+    void interact();
 private:
     bool isWalkable(double, double) const;
     bool isTileWalkable(int, int) const;

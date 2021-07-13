@@ -70,10 +70,16 @@ const InputHandler &GameClient::getInputHandler() const
 
 void GameClient::processKeyboardInput()
 {
-    const bool up = inputHandler->isKeyPressed(Qt::Key_W);
-    const bool down = inputHandler->isKeyPressed(Qt::Key_S);
-    const bool left = inputHandler->isKeyPressed(Qt::Key_A);
-    const bool right = inputHandler->isKeyPressed(Qt::Key_D);
+
     if(currentWorld)
+    {
+        const bool up = inputHandler->isKeyPressed(Qt::Key_W);
+        const bool down = inputHandler->isKeyPressed(Qt::Key_S);
+        const bool left = inputHandler->isKeyPressed(Qt::Key_A);
+        const bool right = inputHandler->isKeyPressed(Qt::Key_D);
         currentWorld->getPlayerController().walk(up, down, left, right);
+
+        if(inputHandler->isKeyPressed(Qt::Key_Space))
+            currentWorld->getPlayerController().interact();
+    }
 }

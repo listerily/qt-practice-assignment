@@ -115,3 +115,8 @@ void PlayerController::walk(bool up, bool down, bool left, bool right)
     else if(towardsRight)
         walkRight(speedNormal);
 }
+
+void PlayerController::interact()
+{
+    world.getPlayer().interact();
+}

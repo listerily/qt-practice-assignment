@@ -18,7 +18,7 @@ const std::list<Tile> &TileObject::getAllTiles() const
     return tiles;
 }
 
-void TileObject::playerInteract(Player &, ItemInstance &)
+void TileObject::playerInteract(Player &, ItemInstance *)
 {
 
 }
@@ -41,4 +41,9 @@ void TileObject::tick()
 std::pair<int, int> TileObject::getPosition() const
 {
     return {positionX, positionY};
+}
+
+bool TileObject::ableToInteract() const
+{
+    return false;
 }

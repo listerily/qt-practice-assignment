@@ -26,7 +26,8 @@ public:
     virtual ~TileObject();
 
     virtual std::list<Tile> const& getAllTiles() const;
-    virtual void playerInteract(Player &, ItemInstance &);
+    virtual void playerInteract(Player &, ItemInstance *);
+    virtual bool ableToInteract() const;
     virtual bool walkable(int, int) const;
     virtual void afterNight();
     virtual void tick();

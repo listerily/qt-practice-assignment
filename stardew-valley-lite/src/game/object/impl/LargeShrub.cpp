@@ -4,7 +4,7 @@
 
 #include "LargeShrub.h"
 
-void LargeShrub::playerInteract(Player &player, ItemInstance &item)
+void LargeShrub::playerInteract(Player &player, ItemInstance *item)
 {
     TileObject::playerInteract(player, item);
 }

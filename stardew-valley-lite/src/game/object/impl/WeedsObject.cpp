@@ -12,7 +12,7 @@ WeedsObject::WeedsObject(int x, int y, int type) : TileObject("weeds", x, y)
     };
 }
 
-void WeedsObject::playerInteract(Player & player, ItemInstance & item)
+void WeedsObject::playerInteract(Player & player, ItemInstance *item)
 {
     TileObject::playerInteract(player, item);
 }

@@ -8,6 +8,8 @@
 
 #include "../world/TileSheet.h"
 #include "../world/Scene.h"
+#include "../item/Item.h"
+#include "../object/TileObject.h"
 #include "../inventory/Inventory.h"
 
 std::string Player::getID() const
@@ -96,7 +98,7 @@ Player::~Player()
 
 void Player::addInitialItemsToInventory()
 {
-    inventory->addItemInstance(ItemInstance("wood", 1));
+    inventory->addItemInstance(ItemInstance("wood", 22));
     inventory->addItemInstance(ItemInstance("weeds", 1));
     inventory->addItemInstance(ItemInstance("stone", 1));
 }
@@ -137,4 +139,14 @@ std::list<std::pair<int, int>> Player::getFacingPositions() const
 double Player::getCollisionBoxRadius()
 {
     return 0.3;
+}
+
+void Player::interact()
+{
+    ItemInstance* selectedItem = getInventory().getSelectedItemInstance();
+    if(selectedItem)
+        selectedItem->item->playerInteract(*this, *selectedItem);
+    const auto& facingPosition = getFacingPosition();
+    auto& tileObjects = scene->getTileSheet().getTileObjectsAt(facingPosition.first, facingPosition.second);
+
 }

@@ -4,7 +4,7 @@
 
 #include "PineTreeObject.h"
 
-void PineTreeObject::playerInteract(Player &player, ItemInstance &item)
+void PineTreeObject::playerInteract(Player &player, ItemInstance *item)
 {
     TileObject::playerInteract(player, item);
 }

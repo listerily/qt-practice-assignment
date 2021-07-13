@@ -22,6 +22,7 @@ public:
     void selectInventorySlot(int);
     Inventory& getInventory();
     const Inventory& getInventory() const;
+    void interact();
 private:
     void walk(double, double);
 };

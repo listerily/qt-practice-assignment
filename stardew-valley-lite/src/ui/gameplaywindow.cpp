@@ -10,6 +10,9 @@
 #include "../game/GameClient.h"
 #include "../game/InputHandler.h"
 
+#include <QLabel>
+#include <sstream>
+
 GamePlayWindow::GamePlayWindow(GameClient& client, QWidget *parent) :
     gameClient(client),
     QWidget(parent),
@@ -23,9 +26,17 @@ GamePlayWindow::GamePlayWindow(GameClient& client, QWidget *parent) :
     painter = new GamePainter(currentWorld);
     currentSlotID = 0;
 
-    pushButtons = {ui->pushButton_0, ui->pushButton_1, ui->pushButton_2, ui->pushButton_3, ui->pushButton_4, ui->pushButton_5, ui->pushButton_6, ui->pushButton_7};
+    buttons = {ui->button_0, ui->button_1, ui->button_2, ui->button_3, ui->button_4, ui->button_5, ui->button_6, ui->button_7};
     for(int i = 0; i < 8; ++i)
-        connect(pushButtons[i], &QPushButton::clicked, this, [=](){this->slotButtonClicked(i);});
+    {
+        connect(buttons[i], &QPushButton::clicked, this, [=](){this->slotButtonClicked(i);});
+        labels[i] = new QLabel("", buttons[i]);
+        labels[i]->setGeometry(18, 8, labels[i]->width(), labels[i]->height());
+        labels[i]->setStyleSheet("QLabel{color:black;font-weight:bold;}");
+        labels[i]->show();
+    }
+
+
     selectSlot(0);
 }
 
@@ -74,38 +85,45 @@ void GamePlayWindow::slotButtonClicked(int id)
 
 void GamePlayWindow::selectSlot(int id)
 {
-    pushButtons[currentSlotID]->setStyleSheet("QPushButton{border-image: url(:svl/textures/ui/not_selected_slot.png);}");
+    buttons[currentSlotID]->setStyleSheet("QPushButton{border-image: url(:svl/textures/ui/not_selected_slot.png);}");
     currentSlotID = id;
     currentWorld.getPlayerController().selectInventorySlot(0);
-    pushButtons[id]->setStyleSheet("QPushButton{border-image: url(:svl/textures/ui/selected_slot.png);}");
+    buttons[id]->setStyleSheet("QPushButton{border-image: url(:svl/textures/ui/selected_slot.png);}");
 }
 
 void GamePlayWindow::notifyInventoryUpdated(unsigned int slot)
 {
-    const auto* item = inventoryUpdates[slot];
-    if(item == nullptr)
+    const auto* pItemInstance = inventoryUpdates[slot];
+    if(pItemInstance->empty())
     {
-        pushButtons[slot]->setIcon(QIcon());
+        buttons[slot]->setIcon(QIcon());
+        labels[slot]->setText("");
+        labels[slot]->setGeometry(20, 10, labels[slot]->width(), labels[slot]->height());
     }
     else
     {
-        QPixmap pixmap(item->getTexture().c_str());
+        std::stringstream stream;
+        stream << pItemInstance->count;
+        QPixmap pixmap(pItemInstance->item->getTexture().c_str());
         pixmap = pixmap.scaled(64, 64);
         QIcon ButtonIcon(pixmap);
-        pushButtons[slot]->setIcon(ButtonIcon);
-        pushButtons[slot]->setIconSize(QSize(50, 50));
+        buttons[slot]->setIcon(ButtonIcon);
+        buttons[slot]->setIconSize(QSize(40, 40));
+        labels[slot]->setText(stream.str().c_str());
+        labels[slot]->setGeometry(18, 8, labels[slot]->width(), labels[slot]->height());
     }
 }
 
 void GamePlayWindow::checkInventoryUpdates()
 {
+
     const auto& inv = currentWorld.getPlayerController().getInventory();
     if(inventoryUpdates.size() != inv.size())
     {
         inventoryUpdates.resize(inv.size());
         for(unsigned int i = 0; i < 8; ++i)
         {
-            inventoryUpdates[i] = inv.getItemInstances()[i].item;
+            inventoryUpdates[i] = &inv.getItemInstances()[i];
             notifyInventoryUpdated(i);
         }
         return;
@@ -113,9 +131,9 @@ void GamePlayWindow::checkInventoryUpdates()
 
     for(int i = 0; i < inv.size(); ++i)
     {
-        if(inv.getItemInstances()[i].item != inventoryUpdates[i])
+        if(&inv.getItemInstances()[i] != inventoryUpdates[i])
         {
-            inventoryUpdates[i] = inv.getItemInstances()[i].item;
+            inventoryUpdates[i] = &inv.getItemInstances()[i];
             notifyInventoryUpdated(i);
         }
     }

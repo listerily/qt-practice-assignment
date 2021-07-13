@@ -16,7 +16,7 @@ bool StoneObject::walkable(int, int) const
     return false;
 }
 
-void StoneObject::playerInteract(Player & player, ItemInstance & item)
+void StoneObject::playerInteract(Player & player, ItemInstance *item)
 {
     TileObject::playerInteract(player, item);
 }

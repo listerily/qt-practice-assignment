@@ -4,7 +4,7 @@
 
 #include "OakTreeObject.h"
 
-void OakTreeObject::playerInteract(Player &player, ItemInstance &item)
+void OakTreeObject::playerInteract(Player &player, ItemInstance *item)
 {
     TileObject::playerInteract(player, item);
 }

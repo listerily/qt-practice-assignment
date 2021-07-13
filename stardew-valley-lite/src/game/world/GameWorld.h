@@ -10,13 +10,13 @@
 #include <list>
 #include <unordered_map>
 
-#include "GameDimension.h"
+#include "Scene.h"
 
 #include "../entity/Entity.h"
 #include "PlayerController.h"
 
 class GameClient;
-class DimMapConfig;
+class SceneMapConfig;
 class Entity;
 class PlayerController;
 class Player;
@@ -24,9 +24,9 @@ class GameWorld
 {
 private:
     GameClient& client;
-    std::unordered_map<std::string, std::unique_ptr<GameDimension>> dimensions;
+    std::unordered_map<std::string, std::unique_ptr<Scene>> scenes;
     std::vector<std::unique_ptr<Entity>> entities;
-    std::string currentDimension;
+    std::string currentScene;
     std::size_t player;
     PlayerController playerController;
 public:
@@ -34,19 +34,19 @@ public:
 
     void initialize();
 
-    GameDimension& getCurrentGameDimension();
-    const GameDimension& getCurrentGameDimension() const;
+    Scene& getCurrentGameScene();
+    const Scene& getCurrentGameScene() const;
     Player& getPlayer();
     const Player& getPlayer() const;
     void addNewEntity(std::unique_ptr<Entity>);
     void removeEntity(const Entity*);
-    GameDimension* getDimensionByID(std::string const& id);
-    const GameDimension* getDimensionByID(const std::string& id) const;
+    Scene* getSceneByID(std::string const& id);
+    const Scene* getSceneByID(const std::string& id) const;
     void tick();
     PlayerController& getPlayerController();
 private:
     void initializePlayer();
-    void registerNewDimension(DimMapConfig const&);
+    void registerNewScene(SceneMapConfig const&);
 };
 
 

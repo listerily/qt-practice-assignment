@@ -16,22 +16,22 @@ GameWorld::GameWorld(GameClient & client) : client(client), playerController(*th
     player = 0;
 }
 
-void GameWorld::registerNewDimension(const DimMapConfig & config)
+void GameWorld::registerNewScene(const SceneMapConfig & config)
 {
-    if(currentDimension.empty())
-        currentDimension = config.id;
-    auto newDimension = std::make_unique<GameDimension>(config);
-    dimensions[config.id] = std::move(newDimension);
+    if(currentScene.empty())
+        currentScene = config.id;
+    auto newDimension = std::make_unique<Scene>(config);
+    scenes[config.id] = std::move(newDimension);
 }
 
-GameDimension &GameWorld::getCurrentGameDimension()
+Scene &GameWorld::getCurrentGameScene()
 {
-    return *dimensions.find(currentDimension)->second;
+    return *scenes.find(currentScene)->second;
 }
 
-const GameDimension &GameWorld::getCurrentGameDimension() const
+const Scene &GameWorld::getCurrentGameScene() const
 {
-    return *dimensions.find(currentDimension)->second;
+    return *scenes.find(currentScene)->second;
 }
 
 Player &GameWorld::getPlayer()
@@ -46,9 +46,9 @@ const Player &GameWorld::getPlayer() const
 
 void GameWorld::initialize()
 {
-    const auto& dimMaps = client.getConfigLoader().getDimMaps();
+    const auto& dimMaps = client.getConfigLoader().getSceneMaps();
     for(const auto& dimMap : dimMaps)
-        registerNewDimension(dimMap);
+        registerNewScene(dimMap);
     initializePlayer();
 }
 
@@ -69,23 +69,23 @@ void GameWorld::removeEntity(const Entity * entityPointer)
 
 void GameWorld::initializePlayer()
 {
-    auto thePlayer = std::make_unique<Player>(*this, getCurrentGameDimension());
+    auto thePlayer = std::make_unique<Player>(*this, getCurrentGameScene());
     addNewEntity(std::move(thePlayer));
 }
 
-GameDimension *GameWorld::getDimensionByID(const std::string& id)
+Scene *GameWorld::getSceneByID(const std::string& id)
 {
-    return dimensions.find(id)->second.get();
+    return scenes.find(id)->second.get();
 }
 
-const GameDimension *GameWorld::getDimensionByID(const std::string& id) const
+const Scene *GameWorld::getSceneByID(const std::string& id) const
 {
-    return dimensions.find(id)->second.get();
+    return scenes.find(id)->second.get();
 }
 
 void GameWorld::tick()
 {
-    std::for_each(dimensions.begin(), dimensions.end(), [](const std::unordered_map<std::string,std::unique_ptr<GameDimension>>::value_type& dimension){
+    std::for_each(scenes.begin(), scenes.end(), [](const std::unordered_map<std::string,std::unique_ptr<Scene>>::value_type& dimension){
         dimension.second->tick();
     });
     std::for_each(entities.begin(), entities.end(), [](const std::unique_ptr<Entity>& entity){

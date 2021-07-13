@@ -9,7 +9,7 @@
 #include <unordered_map>
 #include <vector>
 
-#include "object/TileRef.h"
+#include "../object/TileRef.h"
 
 class TileObject;
 class Tile;

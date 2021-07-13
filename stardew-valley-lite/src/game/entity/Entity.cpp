@@ -4,7 +4,7 @@
 
 #include "Entity.h"
 
-Entity::Entity(GameWorld & gameWorld, GameDimension & dimension) : world(gameWorld), dimension(&dimension)
+Entity::Entity(GameWorld & gameWorld, Scene & dimension) : world(gameWorld), scene(&dimension)
 {
     x = y = 0.0;
     ax = ay = 0.0;
@@ -32,9 +32,9 @@ void Entity::moveTo(double _x, double _y)
     y = _y;
 }
 
-void Entity::setDimension(GameDimension & newDimension)
+void Entity::setScene(Scene & newScene)
 {
-    dimension = &newDimension;
+    scene = &newScene;
 }
 
 int Entity::getHealth() const

@@ -2,43 +2,43 @@
 // Created by listerily on 2021/7/5.
 //
 
-#include "GameDimension.h"
+#include "Scene.h"
 
 #include <algorithm>
 
-#include "../../config/DimMapConfig.h"
-#include "object/factory/TileObjectFactory.h"
+#include "../../config/SceneMapConfig.h"
+#include "../object/factory/TileObjectFactory.h"
 #include "TileSheet.h"
 
-std::list<std::unique_ptr<TileObject>> &GameDimension::getObjects()
+std::list<std::unique_ptr<TileObject>> &Scene::getObjects()
 {
     return objects;
 }
 
-const std::list<std::unique_ptr<TileObject>> &GameDimension::getObjects() const
+const std::list<std::unique_ptr<TileObject>> &Scene::getObjects() const
 {
     return objects;
 }
 
-void GameDimension::tick()
+void Scene::tick()
 {
     std::for_each(objects.begin(), objects.end(), [](const std::unique_ptr<TileObject>& object){
         object->tick();
     });
 }
 
-const std::string &GameDimension::getID() const
+const std::string &Scene::getID() const
 {
     return id;
 }
 
-GameDimension::GameDimension(const DimMapConfig &config) : id(config.id)
+Scene::Scene(const SceneMapConfig &config) : id(config.id)
 {
     tileSheet = new TileSheet;
     initialize(config);
 }
 
-void GameDimension::initialize(const DimMapConfig& config)
+void Scene::initialize(const SceneMapConfig& config)
 {
     for(const auto& object : config.objects)
     {
@@ -47,13 +47,13 @@ void GameDimension::initialize(const DimMapConfig& config)
     }
 }
 
-void GameDimension::addNewObject(std::unique_ptr<TileObject> newObject)
+void Scene::addNewObject(std::unique_ptr<TileObject> newObject)
 {
     tileSheet->onTileObjectAdded(*newObject);
     objects.insert(objects.end(), std::move(newObject));
 }
 
-void GameDimension::removeObject(const TileObject * target)
+void Scene::removeObject(const TileObject * target)
 {
     tileSheet->onTileObjectRemoved(*target);
     objects.remove_if([&target](const std::unique_ptr<TileObject>& object){
@@ -61,12 +61,12 @@ void GameDimension::removeObject(const TileObject * target)
     });
 }
 
-const TileSheet &GameDimension::getTileSheet() const
+const TileSheet &Scene::getTileSheet() const
 {
     return *tileSheet;
 }
 
-GameDimension::~GameDimension()
+Scene::~Scene()
 {
     delete tileSheet;
 }

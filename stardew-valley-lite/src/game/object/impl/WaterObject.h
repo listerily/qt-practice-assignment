@@ -5,7 +5,7 @@
 #ifndef STARDEW_VALLEY_LITE_WATEROBJECT_H
 #define STARDEW_VALLEY_LITE_WATEROBJECT_H
 
-#include "../TileObject.h"
+#include "src/game/object/TileObject.h"
 
 class WaterObject : public TileObject
 {

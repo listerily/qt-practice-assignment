@@ -10,7 +10,7 @@
 #include <cmath>
 
 #include "../../game/world/GameWorld.h"
-#include "../../game/world/GameDimension.h"
+#include "../../game/world/Scene.h"
 #include "../../game/world/TileSheet.h"
 #include "../../game/entity/Player.h"
 
@@ -23,7 +23,7 @@ void GamePainter::paint(QWidget& widget, int width, int height)
 {
     ++paintFrameCount;
     const int displayBlocksNum = 140;
-    const auto& currentDimension = gameWorld.getCurrentGameDimension();
+    const auto& currentDimension = gameWorld.getCurrentGameScene();
     const auto& player = gameWorld.getPlayer();
     const auto& tileSheet = currentDimension.getTileSheet();
     const auto pixelsCount = width * height;

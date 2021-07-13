@@ -8,7 +8,7 @@
 #include <string>
 #include <list>
 
-#include "DimMapConfig.h"
+#include "SceneMapConfig.h"
 
 class QApplication;
 class ConfigLoader
@@ -16,14 +16,14 @@ class ConfigLoader
 private:
     QApplication& application;
 
-    std::list<DimMapConfig> dimInitialMapsList;
+    std::list<SceneMapConfig> sceneInitialMapsList;
 public:
     explicit ConfigLoader(QApplication&);
 
     void initialize();
-    const std::list<DimMapConfig>& getDimMaps() const;
+    const std::list<SceneMapConfig>& getSceneMaps() const;
 private:
-    void initializeDimensionMaps();
+    void initializeSceneMaps();
 };
 
 

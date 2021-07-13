@@ -5,7 +5,7 @@
 #ifndef STARDEW_VALLEY_LITE_SMALLSTONE_H
 #define STARDEW_VALLEY_LITE_SMALLSTONE_H
 
-#include "../TileObject.h"
+#include "src/game/object/TileObject.h"
 
 class SmallStone : public TileObject
 {

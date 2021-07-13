@@ -7,14 +7,14 @@
 #include <cmath>
 
 #include "../world/TileSheet.h"
-#include "../world/GameDimension.h"
+#include "../world/Scene.h"
 
 std::string Player::getID() const
 {
     return "player";
 }
 
-Player::Player(GameWorld & world, GameDimension & dimension) : Entity(world, dimension)
+Player::Player(GameWorld & world, Scene & dimension) : Entity(world, dimension)
 {
     facing = Facing::DOWN;
     movingVariant = 0;
@@ -62,7 +62,7 @@ bool Player::isWalkable(double x, double y) const
 
 bool Player::isTileWalkable(int x, int y) const
 {
-    const auto& tileObjects = dimension->getTileSheet().getTileObjectsAt(x, y);
+    const auto& tileObjects = scene->getTileSheet().getTileObjectsAt(x, y);
     for(const auto& tileObject : tileObjects)
     {
         if(!tileObject->walkable(x, y))

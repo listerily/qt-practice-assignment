@@ -22,11 +22,11 @@ GamePlayWindow::GamePlayWindow(GameWorld& world, QWidget *parent) :
         connect(pushButtons[i], &QPushButton::clicked, this, [=](){this->slotButtonClicked(i);});
     selectSlot(0);
 
-//    QPixmap pixmap(":/svl/textures/items/4_0_3.png");
-//    pixmap = pixmap.scaled(64, 64);
-//    QIcon ButtonIcon(pixmap);
-//    pushButtons[0]->setIcon(ButtonIcon);
-//    pushButtons[0]->setIconSize(QSize(50, 50));
+    QPixmap pixmap(":/svl/textures/items/4_0_3.png");
+    pixmap = pixmap.scaled(64, 64);
+    QIcon ButtonIcon(pixmap);
+    pushButtons[0]->setIcon(ButtonIcon);
+    pushButtons[0]->setIconSize(QSize(50, 50));
 }
 
 GamePlayWindow::~GamePlayWindow()

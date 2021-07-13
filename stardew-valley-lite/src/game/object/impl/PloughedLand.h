@@ -5,7 +5,7 @@
 #ifndef STARDEW_VALLEY_LITE_PLOUGHEDLAND_H
 #define STARDEW_VALLEY_LITE_PLOUGHEDLAND_H
 
-#include "../TileObject.h"
+#include "src/game/object/TileObject.h"
 
 class PloughedLand : public TileObject
 {

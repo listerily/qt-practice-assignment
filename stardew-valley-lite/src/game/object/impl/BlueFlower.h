@@ -6,7 +6,7 @@
 #define STARDEW_VALLEY_LITE_BLUEFLOWER_H
 
 
-#include "../TileObject.h"
+#include "src/game/object/TileObject.h"
 
 class BlueFlower : public TileObject
 {

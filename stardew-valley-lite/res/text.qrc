@@ -1,7 +1,7 @@
 <RCC>
     <qresource prefix="/svl/text/config">
-        <file>dim/dim_manifest.json</file>
-        <file>dim/farm.json</file>
-        <file>dim/home.json</file>
+        <file>scenes/home.json</file>
+        <file>scenes/farm.json</file>
+        <file>scenes/scenes_manifest.json</file>
     </qresource>
 </RCC>

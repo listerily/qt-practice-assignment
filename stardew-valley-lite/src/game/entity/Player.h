@@ -17,7 +17,7 @@ private:
     int movingVariant;
     Facing facing;
 public:
-    Player(GameWorld&, GameDimension&);
+    Player(GameWorld&, Scene&);
     std::string getID() const override;
     Facing getFacing() const;
     bool isMoving() const;

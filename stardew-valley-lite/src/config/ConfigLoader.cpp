@@ -16,35 +16,35 @@ ConfigLoader::ConfigLoader(QApplication & app) : application(app)
 
 void ConfigLoader::initialize()
 {
-    initializeDimensionMaps();
+    initializeSceneMaps();
 }
 
-void ConfigLoader::initializeDimensionMaps()
+void ConfigLoader::initializeSceneMaps()
 {
-    QResource resource(":/svl/text/config/dim/dim_manifest.json");
+    QResource resource(":/svl/text/config/scenes/scenes_manifest.json");
     QJsonDocument document(QJsonDocument::fromJson(resource.uncompressedData().data()));
-    auto worldManifestList = document["dimensions"].toArray();
+    auto worldManifestList = document["scenes"].toArray();
     for(auto const& manifestItem : worldManifestList)
     {
-        QResource manifestItemResFile(":/svl/text/config/dim/" + manifestItem.toString());
+        QResource manifestItemResFile(":/svl/text/config/scenes/" + manifestItem.toString());
         QJsonDocument document_item(QJsonDocument::fromJson(manifestItemResFile.uncompressedData().data()));
         const auto& manifestObject = document_item;
-        DimMapConfig newConfig;
+        SceneMapConfig newConfig;
         newConfig.id = manifestObject["id"].toString().toStdString();
         auto objects = manifestObject["objects"].toArray();
         for(const auto& objectItem : objects)
         {
-            DimMapConfig::ObjectConfig newObject;
+            SceneMapConfig::ObjectConfig newObject;
             newObject.posX = objectItem.toObject()["pos"].toArray()[0].toInt();
             newObject.posY = objectItem.toObject()["pos"].toArray()[1].toInt();
             newObject.id = objectItem.toObject()["id"].toString().toStdString();
             newConfig.objects.insert(newConfig.objects.end(), std::move(newObject));
         }
-        dimInitialMapsList.insert(dimInitialMapsList.end(), std::move(newConfig));
+        sceneInitialMapsList.insert(sceneInitialMapsList.end(), std::move(newConfig));
     }
 }
 
-const std::list<DimMapConfig> &ConfigLoader::getDimMaps() const
+const std::list<SceneMapConfig> &ConfigLoader::getSceneMaps() const
 {
-    return dimInitialMapsList;
+    return sceneInitialMapsList;
 }

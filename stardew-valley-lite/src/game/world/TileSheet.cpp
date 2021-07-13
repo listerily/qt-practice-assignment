@@ -4,7 +4,7 @@
 
 #include "TileSheet.h"
 
-#include "object/TileObject.h"
+#include "../object/TileObject.h"
 
 void TileSheet::onTileObjectAdded(const TileObject & object)
 {

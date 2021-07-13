@@ -2,26 +2,26 @@
 // Created by listerily on 2021/7/5.
 //
 
-#ifndef STARDEW_VALLEY_LITE_GAMEDIMENSION_H
-#define STARDEW_VALLEY_LITE_GAMEDIMENSION_H
+#ifndef STARDEW_VALLEY_LITE_SCENE_H
+#define STARDEW_VALLEY_LITE_SCENE_H
 
 #include <string>
 #include <list>
 #include <memory>
 
-#include "object/TileObject.h"
+#include "../object/TileObject.h"
 
 class TileSheet;
-class DimMapConfig;
-class GameDimension
+class SceneMapConfig;
+class Scene
 {
 private:
     std::string id;
     std::list<std::unique_ptr<TileObject>> objects;
     TileSheet* tileSheet;
 public:
-    explicit GameDimension(const DimMapConfig& config);
-    ~GameDimension();
+    explicit Scene(const SceneMapConfig& config);
+    ~Scene();
 public:
     std::list<std::unique_ptr<TileObject>>& getObjects();
     const std::list<std::unique_ptr<TileObject>>& getObjects() const;
@@ -31,8 +31,8 @@ public:
     void removeObject(const TileObject*);
     const TileSheet& getTileSheet() const;
 private:
-    void initialize(const DimMapConfig&);
+    void initialize(const SceneMapConfig&);
 };
 
 
-#endif //STARDEW_VALLEY_LITE_GAMEDIMENSION_H
+#endif //STARDEW_VALLEY_LITE_SCENE_H

@@ -7,7 +7,7 @@
 
 #include <string>
 
-class GameDimension;
+class Scene;
 class GameWorld;
 class Entity
 {
@@ -16,17 +16,17 @@ protected:
     double ax, ay;
     double vx, vy;
     GameWorld& world;
-    GameDimension* dimension;
+    Scene* scene;
     int health;
 public:
-    Entity(GameWorld&, GameDimension&);
+    Entity(GameWorld&, Scene&);
     virtual ~Entity();
 
     virtual void tick();
     virtual void move(double, double);
     virtual void moveTo(double, double);
     virtual std::string getID() const = 0;
-    virtual void setDimension(GameDimension&);
+    virtual void setScene(Scene&);
     virtual int getHealth() const;
     virtual void hurt(int);
     virtual void onDeath();

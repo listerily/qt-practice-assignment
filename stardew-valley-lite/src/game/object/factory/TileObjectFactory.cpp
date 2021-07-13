@@ -7,16 +7,16 @@
 #include <string>
 #include <memory>
 
-#include "../impl/PathLand.h"
-#include "../impl/GrassLand.h"
-#include "../impl/OakTreeObject.h"
-#include "../impl/LargeShrub.h"
-#include "../impl/SmallShrub.h"
-#include "../impl/WaterObject.h"
-#include "../impl/SmallStone.h"
-#include "../impl/ManyStones.h"
-#include "../impl/PinkFlower.h"
-#include "../impl/BlueFlower.h"
+#include "src/game/object/impl/PathLand.h"
+#include "src/game/object/impl/GrassLand.h"
+#include "src/game/object/impl/OakTreeObject.h"
+#include "src/game/object/impl/LargeShrub.h"
+#include "src/game/object/impl/SmallShrub.h"
+#include "src/game/object/impl/WaterObject.h"
+#include "src/game/object/impl/SmallStone.h"
+#include "src/game/object/impl/ManyStones.h"
+#include "src/game/object/impl/PinkFlower.h"
+#include "src/game/object/impl/BlueFlower.h"
 
 std::unique_ptr<TileObject> TileObjectFactory::generateTileObjectByIdAt(std::string const& id, int x, int y)
 {

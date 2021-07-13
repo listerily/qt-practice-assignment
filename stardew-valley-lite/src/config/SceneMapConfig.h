@@ -2,13 +2,13 @@
 // Created by listerily on 2021/7/6.
 //
 
-#ifndef STARDEW_VALLEY_LITE_DIMMAPCONFIG_H
-#define STARDEW_VALLEY_LITE_DIMMAPCONFIG_H
+#ifndef STARDEW_VALLEY_LITE_SCENEMAPCONFIG_H
+#define STARDEW_VALLEY_LITE_SCENEMAPCONFIG_H
 
 #include <string>
 #include <list>
 
-class DimMapConfig
+class SceneMapConfig
 {
 public:
     class ObjectConfig
@@ -22,4 +22,4 @@ public:
 };
 
 
-#endif //STARDEW_VALLEY_LITE_DIMMAPCONFIG_H
+#endif //STARDEW_VALLEY_LITE_SCENEMAPCONFIG_H

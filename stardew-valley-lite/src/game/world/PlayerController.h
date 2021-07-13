@@ -14,13 +14,16 @@ private:
 public:
     explicit PlayerController(GameWorld&);
 
-    void walkUp();
-    void walkDown();
-    void walkLeft();
-    void walkRight();
+    void walk(bool, bool, bool, bool);
+    void walkUp(double);
+    void walkDown(double);
+    void walkLeft(double);
+    void walkRight(double);
     void selectInventorySlot(int);
     Inventory& getInventory();
     const Inventory& getInventory() const;
+private:
+    void walk(double, double);
 };
 
 

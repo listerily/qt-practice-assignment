@@ -5,14 +5,20 @@
 #include "ItemManager.h"
 
 #include "./impl/WoodItem.h"
+#include "./impl/WeedsItem.h"
+#include "./impl/StoneItem.h"
 
 void ItemManager::initializeItems()
 {
-    lookupMap["wood"] = ItemManager::wood = new WoodItem();
+    lookupMap["wood"] = new WoodItem;
+    lookupMap["weeds"] = new WeedsItem;
+    lookupMap["stone"] = new StoneItem;
 }
 
 const Item *ItemManager::lookup(const std::string& id) const
 {
+    if(lookupMap.find(id) == lookupMap.end())
+        return nullptr;
     return lookupMap.at(id);
 }
 
@@ -32,5 +38,3 @@ const ItemManager &ItemManager::getInstance()
     static const ItemManager instance;
     return instance;
 }
-
-Item* ItemManager::wood = nullptr;

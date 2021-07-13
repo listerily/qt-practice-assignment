@@ -2,6 +2,34 @@
   "id": "home",
   "objects": [
     {
+      "id": "weeds_0",
+      "pos": [-7, 2]
+    },
+    {
+      "id": "weeds_1",
+      "pos": [-7, 3]
+    },
+    {
+      "id": "weeds_2",
+      "pos": [-7, 4]
+    },
+    {
+      "id": "weeds_3",
+      "pos": [-7, 5]
+    },
+    {
+      "id": "branch_0",
+      "pos": [-7, 0]
+    },
+    {
+      "id": "branch_1",
+      "pos": [-6, 0]
+    },
+    {
+      "id": "stone",
+      "pos": [-6, -1]
+    },
+    {
       "id": "path_0",
       "pos": [0, 0]
     },
@@ -100,6 +128,10 @@
     {
       "id": "oak_tree",
       "pos": [5, 4]
+    },
+    {
+      "id": "pine_tree",
+      "pos": [6, 5]
     },
     {
       "id": "large_shrub",

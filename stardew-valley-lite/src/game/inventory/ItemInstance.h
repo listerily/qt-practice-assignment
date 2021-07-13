@@ -25,8 +25,8 @@ public:
     const std::string& getDisplayTexture() const;
     bool empty() const;
     void clear();
-    void reset();
-    void reset(const ItemInstance&);
+
+    void set(const ItemInstance&);
 
     bool itemMatches(const ItemInstance&) const;
     bool itemAndAuxMatches(const ItemInstance&) const;

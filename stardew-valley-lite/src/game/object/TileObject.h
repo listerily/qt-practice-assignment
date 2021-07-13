@@ -8,6 +8,7 @@
 
 #include <list>
 #include <string>
+#include <src/game/inventory/ItemInstance.h>
 
 #include "Tile.h"
 
@@ -25,7 +26,7 @@ public:
     virtual ~TileObject();
 
     virtual std::list<Tile> const& getAllTiles() const;
-    virtual void playerInteract(Player &, Item &, int x, int y);
+    virtual void playerInteract(Player &, ItemInstance &);
     virtual bool walkable(int, int) const;
     virtual void afterNight();
     virtual void tick();

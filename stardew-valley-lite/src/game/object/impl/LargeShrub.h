@@ -12,7 +12,7 @@ class LargeShrub : public TileObject
 public:
     LargeShrub(int x, int y);
 
-    void playerInteract(Player &player, Item &item, int x, int y) override;
+    void playerInteract(Player &player, ItemInstance &item) override;
 
     bool walkable(int i, int i1) const override;
 };

@@ -37,8 +37,7 @@ bool Player::isMoving() const
 void Player::move(double x, double y)
 {
     Entity::move(x, y);
-    renewFacing(x, y);
-    movingVariant = 5;
+    movingVariant = 3;
 }
 
 void Player::tick()
@@ -48,20 +47,13 @@ void Player::tick()
         --movingVariant;
 }
 
-void Player::walk(double dx, double dy)
-{
-    renewFacing(dx, dy);
-    if(isWalkable(x + dx, y + dy))
-        move(dx, dy);
-}
-
 bool Player::isWalkable(double x, double y) const
 {
-    const double DETECTION_RADIUS = 0.25;
-    return isTileWalkable(floor(x - DETECTION_RADIUS), floor(y - DETECTION_RADIUS)) &&
-            isTileWalkable(floor(x + DETECTION_RADIUS), floor(y + DETECTION_RADIUS)) &&
-            isTileWalkable(floor(x - DETECTION_RADIUS), floor(y + DETECTION_RADIUS)) &&
-            isTileWalkable(floor(x + DETECTION_RADIUS), floor(y - DETECTION_RADIUS));
+    const double collisionBoxRadius = getCollisionBoxRadius();
+    return isTileWalkable(floor(x - collisionBoxRadius), floor(y - collisionBoxRadius)) &&
+            isTileWalkable(floor(x + collisionBoxRadius), floor(y + collisionBoxRadius)) &&
+            isTileWalkable(floor(x - collisionBoxRadius), floor(y + collisionBoxRadius)) &&
+            isTileWalkable(floor(x + collisionBoxRadius), floor(y - collisionBoxRadius));
 }
 
 bool Player::isTileWalkable(int x, int y) const
@@ -75,7 +67,7 @@ bool Player::isTileWalkable(int x, int y) const
     return true;
 }
 
-void Player::renewFacing(double x, double y)
+void Player::turn(double x, double y)
 {
     if(x > 0.0 && y == 0.0)
         facing = Facing::RIGHT;
@@ -105,4 +97,44 @@ Player::~Player()
 void Player::addInitialItemsToInventory()
 {
     inventory->addItemInstance(ItemInstance("wood", 1));
+    inventory->addItemInstance(ItemInstance("weeds", 1));
+    inventory->addItemInstance(ItemInstance("stone", 1));
+}
+
+std::pair<int, int> Player::getFacingPosition() const
+{
+    switch (getFacing())
+    {
+        case Facing::UP:
+            return {floor(x), floor(y) - 1};
+        case Facing::DOWN:
+            return {floor(x), floor(y) + 1};
+        case Facing::LEFT:
+            return {floor(x) - 1, floor(y)};
+        case Facing::RIGHT:
+            return {floor(x) + 1, floor(y)};
+    }
+    return {0, 0};
+}
+
+std::list<std::pair<int, int>> Player::getFacingPositions() const
+{
+    const double collisionBoxRadius = getCollisionBoxRadius();
+    switch (getFacing())
+    {
+        case Facing::UP:
+            return {{floor(x - collisionBoxRadius), floor(y) - 1}, {floor(x + collisionBoxRadius), floor(y) - 1}};
+        case Facing::DOWN:
+            return {{floor(x - collisionBoxRadius), floor(y) + 1}, {floor(x + collisionBoxRadius), floor(y) + 1}};
+        case Facing::LEFT:
+            return {{floor(x) - 1, floor(y - collisionBoxRadius)}, {floor(x) - 1, floor(y + collisionBoxRadius)}};
+        case Facing::RIGHT:
+            return {{floor(x) + 1, floor(y - collisionBoxRadius)}, {floor(x) + 1, floor(y + collisionBoxRadius)}};
+    }
+    return {{0, 0}};
+}
+
+double Player::getCollisionBoxRadius()
+{
+    return 0.3;
 }

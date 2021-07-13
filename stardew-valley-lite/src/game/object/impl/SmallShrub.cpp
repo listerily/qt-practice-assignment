@@ -14,9 +14,9 @@ SmallShrub::SmallShrub(int x, int y) : TileObject("small_shrub", x, y)
             };
 }
 
-void SmallShrub::playerInteract(Player &player, Item &item, int x, int y)
+void SmallShrub::playerInteract(Player &player, ItemInstance &item)
 {
-    TileObject::playerInteract(player, item, x, y);
+    TileObject::playerInteract(player, item);
 }
 
 bool SmallShrub::walkable(int x, int y) const

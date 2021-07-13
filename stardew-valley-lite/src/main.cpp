@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     //Startup game Client
     GameClient gameClient(a);
-    GamePlayWindow mainWindow(*gameClient.getCurrentWorld());
+    GamePlayWindow mainWindow(gameClient);
     std::thread([&gameClient, &mainWindow, &gameShouldExit](){
         while(!gameShouldExit) {
             gameClient.tick();

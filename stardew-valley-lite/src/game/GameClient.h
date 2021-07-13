@@ -9,6 +9,7 @@ class QApplication;
 class GameWorld;
 class ConfigLoader;
 class ItemManager;
+class InputHandler;
 class GameClient
 {
 private:
@@ -16,6 +17,7 @@ private:
     bool gameShouldExit;
     GameWorld* currentWorld;
     ConfigLoader* loader;
+    InputHandler* inputHandler;
 public:
     explicit GameClient(QApplication&);
     ~GameClient();
@@ -24,6 +26,11 @@ public:
     const GameWorld* getCurrentWorld() const;
     void createWorld();
     const ConfigLoader& getConfigLoader() const;
+    InputHandler& getInputHandler();
+    const InputHandler& getInputHandler() const;
+
+private:
+    void processKeyboardInput();
 };
 
 

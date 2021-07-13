@@ -39,7 +39,7 @@ void TileSheet::removeTileObjectInLookup(const TileObject & target)
         const auto& posY = target.getPosition().second + tile.offsetY;
         lookup[{posX, posY}].erase(&target);
 
-        lookupTiles[{posX, posY}].erase(tile);
+        lookupTiles[{posX, posY}].erase(TileRef(tile, target));
     }
 }
 
@@ -52,7 +52,7 @@ void TileSheet::addTileObjectInLookup(const TileObject & target)
         const auto& posY = target.getPosition().second + tile.offsetY;
         lookup[{posX, posY}].insert(&target);
 
-        lookupTiles[{posX, posY}].insert(tile);
+        lookupTiles[{posX, posY}].insert(TileRef(tile, target));
     }
 }
 

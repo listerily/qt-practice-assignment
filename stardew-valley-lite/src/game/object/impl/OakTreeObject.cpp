@@ -4,9 +4,9 @@
 
 #include "OakTreeObject.h"
 
-void OakTreeObject::playerInteract(Player &player, Item &item, int x, int y)
+void OakTreeObject::playerInteract(Player &player, ItemInstance &item)
 {
-    TileObject::playerInteract(player, item, x, y);
+    TileObject::playerInteract(player, item);
 }
 
 bool OakTreeObject::walkable(int x, int y) const

@@ -9,25 +9,33 @@ class GamePlayWindow;
 class GameWorld;
 class GamePainter;
 class QPushButton;
+class Item;
+class GameClient;
+class InputHandler;
 class GamePlayWindow : public QWidget
 {
     Q_OBJECT
 private:
     GameWorld& currentWorld;
+    GameClient& gameClient;
+    InputHandler& inputHandler;
     bool paintTickProcessed;
     GamePainter* painter;
     int currentSlotID;
+    std::vector<const Item*> inventoryUpdates;
 public:
-    explicit GamePlayWindow(GameWorld & world, QWidget *parent = nullptr);
+    explicit GamePlayWindow(GameClient&, QWidget *parent = nullptr);
     ~GamePlayWindow() override;
 
     void paintEvent(QPaintEvent *event) override;
     void notifyPaintTick();
-    void notifyInventoryUpdated();
     bool isPaintTickProcessed() const;
     void keyPressEvent(QKeyEvent *event) override;
-
+    void keyReleaseEvent(QKeyEvent *event) override;
+    void wheelEvent(QWheelEvent *event) override;
 private:
+    void notifyInventoryUpdated(unsigned int slot);
+    void checkInventoryUpdates();
     void slotButtonClicked(int);
     void selectSlot(int);
     std::array<QPushButton*, 8> pushButtons{};

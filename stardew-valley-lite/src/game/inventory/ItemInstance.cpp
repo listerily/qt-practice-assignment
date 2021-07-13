@@ -72,12 +72,7 @@ bool ItemInstance::allMatches(const ItemInstance & rhs) const
     return item == rhs.item && aux == rhs.aux && count == rhs.count;
 }
 
-void ItemInstance::reset()
-{
-    clear();
-}
-
-void ItemInstance::reset(const ItemInstance & rhs)
+void ItemInstance::set(const ItemInstance & rhs)
 {
     item = rhs.item;
     count = rhs.count;

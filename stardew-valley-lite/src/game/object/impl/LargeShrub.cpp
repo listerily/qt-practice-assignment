@@ -4,9 +4,9 @@
 
 #include "LargeShrub.h"
 
-void LargeShrub::playerInteract(Player &player, Item &item, int x, int y)
+void LargeShrub::playerInteract(Player &player, ItemInstance &item)
 {
-    TileObject::playerInteract(player, item, x, y);
+    TileObject::playerInteract(player, item);
 }
 
 bool LargeShrub::walkable(int x, int y) const

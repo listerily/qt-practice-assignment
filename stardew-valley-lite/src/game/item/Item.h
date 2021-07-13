@@ -17,7 +17,8 @@ private:
 public:
     explicit Item(std::string);
     virtual ~Item() = default;
-    virtual void playerInteract(Player&, ItemInstance&, TileObject&, int, int);
+    virtual void playerInteract(Player&, ItemInstance&, TileObject&);
+    virtual void playerInteract(Player&, ItemInstance&);
     virtual const std::string& getTexture()const = 0;
 };
 

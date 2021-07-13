@@ -18,7 +18,7 @@ const std::list<Tile> &TileObject::getAllTiles() const
     return tiles;
 }
 
-void TileObject::playerInteract(Player &, Item &, int x, int y)
+void TileObject::playerInteract(Player &, ItemInstance &)
 {
 
 }

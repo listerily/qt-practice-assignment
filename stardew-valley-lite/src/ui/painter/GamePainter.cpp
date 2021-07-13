@@ -16,13 +16,12 @@
 
 GamePainter::GamePainter(const GameWorld &world): gameWorld(world)
 {
-
+    displayBlocksNum = 140;
 }
 
 void GamePainter::paint(QWidget& widget, int width, int height)
 {
     ++paintFrameCount;
-    const int displayBlocksNum = 140;
     const auto& currentDimension = gameWorld.getCurrentGameScene();
     const auto& player = gameWorld.getPlayer();
     const auto& tileSheet = currentDimension.getTileSheet();
@@ -61,7 +60,7 @@ void GamePainter::paint(QWidget& widget, int width, int height)
                     const QRect drawArea(currentDrawX, currentDrawY, displayBlockWidth, displayBlockWidth);
                     const auto& textures = tileRef.tile->textures;
                     const auto texturesSize = textures.size();
-                    painter.drawPixmap(drawArea, QPixmap(textures[(paintFrameCount / 30) % texturesSize].c_str()));
+                    painter.drawPixmap(drawArea, QPixmap(textures[(paintFrameCount / 25) % texturesSize].c_str()));
                 }
             }
         }
@@ -129,9 +128,18 @@ void GamePainter::paint(QWidget& widget, int width, int height)
                     const QRect drawArea(currentDrawX, currentDrawY, displayBlockWidth, displayBlockWidth);
                     const auto& textures = tileRef.tile->textures;
                     const auto texturesSize = textures.size();
-                    painter.drawPixmap(drawArea, QPixmap(textures[(paintFrameCount / 30) % texturesSize].c_str()));
+                    painter.drawPixmap(drawArea, QPixmap(textures[(paintFrameCount / 25) % texturesSize].c_str()));
                 }
             }
         }
     }
+}
+
+void GamePainter::zoom(int delta)
+{
+    displayBlocksNum += delta;
+    if(displayBlocksNum < 80)
+        displayBlocksNum = 80;
+    if(displayBlocksNum > 300)
+        displayBlocksNum = 300;
 }

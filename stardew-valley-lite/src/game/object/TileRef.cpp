@@ -5,15 +5,11 @@
 #include "TileRef.h"
 
 #include "Tile.h"
+#include "TileObject.h"
 
-TileRef::TileRef(const Tile * tile) : tile(tile)
+TileRef::TileRef(const Tile & tile, const TileObject& tileObject) : tile(&tile)
 {
-
-}
-
-TileRef::TileRef(const Tile & tile) : tile(&tile)
-{
-
+    y = tile.offsetY + tileObject.getPosition().second;
 }
 
 const Tile &TileRef::operator()() const
@@ -25,6 +21,8 @@ bool TileRef::operator<(const TileRef & rhs) const
 {
     if(tile->displayPriority != rhs.tile->displayPriority)
         return tile->displayPriority < rhs.tile->displayPriority;
+    if(y != rhs.y)
+        return y < rhs.y;
     return tile < rhs.tile;
 }
 
@@ -32,6 +30,8 @@ bool TileRef::operator>(const TileRef & rhs) const
 {
     if(tile->displayPriority != rhs.tile->displayPriority)
         return tile->displayPriority > rhs.tile->displayPriority;
+    if(y != rhs.y)
+        return y > rhs.y;
     return tile > rhs.tile;
 }
 

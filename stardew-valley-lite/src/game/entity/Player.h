@@ -7,6 +7,8 @@
 
 #include "./Entity.h"
 
+#include <list>
+
 class Inventory;
 class Player : public Entity
 {
@@ -26,14 +28,18 @@ public:
     bool isMoving() const;
     void move(double, double) override;
     void tick() override;
-    void walk(double, double);
     Inventory& getInventory();
     const Inventory& getInventory() const;
+    std::pair<int, int> getFacingPosition() const;
+    std::list<std::pair<int, int>> getFacingPositions() const;
 private:
     bool isWalkable(double, double) const;
     bool isTileWalkable(int, int) const;
-    void renewFacing(double, double);
+    void turn(double, double);
     void addInitialItemsToInventory();
+    static double getCollisionBoxRadius();
+
+    friend class PlayerController;
 };
 
 

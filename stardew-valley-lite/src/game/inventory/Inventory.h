@@ -26,6 +26,7 @@ public:
     const ItemInstance* get(unsigned int slot) const;
     bool addItemInstance(const ItemInstance &item);
     unsigned int getEmptySlotsCount() const;
+    unsigned int size() const;
     void clearSlot(unsigned int slot);
     void clearAll();
     void reduceSelectedItem(unsigned int count);

@@ -7,13 +7,15 @@
 
 
 class Tile;
+class TileObject;
 class TileRef
 {
+private:
+    int y;
 public:
     const Tile* tile;
 
-    TileRef(const Tile*);
-    TileRef(const Tile&);
+    TileRef(const Tile&, const TileObject&);
     const Tile& operator()()const;
     bool operator<(const TileRef&) const;
     bool operator>(const TileRef&) const;

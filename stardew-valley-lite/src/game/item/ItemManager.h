@@ -18,8 +18,6 @@ public:
 
     static const ItemManager& getInstance();
 
-public:
-    static Item* wood;
 private:
     ItemManager();
     ~ItemManager();

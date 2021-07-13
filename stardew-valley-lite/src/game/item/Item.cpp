@@ -9,7 +9,12 @@ Item::Item(std::string id) : id(std::move(id))
 
 }
 
-void Item::playerInteract(Player &, ItemInstance &, TileObject &, int, int)
+void Item::playerInteract(Player &, ItemInstance &, TileObject &)
+{
+
+}
+
+void Item::playerInteract(Player &, ItemInstance &)
 {
 
 }

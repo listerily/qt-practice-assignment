@@ -46,7 +46,6 @@ const ItemInstance *Inventory::get(unsigned int slot) const
 
 bool Inventory::addItemInstance(const ItemInstance & item)
 {
-    //Find items in existence
     for(auto& instance : itemInstances)
     {
         if(instance.itemAndAuxMatches(item))
@@ -60,7 +59,7 @@ bool Inventory::addItemInstance(const ItemInstance & item)
     {
         if(instance.empty())
         {
-            instance.reset(item);
+            instance.set(item);
             return true;
         }
     }
@@ -95,7 +94,7 @@ void Inventory::reduceSelectedItem(unsigned int count)
 
 void Inventory::setSlot(unsigned int slot, const ItemInstance & instance)
 {
-    itemInstances[slot].reset(instance);
+    itemInstances[slot].set(instance);
 }
 
 const std::vector<ItemInstance> &Inventory::getItemInstances() const
@@ -106,4 +105,9 @@ const std::vector<ItemInstance> &Inventory::getItemInstances() const
 std::vector<ItemInstance> &Inventory::getItemInstances()
 {
     return itemInstances;
+}
+
+unsigned int Inventory::size() const
+{
+    return itemInstances.size();
 }

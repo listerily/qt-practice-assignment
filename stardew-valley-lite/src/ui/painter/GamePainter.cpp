@@ -42,7 +42,7 @@ void GamePainter::paint(QWidget& widget, int width, int height)
     const auto worldStartPointY = viewPortCenterTargetWorldPointY - halfDisplayCountInHeight;
 
     QPainter painter(&widget);
-    QPen pen;
+
     //paint tiles
     for (int currentDrawX = static_cast<int>(viewPortStartPointX), x = worldStartPointX;
          currentDrawX <= width;

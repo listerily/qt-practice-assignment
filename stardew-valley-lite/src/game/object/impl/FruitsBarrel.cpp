@@ -7,11 +7,6 @@
 FruitsBarrel::FruitsBarrel(int x, int y) : TileObject("fruits_barrel", x ,y)
 {
     tiles = {
-            Tile{{":/svl/textures/tiles/0_17_4.png"}, false, 0, 0, Tile::DisplayPriority::ON_GROUND}
+            Tile{{":/svl/textures/tiles/0_17_4.png"}, Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::ON_GROUND}
     };
-}
-
-bool FruitsBarrel::walkable(int, int) const
-{
-    return false;
 }

@@ -11,8 +11,6 @@ class FlowerPot : public TileObject
 {
 public:
     FlowerPot(int, int, int);
-
-    bool walkable(int, int) const override;
 };
 
 

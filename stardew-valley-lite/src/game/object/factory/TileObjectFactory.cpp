@@ -6,26 +6,31 @@
 
 #include <string>
 #include <memory>
+#include <sstream>
 
-#include "src/game/object/impl/PathLand.h"
-#include "src/game/object/impl/GrassLand.h"
-#include "src/game/object/impl/OakTreeObject.h"
-#include "src/game/object/impl/PineTreeObject.h"
-#include "src/game/object/impl/LargeShrub.h"
-#include "src/game/object/impl/SmallShrub.h"
-#include "src/game/object/impl/WaterObject.h"
-#include "src/game/object/impl/SmallStone.h"
-#include "src/game/object/impl/ManyStones.h"
-#include "src/game/object/impl/PinkFlower.h"
-#include "src/game/object/impl/BlueFlower.h"
-#include "src/game/object/impl/FruitsBarrel.h"
-#include "src/game/object/impl/LilyPad.h"
-#include "src/game/object/impl/WaterStakes.h"
-#include "src/game/object/impl/FloatingPlant.h"
-#include "src/game/object/impl/FlowerPot.h"
-#include "src/game/object/impl/BranchObject.h"
-#include "src/game/object/impl/StoneObject.h"
-#include "src/game/object/impl/WeedsObject.h"
+#include "../impl/GrassLand.h"
+#include "../impl/OakTreeObject.h"
+#include "../impl/PineTreeObject.h"
+#include "../impl/LargeShrub.h"
+#include "../impl/SmallShrub.h"
+#include "../impl/WaterObject.h"
+#include "../impl/SmallStone.h"
+#include "../impl/ManyStones.h"
+#include "../impl/PinkFlower.h"
+#include "../impl/BlueFlower.h"
+#include "../impl/FruitsBarrel.h"
+#include "../impl/LilyPad.h"
+#include "../impl/WaterStakes.h"
+#include "../impl/FloatingPlant.h"
+#include "../impl/FlowerPot.h"
+#include "../impl/BranchObject.h"
+#include "../impl/StoneObject.h"
+#include "../impl/WeedsObject.h"
+#include "../impl/GrassFlowerObject.h"
+#include "../impl/WaterBankObject.h"
+#include "../impl/FenceObject.h"
+#include "../impl/TentObject.h"
+#include "../impl/HouseObject.h"
 
 std::unique_ptr<TileObject> TileObjectFactory::generateTileObjectByIdAt(std::string const& id, int x, int y)
 {
@@ -77,19 +82,40 @@ std::unique_ptr<TileObject> TileObjectFactory::generateTileObjectByIdAt(std::str
         return std::make_unique<WeedsObject>(x, y, 2);
     if(id == "weeds_3")
         return std::make_unique<WeedsObject>(x, y, 3);
+    if(id == "grass_flower")
+        return std::make_unique<GrassFlowerObject>(x, y);
+    if(id == "fence_0_0")
+        return std::make_unique<FenceObject>(x, y, true, 0);
+    if(id == "fence_0_1")
+        return std::make_unique<FenceObject>(x, y, true, 1);
+    if(id == "fence_0_2")
+        return std::make_unique<FenceObject>(x, y, true, 2);
+    if(id == "fence_1_0")
+        return std::make_unique<FenceObject>(x, y, false, 0);
+    if(id == "fence_1_1")
+        return std::make_unique<FenceObject>(x, y, false, 1);
+    if(id == "fence_1_2")
+        return std::make_unique<FenceObject>(x, y, false, 2);
+    if(id == "tent")
+        return std::make_unique<TentObject>(x, y);
+    if(id == "house")
+        return std::make_unique<HouseObject>(x, y);
 
-    if(id == "path_0")
-        return std::make_unique<PathLand>(x, y, 0);
+    for(int i = 0; i < 16; ++i)
+    {
+        std::stringstream stream;
+        stream << "bank_" << i;
+        if(id == stream.str())
+            return std::make_unique<WaterBankObject>(x, y, i);
+    }
 
-    if(id == "grass_0")
-        return std::make_unique<GrassLand>(x, y, 0);
-    if(id == "grass_1")
-        return std::make_unique<GrassLand>(x, y, 1);
-    if(id == "grass_2")
-        return std::make_unique<GrassLand>(x, y, 2);
-    if(id == "grass_3")
-        return std::make_unique<GrassLand>(x, y, 3);
+    for(int i = 0; i < 32; ++i)
+    {
+        std::stringstream stream;
+        stream << "grass_" << i;
+        if(id == stream.str())
+            return std::make_unique<GrassLand>(x, y, i);
+    }
 
-
-    return std::make_unique<PathLand>(x, y, 0);
+    return std::make_unique<GrassLand>(x, y, 0);
 }

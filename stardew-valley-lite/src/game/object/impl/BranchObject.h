@@ -12,7 +12,6 @@ class BranchObject : public TileObject
 public:
     BranchObject(int, int, int);
 
-    bool walkable(int, int) const override;
     void playerInteract(Player &, ItemInstance *) override;
 };
 

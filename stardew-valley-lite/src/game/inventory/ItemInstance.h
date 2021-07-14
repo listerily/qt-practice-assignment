@@ -32,6 +32,7 @@ public:
     bool itemAndAuxMatches(const ItemInstance&) const;
     bool allMatches(const ItemInstance&) const;
     bool operator==(const ItemInstance&) const;
+    bool operator!=(const ItemInstance&) const;
 };
 
 

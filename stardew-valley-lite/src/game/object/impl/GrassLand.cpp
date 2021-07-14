@@ -9,23 +9,47 @@ GrassLand::GrassLand(int x, int y, int aux) : TileObject("grass", x, y)
     const static std::vector<std::vector<std::string>> textures = {
             {":/svl/textures/tiles/0_0_6.png"},
             {":/svl/textures/tiles/0_0_7.png"},
+            {":/svl/textures/tiles/0_0_8.png"},
+            {":/svl/textures/tiles/0_0_9.png"},
+            {":/svl/textures/tiles/0_0_10.png"},
+
             {":/svl/textures/tiles/0_0_11.png"},
-            {":/svl/textures/tiles/0_0_12.png"},
-            {":/svl/textures/tiles/0_0_13.png"},
-            {":/svl/textures/tiles/0_0_14.png"},
-            {":/svl/textures/tiles/0_0_15.png"},
-            {":/svl/textures/tiles/0_0_16.png"},
-            {":/svl/textures/tiles/0_1_11.png"},
-            {":/svl/textures/tiles/0_1_12.png"},
-            {":/svl/textures/tiles/0_1_13.png"},
-            {":/svl/textures/tiles/0_1_14.png"},
-            {":/svl/textures/tiles/0_1_15.png"},
-            {":/svl/textures/tiles/0_1_16.png"},
+            {":/svl/textures/tiles/0_1_7.png"},
+            {":/svl/textures/tiles/0_1_8.png"},
+            {":/svl/textures/tiles/0_1_9.png"},
+            {":/svl/textures/tiles/0_1_10.png"},
+
+            {":/svl/textures/tiles/0_2_7.png"},
+            {":/svl/textures/tiles/0_2_8.png"},
+            {":/svl/textures/tiles/0_2_9.png"},
+            {":/svl/textures/tiles/0_2_10.png"},
+            {":/svl/textures/tiles/0_3_6.png"},
+
+            {":/svl/textures/tiles/0_3_7.png"},
+            {":/svl/textures/tiles/0_3_8.png"},
+            {":/svl/textures/tiles/0_3_9.png"},
+            {":/svl/textures/tiles/0_3_10.png"},
+            {":/svl/textures/tiles/0_4_7.png"},
+
+            {":/svl/textures/tiles/0_4_8.png"},
+            {":/svl/textures/tiles/0_4_9.png"},
+            {":/svl/textures/tiles/0_4_10.png"},
+            {":/svl/textures/tiles/0_5_7.png"},
+            {":/svl/textures/tiles/0_5_8.png"},
+
+            {":/svl/textures/tiles/0_5_9.png"},
+            {":/svl/textures/tiles/0_5_10.png"},
+            {":/svl/textures/tiles/0_6_7.png"},
+            {":/svl/textures/tiles/0_6_8.png"},
+            {":/svl/textures/tiles/0_6_9.png"},
+
+            {":/svl/textures/tiles/0_7_7.png"},
+            {":/svl/textures/tiles/0_7_8.png"},
     };
     tiles = {
            Tile{
                    textures[aux],
-                   false, 0, 0, Tile::DisplayPriority::SURFACE_BOTTOM
+                   Tile::WalkableType::ABLE, 0, 0, Tile::DisplayPriority::SURFACE_BOTTOM
            }
     };
 }

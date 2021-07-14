@@ -49,13 +49,13 @@ void Scene::initialize(const SceneMapConfig& config)
 
 void Scene::addNewObject(std::unique_ptr<TileObject> newObject)
 {
-    tileSheet->onTileObjectAdded(*newObject);
+    tileSheet->addTileObject(*newObject);
     objects.insert(objects.end(), std::move(newObject));
 }
 
-void Scene::removeObject(const TileObject * target)
+void Scene::removeObject(TileObject * target)
 {
-    tileSheet->onTileObjectRemoved(*target);
+    tileSheet->removeTileObject(*target);
     objects.remove_if([&target](const std::unique_ptr<TileObject>& object){
         return object.get() == target;
     });
@@ -69,4 +69,9 @@ const TileSheet &Scene::getTileSheet() const
 Scene::~Scene()
 {
     delete tileSheet;
+}
+
+TileSheet &Scene::getTileSheet()
+{
+    return *tileSheet;
 }

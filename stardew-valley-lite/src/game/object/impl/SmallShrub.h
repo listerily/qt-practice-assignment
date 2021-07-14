@@ -13,8 +13,6 @@ public:
     SmallShrub(int x, int y);
 
     void playerInteract(Player &player, ItemInstance *item) override;
-
-    bool walkable(int i, int i1) const override;
 };
 
 

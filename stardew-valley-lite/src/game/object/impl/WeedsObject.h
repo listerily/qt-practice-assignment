@@ -13,7 +13,8 @@ public:
     WeedsObject(int, int, int);
 
     void playerInteract(Player &, ItemInstance *) override;
-    bool walkable(int, int) const override;
+
+    bool ableToInteract() const override;
 };
 
 

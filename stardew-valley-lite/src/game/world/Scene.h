@@ -28,8 +28,9 @@ public:
     void tick();
     const std::string& getID() const;
     void addNewObject(std::unique_ptr<TileObject>);
-    void removeObject(const TileObject*);
+    void removeObject(TileObject*);
     const TileSheet& getTileSheet() const;
+    TileSheet& getTileSheet();
 private:
     void initialize(const SceneMapConfig&);
 };

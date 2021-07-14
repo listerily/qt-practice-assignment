@@ -22,7 +22,7 @@ GamePlayWindow::GamePlayWindow(GameClient& client, QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle("Stardew Valley Lite");
-    paintTickProcessed = false;
+
     painter = new GamePainter(currentWorld);
     currentSlotID = 0;
 
@@ -30,6 +30,7 @@ GamePlayWindow::GamePlayWindow(GameClient& client, QWidget *parent) :
     for(int i = 0; i < 8; ++i)
     {
         connect(buttons[i], &QPushButton::clicked, this, [=](){this->slotButtonClicked(i);});
+        buttons[i]->setFocusPolicy(Qt::FocusPolicy::NoFocus);
         labels[i] = new QLabel("", buttons[i]);
         labels[i]->setGeometry(18, 8, labels[i]->width(), labels[i]->height());
         labels[i]->setStyleSheet("QLabel{color:black;font-weight:bold;}");
@@ -48,18 +49,12 @@ GamePlayWindow::~GamePlayWindow()
 
 void GamePlayWindow::notifyPaintTick()
 {
-    paintTickProcessed = false;
     checkInventoryUpdates();
     update();
 }
 
-bool GamePlayWindow::isPaintTickProcessed() const
-{
-    return paintTickProcessed;
-}
 void GamePlayWindow::paintEvent(QPaintEvent *event)
 {
-    paintTickProcessed = true;
     painter->paint(*this, width(), height());
     QWidget::paintEvent(event);
 }
@@ -93,8 +88,8 @@ void GamePlayWindow::selectSlot(int id)
 
 void GamePlayWindow::notifyInventoryUpdated(unsigned int slot)
 {
-    const auto* pItemInstance = inventoryUpdates[slot];
-    if(pItemInstance->empty())
+    const auto& pItemInstance = inventoryUpdates[slot];
+    if(pItemInstance.empty())
     {
         buttons[slot]->setIcon(QIcon());
         labels[slot]->setText("");
@@ -103,8 +98,8 @@ void GamePlayWindow::notifyInventoryUpdated(unsigned int slot)
     else
     {
         std::stringstream stream;
-        stream << pItemInstance->count;
-        QPixmap pixmap(pItemInstance->item->getTexture().c_str());
+        stream << pItemInstance.count;
+        QPixmap pixmap(pItemInstance.item->getTexture().c_str());
         pixmap = pixmap.scaled(64, 64);
         QIcon ButtonIcon(pixmap);
         buttons[slot]->setIcon(ButtonIcon);
@@ -123,7 +118,7 @@ void GamePlayWindow::checkInventoryUpdates()
         inventoryUpdates.resize(inv.size());
         for(unsigned int i = 0; i < 8; ++i)
         {
-            inventoryUpdates[i] = &inv.getItemInstances()[i];
+            inventoryUpdates[i] = inv.getItemInstances()[i];
             notifyInventoryUpdated(i);
         }
         return;
@@ -131,9 +126,9 @@ void GamePlayWindow::checkInventoryUpdates()
 
     for(int i = 0; i < inv.size(); ++i)
     {
-        if(&inv.getItemInstances()[i] != inventoryUpdates[i])
+        if(inv.getItemInstances()[i] != inventoryUpdates[i])
         {
-            inventoryUpdates[i] = &inv.getItemInstances()[i];
+            inventoryUpdates[i] = inv.getItemInstances()[i];
             notifyInventoryUpdated(i);
         }
     }

@@ -23,11 +23,6 @@ void TileObject::playerInteract(Player &, ItemInstance *)
 
 }
 
-bool TileObject::walkable(int, int) const
-{
-    return true;
-}
-
 void TileObject::afterNight()
 {
 

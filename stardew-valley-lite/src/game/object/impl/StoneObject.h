@@ -11,8 +11,6 @@ class StoneObject : public TileObject
 {
 public:
     StoneObject(int, int);
-
-    bool walkable(int, int) const override;
     void playerInteract(Player &, ItemInstance *) override;
 };
 

@@ -85,3 +85,8 @@ ItemInstance::ItemInstance(const std::string &id, unsigned int c, int a)
     count = c;
     aux = a;
 }
+
+bool ItemInstance::operator!=(const ItemInstance & rhs) const
+{
+    return !allMatches(rhs);
+}

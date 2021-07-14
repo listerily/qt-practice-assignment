@@ -60,13 +60,28 @@ bool Player::isWalkable(double x, double y) const
 
 bool Player::isTileWalkable(int x, int y) const
 {
-    const auto& tileObjects = scene->getTileSheet().getTileObjectsAt(x, y);
-    for(const auto& tileObject : tileObjects)
+    const auto& tiles = scene->getTileSheet().getTilesAt(x, y);
+    if(tiles.empty())
+        return true;
+    bool able = true;
+    for(const auto& tile : tiles)
     {
-        if(!tileObject->walkable(x, y))
-            return false;
+        switch(tile.tile->walkable)
+        {
+            case Tile::WalkableType::FORCED_DISABLE:
+                return false;
+            case Tile::WalkableType::DISABLE:
+                able = false;
+                break;
+            case Tile::WalkableType::ABLE:
+                break;
+            case Tile::WalkableType::FORCED_ABLE:
+                able = true;
+                break;
+        }
+
     }
-    return true;
+    return able;
 }
 
 void Player::turn(double x, double y)
@@ -144,9 +159,18 @@ double Player::getCollisionBoxRadius()
 void Player::interact()
 {
     ItemInstance* selectedItem = getInventory().getSelectedItemInstance();
-    if(selectedItem)
+    if(selectedItem && selectedItem->item->isSelfAbleToInteract())
         selectedItem->item->playerInteract(*this, *selectedItem);
-    const auto& facingPosition = getFacingPosition();
-    auto& tileObjects = scene->getTileSheet().getTileObjectsAt(facingPosition.first, facingPosition.second);
-
+    else
+    {
+        const auto& facingPosition = getFacingPosition();
+        auto& tileObjects = scene->getTileSheet().getTileObjectsAt(facingPosition.first, facingPosition.second);
+        if(tileObjects.empty())
+            return;
+        auto* tileObject = *(--tileObjects.end());
+        if(tileObject->ableToInteract())
+            tileObject->playerInteract(*this, selectedItem);
+        if(selectedItem && !selectedItem->empty() && selectedItem->item->isOnObjectAbleToInteract())
+            selectedItem->item->playerInteract(*this, *selectedItem, *tileObject);
+    }
 }

@@ -20,17 +20,15 @@ private:
     GameWorld& currentWorld;
     GameClient& gameClient;
     InputHandler& inputHandler;
-    bool paintTickProcessed;
     GamePainter* painter;
     int currentSlotID;
-    std::vector<const ItemInstance*> inventoryUpdates;
+    std::vector<ItemInstance> inventoryUpdates;
 public:
     explicit GamePlayWindow(GameClient&, QWidget *parent = nullptr);
     ~GamePlayWindow() override;
 
     void paintEvent(QPaintEvent *event) override;
     void notifyPaintTick();
-    bool isPaintTickProcessed() const;
     void keyPressEvent(QKeyEvent *event) override;
     void keyReleaseEvent(QKeyEvent *event) override;
     void wheelEvent(QWheelEvent *event) override;

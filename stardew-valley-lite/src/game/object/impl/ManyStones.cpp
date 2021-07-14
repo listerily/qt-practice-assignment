@@ -7,6 +7,6 @@
 ManyStones::ManyStones(int x, int y) : TileObject("many_stones", x, y)
 {
     tiles = {
-            Tile{{":/svl/textures/tiles/0_7_11.png"}, false, 0, 0, Tile::DisplayPriority::SURFACE_TOP}
+            Tile{{":/svl/textures/tiles/0_7_11.png"}, Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::SURFACE_TOP}
     };
 }

@@ -11,8 +11,6 @@ class LilyPad : public TileObject
 {
 public:
     LilyPad(int, int, int);
-
-    bool walkable(int, int) const override;
 };
 
 

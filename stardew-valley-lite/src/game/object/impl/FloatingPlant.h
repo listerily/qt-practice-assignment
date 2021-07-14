@@ -11,8 +11,6 @@ class FloatingPlant : public TileObject
 {
 public:
     FloatingPlant(int, int, int);
-
-    bool walkable(int, int) const override;
 };
 
 

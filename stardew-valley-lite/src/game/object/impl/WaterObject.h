@@ -11,8 +11,6 @@ class WaterObject : public TileObject
 {
 public:
     WaterObject(int, int);
-
-    bool walkable(int, int) const override;
 };
 
 

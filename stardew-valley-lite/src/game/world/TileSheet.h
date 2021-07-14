@@ -24,20 +24,22 @@ private:
         }
     };
 
-    std::unordered_map<std::pair<int, int>, std::set<const TileObject*>, pair_hash> lookup;
+    std::unordered_map<std::pair<int, int>, std::set<TileObject*>, pair_hash> lookupAt;
+    std::unordered_map<std::pair<int, int>, std::set<TileObject*>, pair_hash> lookupCovered;
     std::unordered_map<std::pair<int, int>, std::set<TileRef>, pair_hash> lookupTiles;
 public:
     TileSheet() = default;
 
-    void onTileObjectAdded(const TileObject&);
-    void onTileObjectChanged(const TileObject&);
-    void onTileObjectRemoved(const TileObject&);
+    void addTileObject(TileObject&);
+    void changeTileObject(TileObject&);
+    void removeTileObject(TileObject&);
 
-    const std::set<const TileObject*>& getTileObjectsAt(int, int) const;
+    const std::set<TileObject*>& getTileObjectsCoveredAt(int, int) const;
     const std::set<TileRef> & getTilesAt(int, int) const;
+    const std::set<TileObject*> & getTileObjectsAt(int, int) const;
 private:
-    void removeTileObjectInLookup(const TileObject&);
-    void addTileObjectInLookup(const TileObject&);
+    void removeTileObjectInLookup(TileObject&);
+    void addTileObjectInLookup(TileObject&);
 };
 
 #endif //STARDEW_VALLEY_LITE_TILESHEET_H

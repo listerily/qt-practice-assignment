@@ -16,7 +16,7 @@
 
 GamePainter::GamePainter(const GameWorld &world): gameWorld(world)
 {
-    displayBlocksNum = 140;
+    displayBlocksNum = 500;
 }
 
 void GamePainter::paint(QWidget& widget, int width, int height)
@@ -140,6 +140,6 @@ void GamePainter::zoom(int delta)
     displayBlocksNum += delta;
     if(displayBlocksNum < 80)
         displayBlocksNum = 80;
-    if(displayBlocksNum > 300)
-        displayBlocksNum = 300;
+    if(displayBlocksNum > 600)
+        displayBlocksNum = 600;
 }

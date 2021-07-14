@@ -8,6 +8,7 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QJsonDocument>
+#include <QFile>
 
 ConfigLoader::ConfigLoader(QApplication & app) : application(app)
 {
@@ -21,14 +22,18 @@ void ConfigLoader::initialize()
 
 void ConfigLoader::initializeSceneMaps()
 {
-    QResource resource(":/svl/text/config/scenes/scenes_manifest.json");
-    QJsonDocument document(QJsonDocument::fromJson(resource.uncompressedData().data()));
-    auto worldManifestList = document["scenes"].toArray();
+    QFile resource(":/svl/text/config/scenes/scenes_manifest.json");
+    if(!resource.open(QFile::ReadOnly))
+        return;
+    QJsonDocument document(QJsonDocument::fromJson(resource.readAll()));
+    auto worldManifestList = document.object()["scenes"].toArray();
     for(auto const& manifestItem : worldManifestList)
     {
-        QResource manifestItemResFile(":/svl/text/config/scenes/" + manifestItem.toString());
-        QJsonDocument document_item(QJsonDocument::fromJson(manifestItemResFile.uncompressedData().data()));
-        const auto& manifestObject = document_item;
+        QFile manifestItemResFile(":/svl/text/config/scenes/" + manifestItem.toString());
+        if(!manifestItemResFile.open(QFile::ReadOnly))
+            continue;
+        QJsonDocument document_item(QJsonDocument::fromJson(manifestItemResFile.readAll()));
+        const auto& manifestObject = document_item.object();
         SceneMapConfig newConfig;
         newConfig.id = manifestObject["id"].toString().toStdString();
         auto objects = manifestObject["objects"].toArray();

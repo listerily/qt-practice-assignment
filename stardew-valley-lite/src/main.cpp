@@ -14,10 +14,13 @@ int main(int argc, char *argv[])
     GameClient gameClient(a);
     GamePlayWindow mainWindow(gameClient);
     std::thread([&gameClient, &mainWindow, &gameShouldExit](){
+        using std::chrono::operator""ms;
         while(!gameShouldExit) {
+            const auto currentTime = std::chrono::system_clock::now();
+            const auto tillTime = currentTime + 20ms;
             gameClient.tick();
             mainWindow.notifyPaintTick();
-            std::this_thread::sleep_for(std::chrono::milliseconds(20));
+            std::this_thread::sleep_until(tillTime);
         }
     }).detach();
     //Startup UI

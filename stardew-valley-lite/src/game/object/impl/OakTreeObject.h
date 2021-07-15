@@ -12,7 +12,7 @@ class OakTreeObject : public TileObject
 public:
     OakTreeObject(int x, int y);
 
-    void playerInteract(Player &player, ItemInstance *item) override;
+    void playerInteract(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x) override;
 };
 
 

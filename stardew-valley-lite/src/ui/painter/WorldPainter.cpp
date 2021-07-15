@@ -2,28 +2,32 @@
 // Created by listerily on 2021/7/6.
 //
 
-#include "GamePainter.h"
+#include "WorldPainter.h"
 
 #include <QPainter>
 #include <QPen>
 #include <QWidget>
 #include <cmath>
+#include <QPainterPath>
 
 #include "../../game/world/GameWorld.h"
 #include "../../game/world/Scene.h"
 #include "../../game/world/TileSheet.h"
 #include "../../game/entity/Player.h"
+#include "src/game/world/WorldStatus.h"
+#include "../../game/GameClient.h"
 
-GamePainter::GamePainter(const GameWorld &world): gameWorld(world)
+WorldPainter::WorldPainter()
 {
-    displayBlocksNum = 140;
+    displayBlocksNum = 120;
 }
 
-void GamePainter::paint(QWidget& widget, int width, int height)
+void WorldPainter::paint(const GameClient& client, const GameWorld & world, QWidget& widget, int width, int height)
 {
     ++paintFrameCount;
-    const auto& currentDimension = gameWorld.getCurrentGameScene();
-    const auto& player = gameWorld.getPlayer();
+
+    const auto& currentDimension = world.getCurrentGameScene();
+    const auto& player = world.getPlayer();
     const auto& tileSheet = currentDimension.getTileSheet();
     const auto pixelsCount = width * height;
     const auto displayBlockArea = (double)pixelsCount / displayBlocksNum;
@@ -134,27 +138,22 @@ void GamePainter::paint(QWidget& widget, int width, int height)
         }
     }
 
-    //TODO: remove it
-    //paint axis
-//    for (int currentDrawX = static_cast<int>(viewPortStartPointX), x = worldStartPointX;
-//         currentDrawX <= width;
-//         currentDrawX += displayBlockWidth, ++x)
-//    {
-//        for(int currentDrawY = static_cast<int>(viewPortStartPointY), y = worldStartPointY;
-//            currentDrawY <= height;
-//            currentDrawY += displayBlockWidth, ++y)
-//        {
-//            const QRect drawArea(currentDrawX, currentDrawY, displayBlockWidth, displayBlockWidth);
-//            painter.drawRect(drawArea);
-//        }
-//    }
+    if(world.getWorldStatus().get() == WorldStatus::SWITCHING_SCENE ||
+    world.getWorldStatus().get() == WorldStatus::SLEEPING)
+    {
+        double progress = world.getWorldStatus().getProgress();
+        if(progress <= 0.50)
+            painter.fillRect(QRect(0, 0, width, height), QColor(0, 0, 0, 255));
+        else
+            painter.fillRect(QRect(0, 0, width, height), QColor(0, 0, 0, int(255 - 255 * (progress - 0.5) * 2)));
+    }
 }
 
-void GamePainter::zoom(int delta)
+void WorldPainter::zoom(int delta)
 {
     displayBlocksNum += delta;
     if(displayBlocksNum < 80)
         displayBlocksNum = 80;
-    if(displayBlocksNum > 600)
-        displayBlocksNum = 600;
+    if(displayBlocksNum > 240)
+        displayBlocksNum = 240;
 }

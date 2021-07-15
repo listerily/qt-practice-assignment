@@ -16,11 +16,12 @@ WeedsObject::WeedsObject(int x, int y, int type) : TileObject("weeds", x, y)
     };
 }
 
-void WeedsObject::playerInteract(Player & player, ItemInstance *item)
+void WeedsObject::playerInteract(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x)
 {
-    TileObject::playerInteract(player, item);
+    TileObject::playerInteract(world, item, player, scene, 0, 0);
 
     player.getInventory().addItemInstance(ItemInstance("weeds", 1));
+    scene.removeObject(this);
 }
 
 bool WeedsObject::ableToInteract() const

@@ -5,6 +5,8 @@
 #ifndef STARDEW_VALLEY_LITE_WEEDSOBJECT_H
 #define STARDEW_VALLEY_LITE_WEEDSOBJECT_H
 
+#include <src/game/world/Scene.h>
+#include <src/game/world/GameWorld.h>
 #include "../TileObject.h"
 
 class WeedsObject : public TileObject
@@ -12,7 +14,7 @@ class WeedsObject : public TileObject
 public:
     WeedsObject(int, int, int);
 
-    void playerInteract(Player &, ItemInstance *) override;
+    void playerInteract(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x) override;
 
     bool ableToInteract() const override;
 };

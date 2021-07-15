@@ -7,7 +7,7 @@ namespace Ui {
 class GamePlayWindow;
 }
 class GameWorld;
-class GamePainter;
+class WorldPainter;
 class QPushButton;
 class ItemInstance;
 class GameClient;
@@ -20,7 +20,7 @@ private:
     GameWorld& currentWorld;
     GameClient& gameClient;
     InputHandler& inputHandler;
-    GamePainter* painter;
+    WorldPainter* painter;
     int currentSlotID;
     std::vector<ItemInstance> inventoryUpdates;
 public:
@@ -32,6 +32,7 @@ public:
     void keyPressEvent(QKeyEvent *event) override;
     void keyReleaseEvent(QKeyEvent *event) override;
     void wheelEvent(QWheelEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
 private:
     void notifyInventoryUpdated(unsigned int slot);
     void checkInventoryUpdates();

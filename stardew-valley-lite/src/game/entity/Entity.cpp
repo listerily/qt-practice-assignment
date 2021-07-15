@@ -58,3 +58,8 @@ std::pair<double, double> Entity::getPosition() const
 {
     return {x, y};
 }
+
+void Entity::changeScene(Scene & s)
+{
+    scene = &s;
+}

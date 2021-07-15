@@ -9,8 +9,16 @@
 
 class FlowerPot : public TileObject
 {
+private:
+    int type;
 public:
     FlowerPot(int, int, int);
+
+    bool ableToInteract() const override;
+    void playerInteract(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x) override;
+
+private:
+    void regenerateTiles();
 };
 
 

@@ -11,7 +11,7 @@ BranchObject::BranchObject(int x, int y, int type) : TileObject("branch", x, y)
     };
 }
 
-void BranchObject::playerInteract(Player & player, ItemInstance *item)
+void BranchObject::playerInteract(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x)
 {
-    TileObject::playerInteract(player, item);
+    TileObject::playerInteract(world, item, player, scene, 0, 0);
 }

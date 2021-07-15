@@ -6,7 +6,7 @@
 
 bool HouseObject::ableToInteract() const
 {
-    return TileObject::ableToInteract();
+    return true;
 }
 
 HouseObject::HouseObject(int x, int y) : TileObject("house", x, y)
@@ -74,9 +74,9 @@ HouseObject::HouseObject(int x, int y) : TileObject("house", x, y)
     };
 }
 
-void HouseObject::playerInteract(Player & p, ItemInstance * instance)
+void HouseObject::playerInteract(GameWorld &world, ItemInstance *instance, Player &p, Scene &scene, int y, int x)
 {
-    TileObject::playerInteract(p, instance);
+    TileObject::playerInteract(world, instance, p, scene, 0, 0);
 
-
+    world.changeScene("home");
 }

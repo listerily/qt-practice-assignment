@@ -32,14 +32,14 @@ const ItemInstance *Inventory::getSelectedItemInstance() const
 
 ItemInstance *Inventory::get(unsigned int slot)
 {
-    if(!itemInstances[slot].empty())
+    if(itemInstances[slot].empty())
         return nullptr;
     return &itemInstances[slot];
 }
 
 const ItemInstance *Inventory::get(unsigned int slot) const
 {
-    if(!itemInstances[slot].empty())
+    if(itemInstances[slot].empty())
         return nullptr;
     return &itemInstances[slot];
 }

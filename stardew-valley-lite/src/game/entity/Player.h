@@ -5,10 +5,11 @@
 #ifndef STARDEW_VALLEY_LITE_PLAYER_H
 #define STARDEW_VALLEY_LITE_PLAYER_H
 
-#include "./Entity.h"
+#include "Entity.h"
 
 #include <list>
 
+class PlayerStatus;
 class Inventory;
 class Player : public Entity
 {
@@ -20,6 +21,7 @@ private:
     int movingVariant;
     Facing facing;
     Inventory* inventory;
+    PlayerStatus* playerStatus;
 public:
     Player(GameWorld&, Scene&);
     ~Player() override;
@@ -32,7 +34,9 @@ public:
     const Inventory& getInventory() const;
     std::pair<int, int> getFacingPosition() const;
     std::list<std::pair<int, int>> getFacingPositions() const;
-    void interact();
+    void interact(bool);
+    PlayerStatus& getPlayerStatus();
+    const PlayerStatus& getPlayerStatus() const;
 private:
     bool isWalkable(double, double) const;
     bool isTileWalkable(int, int) const;

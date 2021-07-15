@@ -4,14 +4,14 @@
 
 #include "StoneObject.h"
 
-StoneObject::StoneObject(int x, int y, int) : TileObject("stone", x, y)
+StoneObject::StoneObject(int x, int y, int type) : TileObject("stone", x, y)
 {
     tiles = {
-            Tile{{":/svl/textures/items/4_7_14.png"}, Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::ON_GROUND}
+            Tile{{type == 0 ? ":/svl/textures/items/4_7_14.png" : ":/svl/textures/items/4_18_18.png"}, Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::ON_GROUND}
     };
 }
 
-void StoneObject::playerInteract(Player & player, ItemInstance *item)
+void StoneObject::playerInteract(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x)
 {
-    TileObject::playerInteract(player, item);
+    TileObject::playerInteract(world, item, player, scene, 0, 0);
 }

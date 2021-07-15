@@ -5,6 +5,8 @@
 #ifndef STARDEW_VALLEY_LITE_BRANCHOBJECT_H
 #define STARDEW_VALLEY_LITE_BRANCHOBJECT_H
 
+#include <src/game/world/Scene.h>
+#include <src/game/world/GameWorld.h>
 #include "../TileObject.h"
 
 class BranchObject : public TileObject
@@ -12,7 +14,7 @@ class BranchObject : public TileObject
 public:
     BranchObject(int, int, int);
 
-    void playerInteract(Player &, ItemInstance *) override;
+    void playerInteract(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x) override;
 };
 
 

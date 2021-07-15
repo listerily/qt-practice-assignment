@@ -11,17 +11,19 @@
 #include "../item/Item.h"
 #include "../object/TileObject.h"
 #include "../inventory/Inventory.h"
+#include "PlayerStatus.h"
 
 std::string Player::getID() const
 {
     return "player";
 }
 
-Player::Player(GameWorld & world, Scene & dimension) : Entity(world, dimension)
+Player::Player(GameWorld & world, Scene & scene) : Entity(world, scene)
 {
     facing = Facing::DOWN;
     movingVariant = 0;
     inventory = new Inventory(8);
+    playerStatus = new PlayerStatus;
 
     addInitialItemsToInventory();
 }
@@ -109,6 +111,7 @@ const Inventory &Player::getInventory() const
 Player::~Player()
 {
     delete inventory;
+    delete playerStatus;
 }
 
 void Player::addInitialItemsToInventory()
@@ -156,21 +159,35 @@ double Player::getCollisionBoxRadius()
     return 0.3;
 }
 
-void Player::interact()
+void Player::interact(bool self)
 {
     ItemInstance* selectedItem = getInventory().getSelectedItemInstance();
-    if(selectedItem && selectedItem->item->isSelfAbleToInteract())
+    if(self && selectedItem)
         selectedItem->item->playerInteract(*this, *selectedItem);
     else
     {
         const auto& facingPosition = getFacingPosition();
         auto& tileObjects = scene->getTileSheet().getTileObjectsAt(facingPosition.first, facingPosition.second);
-        if(tileObjects.empty())
-            return;
-        auto* tileObject = *(--tileObjects.end());
-        if(tileObject->ableToInteract())
-            tileObject->playerInteract(*this, selectedItem);
-        if(selectedItem && !selectedItem->empty() && selectedItem->item->isOnObjectAbleToInteract())
-            selectedItem->item->playerInteract(*this, *selectedItem, *tileObject);
+        for(auto tileObject = tileObjects.rbegin(); tileObject != tileObjects.rend(); ++tileObject)
+        {
+            if((*tileObject)->ableToInteract())
+            {
+                (*tileObject)->playerInteract(world, selectedItem, *this, *scene, facingPosition.first,
+                                              facingPosition.second);
+                if(selectedItem && !selectedItem->empty() && selectedItem->item->isOnObjectAbleToInteract())
+                    selectedItem->item->playerInteract(*this, *selectedItem, **tileObject);
+                break;
+            }
+        }
     }
+}
+
+PlayerStatus &Player::getPlayerStatus()
+{
+    return *playerStatus;
+}
+
+const PlayerStatus &Player::getPlayerStatus() const
+{
+    return *playerStatus;
 }

@@ -17,3 +17,15 @@ BedObject::BedObject(int x, int y) : TileObject("bed", x, y)
             {{":/svl/textures/house/6_9_10.png"}, Tile::WalkableType::DISABLE, 1, +2, Tile::DisplayPriority::ON_GROUND},
     };
 }
+
+bool BedObject::ableToInteract() const
+{
+    return true;
+}
+
+void BedObject::playerInteract(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x)
+{
+    TileObject::playerInteract(world, instance, player, scene, y, x);
+
+    world.triggerEvent(WorldEvent::SLEEP);
+}

@@ -2,6 +2,8 @@
 // Created by listerily on 2021/7/12.
 //
 
+#include <src/game/world/Scene.h>
+#include <src/game/world/GameWorld.h>
 #include "SmallShrub.h"
 
 SmallShrub::SmallShrub(int x, int y) : TileObject("small_shrub", x, y)
@@ -14,7 +16,7 @@ SmallShrub::SmallShrub(int x, int y) : TileObject("small_shrub", x, y)
             };
 }
 
-void SmallShrub::playerInteract(Player &player, ItemInstance *item)
+void SmallShrub::playerInteract(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x)
 {
-    TileObject::playerInteract(player, item);
+    TileObject::playerInteract(world, item, player, scene, 0, 0);
 }

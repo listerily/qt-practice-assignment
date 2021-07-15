@@ -42,7 +42,7 @@ const std::string& ItemInstance::getDisplayTexture() const
 
 bool ItemInstance::empty() const
 {
-    return item == nullptr;
+    return item == nullptr || count <= 0;
 }
 
 void ItemInstance::clear()

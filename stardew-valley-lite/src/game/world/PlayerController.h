@@ -5,8 +5,11 @@
 #ifndef STARDEW_VALLEY_LITE_PLAYERCONTROLLER_H
 #define STARDEW_VALLEY_LITE_PLAYERCONTROLLER_H
 
+#include "../entity/Player.h"
+
 class GameWorld;
 class Inventory;
+class Player;
 class PlayerController
 {
 private:
@@ -22,9 +25,11 @@ public:
     void selectInventorySlot(int);
     Inventory& getInventory();
     const Inventory& getInventory() const;
-    void interact();
+    void interact(bool);
+    void turn(Player::Facing);
 private:
     void walk(double, double);
+    bool isInSilent() const;
 };
 
 

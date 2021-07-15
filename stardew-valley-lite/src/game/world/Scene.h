@@ -13,6 +13,8 @@
 
 class TileSheet;
 class SceneMapConfig;
+class TileObject;
+class GameWorld;
 class Scene
 {
 private:
@@ -33,6 +35,7 @@ public:
     const TileSheet& getTileSheet() const;
     TileSheet& getTileSheet();
     std::pair<double, double> getSpawn() const;
+    void newDay(GameWorld&);
 private:
     void initialize(const SceneMapConfig&);
 };

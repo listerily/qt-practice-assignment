@@ -9,12 +9,16 @@
 #include <list>
 #include <string>
 #include <src/game/inventory/ItemInstance.h>
+#include <src/game/world/Scene.h>
+#include <src/game/world/GameWorld.h>
 
 #include "Tile.h"
 
 class Item;
 class Player;
 class Tile;
+class Scene;
+class GameWorld;
 class TileObject
 {
 protected:
@@ -26,10 +30,10 @@ public:
     virtual ~TileObject();
 
     virtual std::list<Tile> const& getAllTiles() const;
-    virtual void playerInteract(Player &, ItemInstance *);
+    virtual void playerInteract(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x);
     virtual bool ableToInteract() const;
-    virtual void afterNight();
-    virtual void tick();
+    virtual void afterNight(GameWorld &world, Scene &scene);
+    virtual void tick(Scene &scene);
     virtual std::pair<int, int> getPosition() const;
 };
 

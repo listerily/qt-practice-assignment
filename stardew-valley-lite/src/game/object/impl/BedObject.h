@@ -11,6 +11,9 @@ class BedObject : public TileObject
 {
 public:
     BedObject(int, int);
+
+    bool ableToInteract() const override;
+    void playerInteract(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x) override;
 };
 
 

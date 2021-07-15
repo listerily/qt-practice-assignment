@@ -14,6 +14,8 @@
 
 #include "../entity/Entity.h"
 #include "PlayerController.h"
+#include "WorldEvent.h"
+#include "WorldStatus.h"
 
 class GameClient;
 class SceneMapConfig;
@@ -29,11 +31,12 @@ private:
     std::string currentScene;
     std::size_t player;
     PlayerController playerController;
+    WorldStatus* worldStatus;
 public:
     explicit GameWorld(GameClient&);
+    ~GameWorld();
 
     void initialize();
-
     Scene& getCurrentGameScene();
     const Scene& getCurrentGameScene() const;
     Player& getPlayer();
@@ -44,9 +47,14 @@ public:
     const Scene* getSceneByID(const std::string& id) const;
     void tick();
     PlayerController& getPlayerController();
+    void changeScene(std::string const& id);
+    void triggerEvent(WorldEvent);
+    WorldStatus& getWorldStatus();
+    const WorldStatus& getWorldStatus() const;
 private:
     void initializePlayer();
     void registerNewScene(SceneMapConfig const&);
+    void newDay();
 };
 
 

@@ -3,7 +3,7 @@
 
 #include <QKeyEvent>
 
-#include "painter/GamePainter.h"
+#include "painter/WorldPainter.h"
 #include "../game/world/GameWorld.h"
 #include "../game/inventory/Inventory.h"
 #include "../game/item/Item.h"
@@ -23,7 +23,7 @@ GamePlayWindow::GamePlayWindow(GameClient& client, QWidget *parent) :
     ui->setupUi(this);
     setWindowTitle("Stardew Valley Lite");
 
-    painter = new GamePainter(currentWorld);
+    painter = new WorldPainter;
     currentSlotID = 0;
 
     buttons = {ui->button_0, ui->button_1, ui->button_2, ui->button_3, ui->button_4, ui->button_5, ui->button_6, ui->button_7};
@@ -55,7 +55,7 @@ void GamePlayWindow::notifyPaintTick()
 
 void GamePlayWindow::paintEvent(QPaintEvent *event)
 {
-    painter->paint(*this, width(), height());
+    painter->paint(gameClient, *gameClient.getCurrentWorld(), *this, width(), height());
     QWidget::paintEvent(event);
 }
 
@@ -82,7 +82,7 @@ void GamePlayWindow::selectSlot(int id)
 {
     buttons[currentSlotID]->setStyleSheet("QPushButton{border-image: url(:svl/textures/ui/not_selected_slot.png);}");
     currentSlotID = id;
-    currentWorld.getPlayerController().selectInventorySlot(0);
+    currentWorld.getPlayerController().selectInventorySlot(id);
     buttons[id]->setStyleSheet("QPushButton{border-image: url(:svl/textures/ui/selected_slot.png);}");
 }
 
@@ -138,5 +138,36 @@ void GamePlayWindow::wheelEvent(QWheelEvent *event)
 {
     QWidget::wheelEvent(event);
     painter->zoom(-event->angleDelta().y() / 60);
+}
+
+void GamePlayWindow::mousePressEvent(QMouseEvent *event)
+{
+    QWidget::mousePressEvent(event);
+    auto& playerController = currentWorld.getPlayerController();
+    if(playerController.getInventory().getSelectedItemInstance())
+    {
+        if(event->button() == Qt::LeftButton)
+        {
+            double x = event->x();
+            double y = event->y();
+            double width = this->width();
+            double height = this->height() + 15.0;
+            double k = (double)height / width;
+            if(y < k * x && y < height - k * x)
+                playerController.turn(Player::Facing::UP);
+            else if(y < k * x && y > height - k * x)
+                playerController.turn(Player::Facing::RIGHT);
+            else if(y > k * x && y > height - k * x)
+                playerController.turn(Player::Facing::DOWN);
+            else if(y > k * x && y < height - k * x)
+                playerController.turn(Player::Facing::LEFT);
+
+            currentWorld.getPlayerController().interact(false);
+        }
+        else if(event->button() == Qt::RightButton)
+        {
+            currentWorld.getPlayerController().interact(true);
+        }
+    }
 }
 

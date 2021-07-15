@@ -10,6 +10,7 @@
 #include "config/ConfigLoader.h"
 #include "item/ItemManager.h"
 #include "InputHandler.h"
+#include "src/game/world/WorldStatus.h"
 
 GameClient::GameClient(QApplication& app): app(app)
 {
@@ -80,17 +81,5 @@ void GameClient::processKeyboardInput()
         const bool left = inputHandler->isKeyPressed(Qt::Key_A) || inputHandler->isKeyPressed(Qt::Key_Left);
         const bool right = inputHandler->isKeyPressed(Qt::Key_D) || inputHandler->isKeyPressed(Qt::Key_Right);
         currentWorld->getPlayerController().walk(up, down, left, right);
-
-        //if(interactCoolDown <= 0 && (inputHandler->isKeyPressed(Qt::Key_Space) || inputHandler->isKeyPressed(Qt::Key_Enter)))
-        if(inputHandler->isKeyPressed(Qt::Key_Space) || inputHandler->isKeyPressed(Qt::Key_Enter))
-        {
-            currentWorld->getPlayerController().interact();
-            interactCoolDown = 20;
-        }
-//        else if(interactCoolDown > 0)
-//            --interactCoolDown;
-//
-//        if(inputHandler->isKeyPressed(Qt::Key_Exit))
-//            gameShouldExit = true;
     }
 }

@@ -10,3 +10,15 @@ HomeStairsObject::HomeStairsObject(int x, int y) : TileObject("home_stairs", x, 
             {{":/svl/textures/house/6_1_15.png"}, Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::ON_GROUND}
     };
 }
+
+bool HomeStairsObject::ableToInteract() const
+{
+    return true;
+}
+
+void HomeStairsObject::playerInteract(GameWorld &world, ItemInstance *instance, Player &p, Scene &scene, int y, int x)
+{
+    TileObject::playerInteract(world, instance, p, scene, 0, 0);
+
+    world.changeScene("farm");
+}

@@ -31,6 +31,7 @@ public:
     virtual void hurt(int);
     virtual void onDeath();
     virtual std::pair<double, double> getPosition() const;
+    virtual void changeScene(Scene&);
 };
 
 

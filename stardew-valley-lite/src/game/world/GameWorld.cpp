@@ -9,11 +9,13 @@
 #include "../entity/Player.h"
 #include "../GameClient.h"
 #include "../config/ConfigLoader.h"
-
+#include "WorldStatus.h"
 
 GameWorld::GameWorld(GameClient & client) : client(client), playerController(*this)
 {
     player = 0;
+    worldStatus = new WorldStatus;
+    worldStatus->set(WorldStatus::PLAYING);
 }
 
 void GameWorld::registerNewScene(const SceneMapConfig & config)
@@ -86,8 +88,9 @@ const Scene *GameWorld::getSceneByID(const std::string& id) const
 
 void GameWorld::tick()
 {
-    std::for_each(scenes.begin(), scenes.end(), [](const std::unordered_map<std::string,std::unique_ptr<Scene>>::value_type& dimension){
-        dimension.second->tick();
+    worldStatus->tick();
+    std::for_each(scenes.begin(), scenes.end(), [](const std::unordered_map<std::string,std::unique_ptr<Scene>>::value_type& scene){
+        scene.second->tick();
     });
     std::for_each(entities.begin(), entities.end(), [](const std::unique_ptr<Entity>& entity){
         entity->tick();
@@ -97,4 +100,50 @@ void GameWorld::tick()
 PlayerController &GameWorld::getPlayerController()
 {
     return playerController;
+}
+
+void GameWorld::changeScene(const std::string &id)
+{
+    currentScene = id;
+    getPlayer().changeScene(getCurrentGameScene());
+    const auto& spawn = getCurrentGameScene().getSpawn();
+    getPlayer().moveTo(spawn.first, spawn.second);
+
+    triggerEvent(WorldEvent::SWITCH_SCENE);
+}
+
+void GameWorld::triggerEvent(WorldEvent event)
+{
+    switch (event)
+    {
+        case WorldEvent::SLEEP:
+            worldStatus->set(WorldStatus::SLEEPING);
+            break;
+        case WorldEvent::SWITCH_SCENE:
+            worldStatus->set(WorldStatus::SWITCHING_SCENE);
+            newDay();
+            break;
+    }
+}
+
+WorldStatus &GameWorld::getWorldStatus()
+{
+    return *worldStatus;
+}
+
+const WorldStatus &GameWorld::getWorldStatus() const
+{
+    return *worldStatus;
+}
+
+GameWorld::~GameWorld()
+{
+    delete worldStatus;
+}
+
+void GameWorld::newDay()
+{
+    std::for_each(scenes.begin(), scenes.end(), [this](const std::unordered_map<std::string,std::unique_ptr<Scene>>::value_type& scene){
+        scene.second->newDay(*this);
+    });
 }

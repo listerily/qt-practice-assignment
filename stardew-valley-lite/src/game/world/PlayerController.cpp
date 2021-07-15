@@ -6,6 +6,8 @@
 #include "GameWorld.h"
 #include "../entity/Player.h"
 #include "../inventory/Inventory.h"
+#include "WorldStatus.h"
+#include "../entity/PlayerStatus.h"
 
 PlayerController::PlayerController(GameWorld & world) : world(world)
 {
@@ -80,6 +82,8 @@ void PlayerController::walk(double dx, double dy)
 
 void PlayerController::walk(bool up, bool down, bool left, bool right)
 {
+    if(isInSilent())
+        return;
     const double speedNormal = 0.1;
     const double speedDiagonal = 0.07;
 
@@ -116,7 +120,23 @@ void PlayerController::walk(bool up, bool down, bool left, bool right)
         walkRight(speedNormal);
 }
 
-void PlayerController::interact()
+void PlayerController::interact(bool self)
 {
-    world.getPlayer().interact();
+    if(isInSilent())
+        return;
+    world.getPlayer().interact(self);
+}
+
+void PlayerController::turn(Player::Facing facing)
+{
+    if(isInSilent())
+        return;
+    world.getPlayer().facing = facing;
+}
+
+bool PlayerController::isInSilent() const
+{
+    return world.getWorldStatus().get() == WorldStatus::SLEEPING ||
+            world.getWorldStatus().get() == WorldStatus::SWITCHING_SCENE ||
+            world.getPlayer().getPlayerStatus().isInStatus();
 }

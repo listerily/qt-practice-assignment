@@ -2,11 +2,13 @@
 // Created by listerily on 2021/7/12.
 //
 
+#include <src/game/world/Scene.h>
+#include <src/game/world/GameWorld.h>
 #include "OakTreeObject.h"
 
-void OakTreeObject::playerInteract(Player &player, ItemInstance *item)
+void OakTreeObject::playerInteract(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x)
 {
-    TileObject::playerInteract(player, item);
+    TileObject::playerInteract(world, item, player, scene, 0, 0);
 }
 
 OakTreeObject::OakTreeObject(int x, int y) : TileObject("oak_tree", x, y)

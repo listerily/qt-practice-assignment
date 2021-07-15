@@ -22,8 +22,8 @@ const std::list<std::unique_ptr<TileObject>> &Scene::getObjects() const
 
 void Scene::tick()
 {
-    std::for_each(objects.begin(), objects.end(), [](const std::unique_ptr<TileObject>& object){
-        object->tick();
+    std::for_each(objects.begin(), objects.end(), [this](const std::unique_ptr<TileObject>& object){
+        object->tick(*this);
     });
 }
 
@@ -81,4 +81,11 @@ TileSheet &Scene::getTileSheet()
 std::pair<double, double> Scene::getSpawn() const
 {
     return {spawnX, spawnY};
+}
+
+void Scene::newDay(GameWorld& world)
+{
+    std::for_each(objects.begin(), objects.end(), [&](std::unique_ptr<TileObject>& tileObject){
+        tileObject->afterNight(world, *this);
+    });
 }

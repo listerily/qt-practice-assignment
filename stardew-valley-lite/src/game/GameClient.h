@@ -10,6 +10,7 @@ class GameWorld;
 class ConfigLoader;
 class ItemManager;
 class InputHandler;
+class WorldStatus;
 class GameClient
 {
 private:

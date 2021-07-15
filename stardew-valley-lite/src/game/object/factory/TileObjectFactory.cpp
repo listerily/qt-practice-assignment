@@ -39,6 +39,11 @@
 #include "../impl/StonePathObject.h"
 #include "../impl/AutoMobileObject.h"
 #include "../impl/LargeWoodObject.h"
+#include "../impl/HouseBackgroundObject.h"
+#include "../impl/BedObject.h"
+#include "../impl/TVObject.h"
+#include "../impl/HomeStairsObject.h"
+#include "../impl/HomeBorderObject.h"
 
 std::unique_ptr<TileObject> TileObjectFactory::generateTileObjectByIdAt(std::string const& id, int x, int y)
 {
@@ -134,6 +139,16 @@ std::unique_ptr<TileObject> TileObjectFactory::generateTileObjectByIdAt(std::str
         return std::make_unique<LargeWoodObject>(x, y, 0);
     if(id == "large_wood_1")
         return std::make_unique<LargeWoodObject>(x, y, 1);
+    if(id == "house_background")
+        return std::make_unique<HouseBackgroundObject>(x, y);
+    if(id == "bed")
+        return std::make_unique<BedObject>(x, y);
+    if(id == "tv")
+        return std::make_unique<TVObject>(x, y);
+    if(id == "home_stairs")
+        return std::make_unique<HomeStairsObject>(x, y);
+    if(id == "home_border")
+        return std::make_unique<HomeBorderObject>(x, y);
 
     for(int i = 0; i < 4; ++i)
     {

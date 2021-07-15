@@ -40,6 +40,8 @@ Scene::Scene(const SceneMapConfig &config) : id(config.id)
 
 void Scene::initialize(const SceneMapConfig& config)
 {
+    spawnX = config.spawnX;
+    spawnY = config.spawnY;
     for(const auto& object : config.objects)
     {
         auto newObject = TileObjectFactory::generateTileObjectByIdAt(object.id, object.posX, object.posY);
@@ -74,4 +76,9 @@ Scene::~Scene()
 TileSheet &Scene::getTileSheet()
 {
     return *tileSheet;
+}
+
+std::pair<double, double> Scene::getSpawn() const
+{
+    return {spawnX, spawnY};
 }

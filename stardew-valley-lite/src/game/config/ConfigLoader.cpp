@@ -36,6 +36,8 @@ void ConfigLoader::initializeSceneMaps()
         const auto& manifestObject = document_item.object();
         SceneMapConfig newConfig;
         newConfig.id = manifestObject["id"].toString().toStdString();
+        newConfig.spawnX = manifestObject["spawn"][0].toDouble();
+        newConfig.spawnY = manifestObject["spawn"][1].toDouble();
         auto objects = manifestObject["objects"].toArray();
         for(const auto& objectItem : objects)
         {

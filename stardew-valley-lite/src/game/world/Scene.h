@@ -19,6 +19,7 @@ private:
     std::string id;
     std::list<std::unique_ptr<TileObject>> objects;
     TileSheet* tileSheet;
+    double spawnX{}, spawnY{};
 public:
     explicit Scene(const SceneMapConfig& config);
     ~Scene();
@@ -31,6 +32,7 @@ public:
     void removeObject(TileObject*);
     const TileSheet& getTileSheet() const;
     TileSheet& getTileSheet();
+    std::pair<double, double> getSpawn() const;
 private:
     void initialize(const SceneMapConfig&);
 };

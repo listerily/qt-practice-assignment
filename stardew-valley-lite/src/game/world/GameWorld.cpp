@@ -70,6 +70,7 @@ void GameWorld::removeEntity(const Entity * entityPointer)
 void GameWorld::initializePlayer()
 {
     auto thePlayer = std::make_unique<Player>(*this, getCurrentGameScene());
+    thePlayer->moveTo(getCurrentGameScene().getSpawn().first, getCurrentGameScene().getSpawn().second);
     addNewEntity(std::move(thePlayer));
 }
 

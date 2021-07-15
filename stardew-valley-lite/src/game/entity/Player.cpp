@@ -24,10 +24,6 @@ Player::Player(GameWorld & world, Scene & dimension) : Entity(world, dimension)
     inventory = new Inventory(8);
 
     addInitialItemsToInventory();
-
-    //Todo: remove it
-    x = 5.5;
-    y = 21.5;
 }
 
 Player::Facing Player::getFacing() const

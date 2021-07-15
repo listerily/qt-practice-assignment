@@ -48,8 +48,10 @@ std::unique_ptr<TileObject> TileObjectFactory::generateTileObjectByIdAt(std::str
         return std::make_unique<PineTreeObject>(x, y);
     if(id == "apple_tree")
         return std::make_unique<AppleTreeObject>(x, y);
-    if(id == "stone")
-        return std::make_unique<StoneObject>(x, y);
+    if(id == "stone_0")
+        return std::make_unique<StoneObject>(x, y, 0);
+    if(id == "stone_1")
+        return std::make_unique<StoneObject>(x, y, 1);
     if(id == "large_shrub")
         return std::make_unique<LargeShrub>(x, y);
     if(id == "small_shrub")

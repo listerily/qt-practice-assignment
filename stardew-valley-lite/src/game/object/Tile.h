@@ -7,13 +7,14 @@
 
 #include <string>
 #include <vector>
+
 class Tile;
 class Tile
 {
 public:
     enum class DisplayPriority : int
     {
-        UNDERGROUND, SURFACE_BOTTOM, SURFACE_MEDIUM, SURFACE_TOP, SURFACE_OVERLAY, ON_GROUND, FLOATING, SKY
+        BORDER, UNDERGROUND, SURFACE_BOTTOM, SURFACE_MEDIUM, SURFACE_TOP, SURFACE_OVERLAY, ON_GROUND, FLOATING, SKY
     };
 
     enum class WalkableType : int

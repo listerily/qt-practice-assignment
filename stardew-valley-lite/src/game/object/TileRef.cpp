@@ -9,7 +9,7 @@
 
 TileRef::TileRef(const Tile & tile, const TileObject& tileObject) : tile(&tile)
 {
-    y = tile.offsetY + tileObject.getPosition().second;
+    y = tileObject.getPosition().second;
 }
 
 const Tile &TileRef::operator()() const

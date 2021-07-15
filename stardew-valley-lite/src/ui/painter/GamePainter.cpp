@@ -16,7 +16,7 @@
 
 GamePainter::GamePainter(const GameWorld &world): gameWorld(world)
 {
-    displayBlocksNum = 500;
+    displayBlocksNum = 140;
 }
 
 void GamePainter::paint(QWidget& widget, int width, int height)
@@ -55,7 +55,8 @@ void GamePainter::paint(QWidget& widget, int width, int height)
             const auto& tileObjects = tileSheet.getTilesAt(x, y);
             for(const auto& tileRef : tileObjects)
             {
-                if(tileRef().displayPriority <= Tile::DisplayPriority::ON_GROUND)
+                if(tileRef().displayPriority <= Tile::DisplayPriority::ON_GROUND &&
+                        tileRef().displayPriority >= Tile::DisplayPriority::BORDER)
                 {
                     const QRect drawArea(currentDrawX, currentDrawY, displayBlockWidth, displayBlockWidth);
                     const auto& textures = tileRef.tile->textures;
@@ -133,6 +134,44 @@ void GamePainter::paint(QWidget& widget, int width, int height)
             }
         }
     }
+
+    //paint tiles
+    for (int currentDrawX = static_cast<int>(viewPortStartPointX), x = worldStartPointX;
+         currentDrawX <= width;
+         currentDrawX += displayBlockWidth, ++x)
+    {
+        for(int currentDrawY = static_cast<int>(viewPortStartPointY), y = worldStartPointY;
+            currentDrawY <= height;
+            currentDrawY += displayBlockWidth, ++y)
+        {
+            const auto& tileObjects = tileSheet.getTilesAt(x, y);
+            for(const auto& tileRef : tileObjects)
+            {
+                if(tileRef().displayPriority == Tile::DisplayPriority::BORDER)
+                {
+                    const QRect drawArea(currentDrawX, currentDrawY, displayBlockWidth, displayBlockWidth);
+                    const auto& textures = tileRef.tile->textures;
+                    const auto texturesSize = textures.size();
+                    painter.drawPixmap(drawArea, QPixmap(textures[(paintFrameCount / 25) % texturesSize].c_str()));
+                }
+            }
+        }
+    }
+
+    //TODO: remove it
+    //paint axis
+//    for (int currentDrawX = static_cast<int>(viewPortStartPointX), x = worldStartPointX;
+//         currentDrawX <= width;
+//         currentDrawX += displayBlockWidth, ++x)
+//    {
+//        for(int currentDrawY = static_cast<int>(viewPortStartPointY), y = worldStartPointY;
+//            currentDrawY <= height;
+//            currentDrawY += displayBlockWidth, ++y)
+//        {
+//            const QRect drawArea(currentDrawX, currentDrawY, displayBlockWidth, displayBlockWidth);
+//            painter.drawRect(drawArea);
+//        }
+//    }
 }
 
 void GamePainter::zoom(int delta)

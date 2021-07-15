@@ -18,6 +18,7 @@ private:
     GameWorld* currentWorld;
     ConfigLoader* loader;
     InputHandler* inputHandler;
+    int interactCoolDown;
 public:
     explicit GameClient(QApplication&);
     ~GameClient();
@@ -28,7 +29,6 @@ public:
     const ConfigLoader& getConfigLoader() const;
     InputHandler& getInputHandler();
     const InputHandler& getInputHandler() const;
-
 private:
     void processKeyboardInput();
 };

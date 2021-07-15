@@ -31,6 +31,14 @@
 #include "../impl/FenceObject.h"
 #include "../impl/TentObject.h"
 #include "../impl/HouseObject.h"
+#include "../impl/TrestleObject.h"
+#include "../impl/BorderObject.h"
+#include "../impl/AppleTreeObject.h"
+#include "../impl/MailBoxObject.h"
+#include "../impl/WoodenPlate.h"
+#include "../impl/StonePathObject.h"
+#include "../impl/AutoMobileObject.h"
+#include "../impl/LargeWoodObject.h"
 
 std::unique_ptr<TileObject> TileObjectFactory::generateTileObjectByIdAt(std::string const& id, int x, int y)
 {
@@ -38,6 +46,8 @@ std::unique_ptr<TileObject> TileObjectFactory::generateTileObjectByIdAt(std::str
         return std::make_unique<OakTreeObject>(x, y);
     if(id == "pine_tree")
         return std::make_unique<PineTreeObject>(x, y);
+    if(id == "apple_tree")
+        return std::make_unique<AppleTreeObject>(x, y);
     if(id == "stone")
         return std::make_unique<StoneObject>(x, y);
     if(id == "large_shrub")
@@ -90,6 +100,8 @@ std::unique_ptr<TileObject> TileObjectFactory::generateTileObjectByIdAt(std::str
         return std::make_unique<FenceObject>(x, y, true, 1);
     if(id == "fence_0_2")
         return std::make_unique<FenceObject>(x, y, true, 2);
+    if(id == "fence_0_3")
+        return std::make_unique<FenceObject>(x, y, true, 3);
     if(id == "fence_1_0")
         return std::make_unique<FenceObject>(x, y, false, 0);
     if(id == "fence_1_1")
@@ -98,8 +110,44 @@ std::unique_ptr<TileObject> TileObjectFactory::generateTileObjectByIdAt(std::str
         return std::make_unique<FenceObject>(x, y, false, 2);
     if(id == "tent")
         return std::make_unique<TentObject>(x, y);
+    if(id == "mail_box")
+        return std::make_unique<MailBoxObject>(x, y);
     if(id == "house")
         return std::make_unique<HouseObject>(x, y);
+    if(id == "trestle_0")
+        return std::make_unique<TrestleObject>(x, y, 0);
+    if(id == "trestle_1")
+        return std::make_unique<TrestleObject>(x, y, 1);
+    if(id == "trestle_2")
+        return std::make_unique<TrestleObject>(x, y, 2);
+    if(id == "stone_path_0")
+        return std::make_unique<StonePathObject>(x, y, 0);
+    if(id == "stone_path_1")
+        return std::make_unique<StonePathObject>(x, y, 1);
+    if(id == "stone_path_2")
+        return std::make_unique<StonePathObject>(x, y, 2);
+    if(id == "automobile")
+        return std::make_unique<AutoMobileObject>(x, y);
+    if(id == "large_wood_0")
+        return std::make_unique<LargeWoodObject>(x, y, 0);
+    if(id == "large_wood_1")
+        return std::make_unique<LargeWoodObject>(x, y, 1);
+
+    for(int i = 0; i < 4; ++i)
+    {
+        std::stringstream stream;
+        stream << "wooden_plate_" << i;
+        if(id == stream.str())
+            return std::make_unique<WoodenPlate>(x, y, i);
+    }
+
+    for(int i = 0; i < 11; ++i)
+    {
+        std::stringstream stream;
+        stream << "border_" << i;
+        if(id == stream.str())
+            return std::make_unique<BorderObject>(x, y, i);
+    }
 
     for(int i = 0; i < 16; ++i)
     {
@@ -117,5 +165,5 @@ std::unique_ptr<TileObject> TileObjectFactory::generateTileObjectByIdAt(std::str
             return std::make_unique<GrassLand>(x, y, i);
     }
 
-    return std::make_unique<GrassLand>(x, y, 0);
+    return std::make_unique<BorderObject>(x, y, 8);
 }

@@ -28,6 +28,12 @@ FenceObject::FenceObject(int x, int y, bool h, int type) : TileObject("fence", x
                         {{":/svl/textures/tiles/0_10_14.png"}, Tile::WalkableType::ABLE, 0, -1, Tile::DisplayPriority::SKY}
                 };
                 break;
+            case 3:
+                tiles = {
+                        {{":/svl/textures/tiles/0_9_16.png"}, Tile::WalkableType::ABLE, 0, -1, Tile::DisplayPriority::SKY},
+                        {{":/svl/textures/tiles/0_9_17.png"}, Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::ON_GROUND},
+                };
+                break;
             default:
                 ;
         }
@@ -36,9 +42,9 @@ FenceObject::FenceObject(int x, int y, bool h, int type) : TileObject("fence", x
     {
         switch(type)
         {
-            case 0:
+            case 2:
                 tiles = {
-                        {{":/svl/textures/tiles/0_11_16.png"}, Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::SKY},
+                        {{":/svl/textures/tiles/0_11_16.png"}, Tile::WalkableType::DISABLE, 0, -1, Tile::DisplayPriority::SKY},
                         {{":/svl/textures/tiles/0_11_17.png"}, Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::ON_GROUND}
                 };
                 break;
@@ -47,9 +53,9 @@ FenceObject::FenceObject(int x, int y, bool h, int type) : TileObject("fence", x
                         {{":/svl/textures/tiles/0_11_15.png"}, Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::ON_GROUND},
                 };
                 break;
-            case 2:
+            case 0:
                 tiles = {
-                        {{":/svl/textures/tiles/0_11_14.png"}, Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::ON_GROUND},
+                        {{":/svl/textures/tiles/0_11_14.png"}, Tile::WalkableType::ABLE, 0, 0, Tile::DisplayPriority::SKY},
                 };
                 break;
             default:

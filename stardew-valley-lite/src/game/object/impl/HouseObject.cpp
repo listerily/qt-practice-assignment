@@ -77,4 +77,6 @@ HouseObject::HouseObject(int x, int y) : TileObject("house", x, y)
 void HouseObject::playerInteract(Player & p, ItemInstance * instance)
 {
     TileObject::playerInteract(p, instance);
+
+
 }

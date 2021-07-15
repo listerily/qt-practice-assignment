@@ -10,7 +10,7 @@
 class StoneObject : public TileObject
 {
 public:
-    StoneObject(int, int);
+    StoneObject(int, int, int);
     void playerInteract(Player &, ItemInstance *) override;
 };
 

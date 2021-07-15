@@ -4,7 +4,7 @@
 
 #include "StoneObject.h"
 
-StoneObject::StoneObject(int x, int y) : TileObject("stone", x, y)
+StoneObject::StoneObject(int x, int y, int) : TileObject("stone", x, y)
 {
     tiles = {
             Tile{{":/svl/textures/items/4_7_14.png"}, Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::ON_GROUND}

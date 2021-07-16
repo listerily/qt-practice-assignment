@@ -27,7 +27,7 @@ public:
 
     virtual ~Item() = default;
 
-    virtual std::unique_ptr<Action> onInteract(Player &, ItemInstance &, TileObject &) const;
+    virtual void onInteract(Player &, ItemInstance &, TileObject &) const;
 
     virtual std::unique_ptr<Action> interact(Player &, ItemInstance &) const;
 

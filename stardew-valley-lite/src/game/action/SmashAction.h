@@ -5,20 +5,21 @@
 #ifndef STARDEW_VALLEY_LITE_SMASHACTION_H
 #define STARDEW_VALLEY_LITE_SMASHACTION_H
 
+#include "../inventory/ItemInstance.h"
 #include "Action.h"
 
 class Item;
 
 class TileObject;
 
+class ItemInstance;
+
 class SmashAction : public Action
 {
 private:
     const Item &tool;
-    const Item &harvest;
-    TileObject &tileObject;
 public:
-    SmashAction(const Item &, const Item &, TileObject &);
+    explicit SmashAction(const Item &);
 
     int getDuration() const override;
 

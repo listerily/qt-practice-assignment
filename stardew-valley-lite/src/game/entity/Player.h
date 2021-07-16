@@ -62,7 +62,7 @@ protected:
 
     void turn(double, double);
 
-    double getCollisionBoxRadius() const;
+    static double getCollisionBoxRadius();
 
     friend class PlayerController;
 };

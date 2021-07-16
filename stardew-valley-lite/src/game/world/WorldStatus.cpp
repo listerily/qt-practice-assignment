@@ -39,8 +39,9 @@ int WorldStatus::getUpTime() const
     switch (current)
     {
         case SWITCHING_SCENE:
-        case SLEEPING:
             return 40;
+        case SLEEPING:
+            return 240;
         default:;
     }
     return 0;

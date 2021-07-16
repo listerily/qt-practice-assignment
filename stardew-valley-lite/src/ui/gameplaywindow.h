@@ -21,6 +21,10 @@ class InputHandler;
 
 class QLabel;
 
+class QMediaPlayer;
+
+class QMediaPlaylist;
+
 class GamePlayWindow : public QWidget
 {
 Q_OBJECT
@@ -60,6 +64,8 @@ private:
     std::array<QPushButton *, 8> buttons{};
     std::array<QLabel *, 8> labels{};
     Ui::GamePlayWindow *ui;
+    QMediaPlayer *mediaPlayer;
+    QMediaPlaylist *mediaPlaylist;
 };
 
 #endif // GAMEPLAYWINDOW_H

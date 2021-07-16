@@ -9,9 +9,9 @@ Item::Item(std::string id) : id(std::move(id))
 
 }
 
-std::unique_ptr<Action> Item::onInteract(Player &, ItemInstance &, TileObject &) const
+void Item::onInteract(Player &, ItemInstance &, TileObject &) const
 {
-    return nullptr;
+
 }
 
 std::unique_ptr<Action> Item::interact(Player &, ItemInstance &) const

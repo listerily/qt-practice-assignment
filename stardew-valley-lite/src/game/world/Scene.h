@@ -44,6 +44,8 @@ public:
 
     void removeObject(TileObject *);
 
+    void updateObject(TileObject *);
+
     const TileSheet &getTileSheet() const;
 
     TileSheet &getTileSheet();

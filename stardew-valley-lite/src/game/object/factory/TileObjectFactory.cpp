@@ -44,6 +44,8 @@
 #include "../impl/TVObject.h"
 #include "../impl/HomeStairsObject.h"
 #include "../impl/HomeBorderObject.h"
+#include "../impl/HoeSoilObject.h"
+#include "../impl/ParsnipObject.h"
 
 std::unique_ptr<TileObject> TileObjectFactory::generateTileObjectByIdAt(std::string const &id, int x, int y)
 {
@@ -149,6 +151,10 @@ std::unique_ptr<TileObject> TileObjectFactory::generateTileObjectByIdAt(std::str
         return std::make_unique<HomeStairsObject>(x, y);
     if (id == "home_border")
         return std::make_unique<HomeBorderObject>(x, y);
+    if (id == "hoe_soil")
+        return std::make_unique<HoeSoilObject>(x, y);
+    if (id == "parsnip")
+        return std::make_unique<ParsnipObject>(x, y);
 
     for (int i = 0; i < 4; ++i)
     {

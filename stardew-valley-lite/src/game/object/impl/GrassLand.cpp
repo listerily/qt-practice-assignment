@@ -4,8 +4,11 @@
 
 #include "GrassLand.h"
 
+#include "../../action/SmashAndCreateSoilAction.h"
+
 GrassLand::GrassLand(int x, int y, int aux) : TileObject("grass", x, y)
 {
+    hoeAble = aux == 6 || aux == 8 || aux == 12 || aux == 14 || aux == 28 || aux == 29 || aux == 31;
     const static std::vector<std::vector<std::string>> textures = {
             {":/svl/textures/tiles/0_0_6.png"},
             {":/svl/textures/tiles/0_0_7.png"},
@@ -52,4 +55,14 @@ GrassLand::GrassLand(int x, int y, int aux) : TileObject("grass", x, y)
                     Tile::WalkableType::ABLE, 0, 0, Tile::DisplayPriority::SURFACE_BOTTOM
             }
     };
+}
+
+std::unique_ptr<Action>
+GrassLand::interact(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int x, int y)
+{
+    if (hoeAble && instance && instance->itemMatches(ItemInstance("hoe")))
+    {
+        return std::make_unique<SmashAndCreateSoilAction>(*instance->getItem(), x, y);
+    }
+    return TileObject::interact(world, instance, player, scene, x, y);
 }

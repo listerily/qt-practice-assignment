@@ -4,7 +4,7 @@
 
 #include "AppleTreeObject.h"
 
-AppleTreeObject::AppleTreeObject(int x, int y) : TileObject("apple_tree", x, y)
+AppleTreeObject::AppleTreeObject(int x, int y) : TreeObject("apple_tree", x, y)
 {
     tiles = {
             Tile{{":/svl/textures/tiles/0_3_0.png"}, Tile::WalkableType::ABLE, -1, -5, Tile::DisplayPriority::SKY},

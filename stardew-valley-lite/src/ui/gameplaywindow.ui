@@ -22,6 +22,11 @@
         <property name="windowTitle">
             <string>Form</string>
         </property>
+        <property name="windowIcon">
+            <iconset resource="../../res/textures.qrc">
+                <normaloff>:/svl/textures/icon.png</normaloff>:/svl/textures/icon.png
+            </iconset>
+        </property>
         <property name="autoFillBackground">
             <bool>false</bool>
         </property>
@@ -297,6 +302,8 @@
             </item>
         </layout>
     </widget>
-    <resources/>
+    <resources>
+        <include location="../../res/textures.qrc"/>
+    </resources>
     <connections/>
 </ui>

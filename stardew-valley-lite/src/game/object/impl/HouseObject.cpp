@@ -75,10 +75,11 @@ HouseObject::HouseObject(int x, int y) : TileObject("house", x, y)
 }
 
 std::unique_ptr<Action>
-HouseObject::interact(GameWorld &world, ItemInstance *instance, Player &p, Scene &scene, int y, int x)
+HouseObject::interact(GameWorld &world, ItemInstance *instance, Player &p, Scene &scene, int x, int y)
 {
     TileObject::interact(world, instance, p, scene, 0, 0);
 
-    world.changeScene("home");
+    if (x == this->positionX && y == this->positionY)
+        world.changeScene("home");
     return nullptr;
 }

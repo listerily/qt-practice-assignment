@@ -9,8 +9,13 @@
 
 class GrassLand : public TileObject
 {
+private:
+    bool hoeAble;
 public:
     GrassLand(int x, int y, int aux);
+
+    std::unique_ptr<Action>
+    interact(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int x, int y) override;
 };
 
 

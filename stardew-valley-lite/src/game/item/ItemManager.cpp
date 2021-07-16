@@ -9,6 +9,10 @@
 #include "./impl/StoneItem.h"
 #include "./impl/StrawberryItem.h"
 #include "./impl/AxeItem.h"
+#include "./impl/PickaxeItem.h"
+#include "./impl/HoeItem.h"
+#include "./impl/MixedSeedsItem.h"
+#include "./impl/ParsnipItem.h"
 
 void ItemManager::initializeItems()
 {
@@ -17,6 +21,10 @@ void ItemManager::initializeItems()
     lookupMap["stone"] = new StoneItem;
     lookupMap["strawberry"] = new StrawberryItem;
     lookupMap["axe"] = new AxeItem;
+    lookupMap["pickaxe"] = new PickaxeItem;
+    lookupMap["hoe"] = new HoeItem;
+    lookupMap["mixed_seeds"] = new MixedSeedItem;
+    lookupMap["parsnip"] = new ParsnipItem;
 }
 
 const Item *ItemManager::lookup(const std::string &id) const

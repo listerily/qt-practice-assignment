@@ -28,8 +28,8 @@ private:
     };
 
     std::unordered_map<std::pair<int, int>, std::set<TileObject *>, pair_hash> lookupAt;
-    std::unordered_map<std::pair<int, int>, std::set<TileObject *>, pair_hash> lookupCovered;
     std::unordered_map<std::pair<int, int>, std::set<TileRef>, pair_hash> lookupTiles;
+    std::unordered_map<std::pair<int, int>, std::set<std::pair<TileRef, TileObject *>>, pair_hash> lookupCovered;
 public:
     TileSheet() = default;
 
@@ -39,7 +39,7 @@ public:
 
     void removeTileObject(TileObject &);
 
-    const std::set<TileObject *> &getTileObjectsCoveredAt(int, int) const;
+    const std::set<std::pair<TileRef, TileObject *>> &getTilesAndObjectsCoveredAt(int, int) const;
 
     const std::set<TileRef> &getTilesAt(int, int) const;
 

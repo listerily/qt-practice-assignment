@@ -4,6 +4,8 @@
 
 #include "StoneObject.h"
 
+#include "../../action/SmashAndGetAction.h"
+
 StoneObject::StoneObject(int x, int y, int type) : TileObject("stone", x, y)
 {
     tiles = {
@@ -13,8 +15,14 @@ StoneObject::StoneObject(int x, int y, int type) : TileObject("stone", x, y)
 }
 
 std::unique_ptr<Action>
-StoneObject::interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x)
+StoneObject::interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int x, int y)
 {
-    TileObject::interact(world, item, player, scene, 0, 0);
-    return nullptr;
+    if (item && item->itemMatches(ItemInstance("pickaxe")))
+        return std::make_unique<SmashAndGetAction>(*(item->getItem()), ItemInstance("stone", 1), *this, true);
+    return TileObject::interact(world, item, player, scene, x, y);
+}
+
+bool StoneObject::ableToInteract() const
+{
+    return true;
 }

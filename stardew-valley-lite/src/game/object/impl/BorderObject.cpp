@@ -90,3 +90,8 @@ BorderObject::BorderObject(int x, int y, int type) : TileObject("border", x, y)
         default:;
     }
 }
+
+bool BorderObject::ableToInteract() const
+{
+    return false;
+}

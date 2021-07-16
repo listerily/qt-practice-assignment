@@ -17,7 +17,8 @@
 #include "../../game/world/WorldStatus.h"
 #include "../../game/GameClient.h"
 #include "../../game/action/PickupAction.h"
-#include "../../game/action/SmashAction.h"
+#include "../../game/action/SmashAndGetAction.h"
+#include "../../game/action/SmashAndCreateSoilAction.h"
 #include "../../game/item/Item.h"
 
 WorldPainter::WorldPainter()
@@ -134,14 +135,27 @@ WorldPainter::paintWorldOverlay(QPainter &painter, const GameClient &client, con
                                 int width,
                                 int height)
 {
-    if (world.getWorldStatus().get() == WorldStatus::SWITCHING_SCENE ||
-        world.getWorldStatus().get() == WorldStatus::SLEEPING)
+    if (world.getWorldStatus().get() == WorldStatus::SWITCHING_SCENE)
     {
         double progress = world.getWorldStatus().getProgress();
         if (progress <= 0.50)
             painter.fillRect(QRect(0, 0, width, height), QColor(0, 0, 0, 255));
         else
             painter.fillRect(QRect(0, 0, width, height), QColor(0, 0, 0, int(255 - 255 * (progress - 0.5) * 2)));
+    } else if (world.getWorldStatus().get() == WorldStatus::SLEEPING)
+    {
+        double progress = world.getWorldStatus().getProgress();
+        int transparency = 255;
+        if (progress <= 0.2)
+            transparency = static_cast<int>(255 * progress * 5);
+        else if (progress >= 0.8)
+            transparency = static_cast<int>(255 - 255 * (progress - 0.8) * 2);
+        painter.fillRect(QRect(0, 0, width, height), QColor(0, 0, 0, transparency));
+        QFont font = painter.font();
+        font.setBold(true);
+        font.setPointSize(font.pointSize() * 4);
+        painter.setFont(font);
+        painter.drawText(QRect(0, 0, width, height), Qt::AlignCenter, "SLEEPING...");
     }
 }
 
@@ -214,7 +228,8 @@ WorldPainter::paintActionBeforePlayer(QPainter &painter, const GameClient &clien
         return;
     if (typeid(*playerAction) == typeid(const PickupAction &))
         paintPickupActionBF(painter, client, world, widget, width, height, displayBlockWidth);
-    if (typeid(*playerAction) == typeid(const SmashAction &))
+    if (typeid(*playerAction) == typeid(const SmashAndGetAction &) ||
+        typeid(*playerAction) == typeid(const SmashAndCreateSoilAction &))
         paintSmashActionBF(painter, client, world, widget, width, height, displayBlockWidth);
 }
 
@@ -228,7 +243,8 @@ void WorldPainter::paintActionAfterPlayer(QPainter &painter, const GameClient &c
         return;
     if (typeid(*playerAction) == typeid(const PickupAction &))
         paintPickupActionAF(painter, client, world, widget, width, height, displayBlockWidth);
-    if (typeid(*playerAction) == typeid(const SmashAction &))
+    if (typeid(*playerAction) == typeid(const SmashAndGetAction &) ||
+        typeid(*playerAction) == typeid(const SmashAndCreateSoilAction &))
         paintSmashActionAF(painter, client, world, widget, width, height, displayBlockWidth);
 }
 
@@ -261,6 +277,10 @@ void WorldPainter::paintSmashActionBF(QPainter &painter, const GameClient &, con
         std::string t1;
         if (&playerAction->getToolItem() == ItemInstance("axe").getItem())
             t1 = ":/svl/textures/tools/5_3_10.png";
+        if (&playerAction->getToolItem() == ItemInstance("pickaxe").getItem())
+            t1 = ":/svl/textures/tools/5_3_6.png";
+        if (&playerAction->getToolItem() == ItemInstance("hoe").getItem())
+            t1 = ":/svl/textures/tools/5_3_2.png";
         const QRect playerRect(int(width / 2.0 - displayBlockWidth / 2.0),
                                int((double) height / 2 - displayBlockWidth * 0.6 / 2 - displayBlockWidth * 1.6),
                                int(displayBlockWidth),
@@ -313,6 +333,10 @@ void WorldPainter::paintSmashActionAF(QPainter &painter, const GameClient &, con
         std::string t1;
         if (&playerAction->getToolItem() == ItemInstance("axe").getItem())
             t1 = ":/svl/textures/tools/5_1_10.png";
+        if (&playerAction->getToolItem() == ItemInstance("pickaxe").getItem())
+            t1 = ":/svl/textures/tools/5_1_6.png";
+        if (&playerAction->getToolItem() == ItemInstance("hoe").getItem())
+            t1 = ":/svl/textures/tools/5_1_2.png";
         const QRect playerRect(int(width / 2.0 - displayBlockWidth / 2.0),
                                int(height / 2.0 - displayBlockWidth / 2.0 + displayBlockWidth * 0.3),
                                int(displayBlockWidth),
@@ -323,6 +347,10 @@ void WorldPainter::paintSmashActionAF(QPainter &painter, const GameClient &, con
         std::string t1, t2;
         if (&playerAction->getToolItem() == ItemInstance("axe").getItem())
             t1 = ":/svl/textures/tools/5_2_10.png", t2 = ":/svl/textures/tools/5_2_9.png";
+        if (&playerAction->getToolItem() == ItemInstance("pickaxe").getItem())
+            t1 = ":/svl/textures/tools/5_2_6.png", t2 = ":/svl/textures/tools/5_2_5.png";
+        if (&playerAction->getToolItem() == ItemInstance("hoe").getItem())
+            t1 = ":/svl/textures/tools/5_2_2.png", t2 = ":/svl/textures/tools/5_2_1.png";
         {
             const QRect playerRect(int(width / 2.0 - displayBlockWidth / 2.0 - displayBlockWidth * 0.4),
                                    int(height / 2.0 - displayBlockWidth / 2.0 - displayBlockWidth * 0.2),
@@ -346,6 +374,10 @@ void WorldPainter::paintSmashActionAF(QPainter &painter, const GameClient &, con
         std::string t1, t2;
         if (&playerAction->getToolItem() == ItemInstance("axe").getItem())
             t1 = ":/svl/textures/tools/5_2_10.png", t2 = ":/svl/textures/tools/5_2_9.png";
+        if (&playerAction->getToolItem() == ItemInstance("pickaxe").getItem())
+            t1 = ":/svl/textures/tools/5_2_6.png", t2 = ":/svl/textures/tools/5_2_5.png";
+        if (&playerAction->getToolItem() == ItemInstance("hoe").getItem())
+            t1 = ":/svl/textures/tools/5_2_2.png", t2 = ":/svl/textures/tools/5_2_1.png";
         {
             const QRect playerRect(int(width / 2.0 - displayBlockWidth / 2.0 + displayBlockWidth * 0.4),
                                    int(height / 2.0 - displayBlockWidth / 2.0 - displayBlockWidth * 0.2),

@@ -11,11 +11,13 @@
 
 class WeedsObject : public TileObject
 {
+private:
+    int type;
 public:
     WeedsObject(int, int, int);
 
     std::unique_ptr<Action>
-    interact(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x) override;
+    interact(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int x, int y) override;
 
     bool ableToInteract() const override;
 };

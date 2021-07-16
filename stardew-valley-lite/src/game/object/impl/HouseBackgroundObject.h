@@ -11,6 +11,8 @@ class HouseBackgroundObject : public TileObject
 {
 public:
     HouseBackgroundObject(int, int);
+
+    bool ableToInteract() const override;
 };
 
 

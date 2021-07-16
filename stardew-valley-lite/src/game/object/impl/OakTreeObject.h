@@ -5,15 +5,12 @@
 #ifndef STARDEW_VALLEY_LITE_OAKTREEOBJECT_H
 #define STARDEW_VALLEY_LITE_OAKTREEOBJECT_H
 
-#include "src/game/object/TileObject.h"
+#include "TreeObject.h"
 
-class OakTreeObject : public TileObject
+class OakTreeObject : public TreeObject
 {
 public:
     OakTreeObject(int x, int y);
-
-    std::unique_ptr<Action>
-    interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x) override;
 };
 
 

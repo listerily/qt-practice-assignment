@@ -116,6 +116,8 @@ Player::~Player()
 void Player::addInitialItemsToInventory()
 {
     inventory->addItemInstance(ItemInstance("axe", 1));
+    inventory->addItemInstance(ItemInstance("pickaxe", 1));
+    inventory->addItemInstance(ItemInstance("hoe", 1));
 }
 
 std::pair<int, int> Player::getFacingPosition() const
@@ -155,7 +157,7 @@ std::list<std::pair<int, int>> Player::getFacingPositions() const
     return {{0, 0}};
 }
 
-double Player::getCollisionBoxRadius() const
+double Player::getCollisionBoxRadius()
 {
     return 0.3;
 }
@@ -172,16 +174,18 @@ void Player::interact(GameWorld &world, bool self)
     } else if (!self)
     {
         const auto &facingPosition = getFacingPosition();
-        auto &tileObjects = getScene().getTileSheet().getTileObjectsAt(facingPosition.first, facingPosition.second);
+        auto &tileObjects = getScene().getTileSheet().getTilesAndObjectsCoveredAt(facingPosition.first,
+                                                                                  facingPosition.second);
         for (auto tileObject = tileObjects.rbegin(); tileObject != tileObjects.rend(); ++tileObject)
         {
-            if ((*tileObject)->ableToInteract())
+            if ((tileObject->second)->ableToInteract())
             {
-                auto theAction = (*tileObject)->interact(world, selectedItem, *this, getScene(), facingPosition.first,
-                                                         facingPosition.second);
+                auto theAction = (tileObject->second)->interact(world, selectedItem, *this, getScene(),
+                                                                facingPosition.first,
+                                                                facingPosition.second);
                 setAction(std::move(theAction));
                 if (selectedItem && !selectedItem->empty())
-                    selectedItem->item->onInteract(*this, *selectedItem, **tileObject);
+                    selectedItem->item->onInteract(*this, *selectedItem, *tileObject->second);
                 break;
             }
         }

@@ -92,3 +92,8 @@ void Scene::newDay(GameWorld &world)
         tileObject->afterNight(world, *this);
     });
 }
+
+void Scene::updateObject(TileObject *object)
+{
+    tileSheet->changeTileObject(*object);
+}

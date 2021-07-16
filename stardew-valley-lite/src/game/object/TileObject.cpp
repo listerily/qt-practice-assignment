@@ -43,5 +43,5 @@ std::pair<int, int> TileObject::getPosition() const
 
 bool TileObject::ableToInteract() const
 {
-    return false;
+    return true;
 }

@@ -20,17 +20,16 @@ GameClient::GameClient(QApplication &app) : app(app)
     loader->initialize();
     inputHandler = new InputHandler;
     interactCoolDown = 0;
-
-    createWorld();
 }
 
 void GameClient::tick()
 {
-    if (gameShouldExit)
+    if (gameShouldExit || !currentWorld)
         return;
-    if (currentWorld)
-        currentWorld->tick();
+    worldLock.lock();
+    currentWorld->tick();
     processKeyboardInput();
+    worldLock.unlock();
 }
 
 GameWorld *GameClient::getCurrentWorld()
@@ -45,9 +44,11 @@ const GameWorld *GameClient::getCurrentWorld() const
 
 void GameClient::createWorld()
 {
+    worldLock.lock();
     delete currentWorld;
     currentWorld = new GameWorld(*this);
     currentWorld->initialize();
+    worldLock.unlock();
 }
 
 GameClient::~GameClient()
@@ -74,12 +75,9 @@ const InputHandler &GameClient::getInputHandler() const
 
 void GameClient::processKeyboardInput()
 {
-    if (currentWorld)
-    {
-        const bool up = inputHandler->isKeyPressed(Qt::Key_W) || inputHandler->isKeyPressed(Qt::Key_Up);
-        const bool down = inputHandler->isKeyPressed(Qt::Key_S) || inputHandler->isKeyPressed(Qt::Key_Down);
-        const bool left = inputHandler->isKeyPressed(Qt::Key_A) || inputHandler->isKeyPressed(Qt::Key_Left);
-        const bool right = inputHandler->isKeyPressed(Qt::Key_D) || inputHandler->isKeyPressed(Qt::Key_Right);
-        currentWorld->getPlayerController().walk(up, down, left, right);
-    }
+    const bool up = inputHandler->isKeyPressed(Qt::Key_W) || inputHandler->isKeyPressed(Qt::Key_Up);
+    const bool down = inputHandler->isKeyPressed(Qt::Key_S) || inputHandler->isKeyPressed(Qt::Key_Down);
+    const bool left = inputHandler->isKeyPressed(Qt::Key_A) || inputHandler->isKeyPressed(Qt::Key_Left);
+    const bool right = inputHandler->isKeyPressed(Qt::Key_D) || inputHandler->isKeyPressed(Qt::Key_Right);
+    currentWorld->getPlayerController().walk(up, down, left, right);
 }

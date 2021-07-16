@@ -19,9 +19,9 @@ bool FlowerPot::ableToInteract() const
 }
 
 std::unique_ptr<Action>
-FlowerPot::interact(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x)
+FlowerPot::interact(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int x, int y)
 {
-    TileObject::interact(world, instance, player, scene, y, x);
+    TileObject::interact(world, instance, player, scene, x, y);
 
     if (type == 1 && instance && instance->itemMatches(ItemInstance("weeds")))
     {

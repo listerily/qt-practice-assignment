@@ -5,9 +5,9 @@
 #include "LargeShrub.h"
 
 std::unique_ptr<Action>
-LargeShrub::interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x)
+LargeShrub::interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int x, int y)
 {
-    TileObject::interact(world, item, player, scene, 0, 0);
+    TileObject::interact(world, item, player, scene, x, y);
     return nullptr;
 }
 

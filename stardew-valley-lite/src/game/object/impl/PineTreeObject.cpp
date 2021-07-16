@@ -4,14 +4,8 @@
 
 #include "PineTreeObject.h"
 
-std::unique_ptr<Action>
-PineTreeObject::interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x)
-{
-    TileObject::interact(world, item, player, scene, 0, 0);
-    return nullptr;
-}
 
-PineTreeObject::PineTreeObject(int x, int y) : TileObject("oak_tree", x, y)
+PineTreeObject::PineTreeObject(int x, int y) : TreeObject("oak_tree", x, y)
 {
     tiles = {
             Tile{{":/svl/textures/tiles/0_10_0.png"}, Tile::WalkableType::ABLE, -1, -5, Tile::DisplayPriority::SKY},

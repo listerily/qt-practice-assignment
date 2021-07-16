@@ -21,9 +21,9 @@ bool FruitsBarrel::ableToInteract() const
 }
 
 std::unique_ptr<Action>
-FruitsBarrel::interact(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x)
+FruitsBarrel::interact(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int x, int y)
 {
-    TileObject::interact(world, instance, player, scene, y, x);
+    TileObject::interact(world, instance, player, scene, x, y);
 
     return std::make_unique<PickupAction>(*ItemInstance("strawberry").getItem());
 }

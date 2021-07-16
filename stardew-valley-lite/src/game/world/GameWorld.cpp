@@ -121,10 +121,10 @@ void GameWorld::triggerEvent(WorldEvent event)
     {
         case WorldEvent::SLEEP:
             worldStatus->set(WorldStatus::SLEEPING);
+            newDay();
             break;
         case WorldEvent::SWITCH_SCENE:
             worldStatus->set(WorldStatus::SWITCHING_SCENE);
-            newDay();
             break;
     }
 }

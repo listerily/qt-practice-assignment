@@ -11,6 +11,8 @@ class BorderObject : public TileObject
 {
 public:
     BorderObject(int, int, int);
+
+    bool ableToInteract() const override;
 };
 
 

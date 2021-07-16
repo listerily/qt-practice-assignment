@@ -4,7 +4,7 @@
 
 #include "BranchObject.h"
 
-#include "../../action/SmashAction.h"
+#include "../../action/SmashAndGetAction.h"
 
 BranchObject::BranchObject(int x, int y, int type) : TileObject("branch", x, y)
 {
@@ -15,13 +15,11 @@ BranchObject::BranchObject(int x, int y, int type) : TileObject("branch", x, y)
 }
 
 std::unique_ptr<Action>
-BranchObject::interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x)
+BranchObject::interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int x, int y)
 {
-    TileObject::interact(world, item, player, scene, 0, 0);
-
     if (item && item->itemMatches(ItemInstance("axe")))
-        return std::make_unique<SmashAction>(*(item->getItem()), *ItemInstance("wood").getItem(), *this);
-    return nullptr;
+        return std::make_unique<SmashAndGetAction>(*(item->getItem()), ItemInstance("wood", 1), *this, true);
+    return TileObject::interact(world, item, player, scene, x, y);
 }
 
 bool BranchObject::ableToInteract() const

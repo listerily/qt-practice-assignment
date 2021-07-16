@@ -42,7 +42,7 @@ public:
     virtual std::list<Tile> const &getAllTiles() const;
 
     virtual std::unique_ptr<Action>
-    interact(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x);
+    interact(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int x, int y);
 
     virtual bool ableToInteract() const;
 

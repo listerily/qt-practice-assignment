@@ -22,14 +22,6 @@ void TileSheet::removeTileObject(TileObject &object)
     removeTileObjectInLookup(object);
 }
 
-const std::set<TileObject *> &TileSheet::getTileObjectsCoveredAt(int x, int y) const
-{
-    static const std::set<TileObject *> emptyReturn;
-    if (lookupCovered.find({x, y}) == lookupCovered.end())
-        return emptyReturn;
-    return lookupCovered.at({x, y});
-}
-
 void TileSheet::removeTileObjectInLookup(TileObject &target)
 {
     lookupAt[target.getPosition()].erase(&target);
@@ -38,7 +30,7 @@ void TileSheet::removeTileObjectInLookup(TileObject &target)
     {
         const auto &posX = target.getPosition().first + tile.offsetX;
         const auto &posY = target.getPosition().second + tile.offsetY;
-        lookupCovered[{posX, posY}].erase(&target);
+        lookupCovered[{posX, posY}].erase(std::make_pair<>(TileRef(tile, target), &target));
 
         lookupTiles[{posX, posY}].erase(TileRef(tile, target));
     }
@@ -52,7 +44,7 @@ void TileSheet::addTileObjectInLookup(TileObject &target)
     {
         const auto &posX = target.getPosition().first + tile.offsetX;
         const auto &posY = target.getPosition().second + tile.offsetY;
-        lookupCovered[{posX, posY}].insert(&target);
+        lookupCovered[{posX, posY}].insert(std::make_pair<>(TileRef(tile, target), &target));
 
         lookupTiles[{posX, posY}].insert(TileRef(tile, target));
     }
@@ -72,4 +64,12 @@ const std::set<TileObject *> &TileSheet::getTileObjectsAt(int x, int y) const
     if (lookupAt.find({x, y}) == lookupAt.end())
         return emptyReturn;
     return lookupAt.at({x, y});
+}
+
+const std::set<std::pair<TileRef, TileObject *>> &TileSheet::getTilesAndObjectsCoveredAt(int x, int y) const
+{
+    static const std::set<std::pair<TileRef, TileObject *>> emptyReturn;
+    if (lookupCovered.find({x, y}) == lookupCovered.end())
+        return emptyReturn;
+    return lookupCovered.at({x, y});
 }

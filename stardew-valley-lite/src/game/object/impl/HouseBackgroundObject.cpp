@@ -176,3 +176,8 @@ HouseBackgroundObject::HouseBackgroundObject(int x, int y) : TileObject("house_b
     };
 
 }
+
+bool HouseBackgroundObject::ableToInteract() const
+{
+    return false;
+}

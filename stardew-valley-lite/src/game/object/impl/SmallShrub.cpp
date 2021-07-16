@@ -19,8 +19,8 @@ SmallShrub::SmallShrub(int x, int y) : TileObject("small_shrub", x, y)
 }
 
 std::unique_ptr<Action>
-SmallShrub::interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x)
+SmallShrub::interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int x, int y)
 {
-    TileObject::interact(world, item, player, scene, 0, 0);
+    TileObject::interact(world, item, player, scene, x, y);
     return nullptr;
 }

@@ -13,7 +13,7 @@ public:
     SmallShrub(int x, int y);
 
     std::unique_ptr<Action>
-    interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x) override;
+    interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int x, int y) override;
 };
 
 

@@ -4,12 +4,8 @@
 
 #include "SmashAction.h"
 
-#include "../inventory/Inventory.h"
-#include "../entity/Player.h"
-#include "../world/Scene.h"
-
-SmashAction::SmashAction(const Item &tool, const Item &harvest, TileObject &tileObject) : tool(tool), harvest(harvest),
-                                                                                          tileObject(tileObject)
+SmashAction::SmashAction(const Item &tool) :
+        tool(tool)
 {
 
 }
@@ -22,9 +18,6 @@ int SmashAction::getDuration() const
 void SmashAction::onActionEnd(GameWorld &w, Scene &s, Player &p)
 {
     Action::onActionEnd(w, s, p);
-
-    p.getInventory().addItemInstance(ItemInstance(&harvest, 1));
-    s.removeObject(&tileObject);
 }
 
 const Item &SmashAction::getToolItem() const

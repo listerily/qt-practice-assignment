@@ -6,14 +6,7 @@
 #include <src/game/world/GameWorld.h>
 #include "OakTreeObject.h"
 
-std::unique_ptr<Action>
-OakTreeObject::interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x)
-{
-    TileObject::interact(world, item, player, scene, 0, 0);
-    return nullptr;
-}
-
-OakTreeObject::OakTreeObject(int x, int y) : TileObject("oak_tree", x, y)
+OakTreeObject::OakTreeObject(int x, int y) : TreeObject("oak_tree", x, y)
 {
     tiles = {
             Tile{{":/svl/textures/tiles/0_0_0.png"}, Tile::WalkableType::ABLE, -1, -5, Tile::DisplayPriority::SKY},

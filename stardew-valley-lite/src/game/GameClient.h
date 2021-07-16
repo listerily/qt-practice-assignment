@@ -5,6 +5,8 @@
 #ifndef STARDEW_VALLEY_LITE_GAMECLIENT_H
 #define STARDEW_VALLEY_LITE_GAMECLIENT_H
 
+#include <mutex>
+
 class QApplication;
 
 class GameWorld;
@@ -26,6 +28,7 @@ private:
     ConfigLoader *loader;
     InputHandler *inputHandler;
     int interactCoolDown;
+    std::mutex worldLock;
 public:
     explicit GameClient(QApplication &);
 

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/svl/audio">
+        <file>audio/0000014f.wav</file>
+        <file>audio/0000005b.wav</file>
+    </qresource>
+</RCC>

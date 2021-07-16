@@ -5,17 +5,12 @@
 #ifndef STARDEW_VALLEY_LITE_PINETREEOBJECT_H
 #define STARDEW_VALLEY_LITE_PINETREEOBJECT_H
 
-#include <src/game/world/Scene.h>
-#include <src/game/world/GameWorld.h>
-#include "src/game/object/TileObject.h"
+#include "TreeObject.h"
 
-class PineTreeObject : public TileObject
+class PineTreeObject : public TreeObject
 {
 public:
     PineTreeObject(int x, int y);
-
-    std::unique_ptr<Action>
-    interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x) override;
 };
 
 #endif //STARDEW_VALLEY_LITE_PINETREEOBJECT_H

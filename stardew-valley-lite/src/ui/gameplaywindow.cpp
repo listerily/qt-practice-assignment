@@ -12,6 +12,8 @@
 
 #include <QLabel>
 #include <sstream>
+#include <QtMultimedia/QMediaPlayer>
+#include <QtMultimedia/QMediaPlaylist>
 
 GamePlayWindow::GamePlayWindow(GameClient &client, QWidget *parent) :
         gameClient(client),
@@ -38,12 +40,20 @@ GamePlayWindow::GamePlayWindow(GameClient &client, QWidget *parent) :
         labels[i]->show();
     }
 
-
     selectSlot(0);
+
+    mediaPlaylist = new QMediaPlaylist;
+    mediaPlaylist->addMedia(QMediaContent(QUrl("qrc:/svl/audio/audio/0000005b.wav")));
+    mediaPlaylist->setPlaybackMode(QMediaPlaylist::CurrentItemInLoop);
+    mediaPlayer = new QMediaPlayer(this);
+    mediaPlayer->setPlaylist(mediaPlaylist);
+    mediaPlayer->play();
 }
 
 GamePlayWindow::~GamePlayWindow()
 {
+    delete mediaPlayer;
+    delete mediaPlaylist;
     delete ui;
     delete painter;
 }

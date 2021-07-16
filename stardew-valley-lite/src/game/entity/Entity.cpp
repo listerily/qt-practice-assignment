@@ -4,7 +4,7 @@
 
 #include "Entity.h"
 
-Entity::Entity(Scene& scene) : scene(&scene)
+Entity::Entity(Scene &scene) : scene(&scene)
 {
     x = y = 0.0;
     health = 0x7fffffff;
@@ -13,7 +13,7 @@ Entity::Entity(Scene& scene) : scene(&scene)
 Entity::~Entity()
 = default;
 
-void Entity::tick(GameWorld&)
+void Entity::tick(GameWorld &)
 {
 
 }
@@ -35,14 +35,14 @@ int Entity::getHealth() const
     return health;
 }
 
-void Entity::hurt(GameWorld& world, int hp)
+void Entity::hurt(GameWorld &world, int hp)
 {
     health -= hp;
     if (health <= 0)
         onDeath(world);
 }
 
-void Entity::onDeath(GameWorld&)
+void Entity::onDeath(GameWorld &)
 {
 
 }
@@ -57,7 +57,7 @@ Scene &Entity::getScene() const
     return *scene;
 }
 
-void Entity::changeScene(Scene & s)
+void Entity::changeScene(Scene &s)
 {
     scene = &s;
 }

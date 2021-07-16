@@ -12,7 +12,7 @@ class WeedsItem : public Item
 public:
     WeedsItem();
 
-    const std::string & getTexture() const override;
+    const std::string &getTexture() const override;
 };
 
 

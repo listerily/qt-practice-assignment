@@ -23,13 +23,12 @@ FlowerPot::interact(GameWorld &world, ItemInstance *instance, Player &player, Sc
 {
     TileObject::interact(world, instance, player, scene, y, x);
 
-    if(type == 1 && instance && instance->itemMatches(ItemInstance("weeds")))
+    if (type == 1 && instance && instance->itemMatches(ItemInstance("weeds")))
     {
         instance->reduce(1);
         type = 0;
         regenerateTiles();
-    }
-    else if(type == 0)
+    } else if (type == 0)
     {
         type = 1;
         regenerateTiles();
@@ -41,6 +40,7 @@ FlowerPot::interact(GameWorld &world, ItemInstance *instance, Player &player, Sc
 void FlowerPot::regenerateTiles()
 {
     tiles = {
-            Tile{{type == 0 ? ":/svl/textures/tiles/0_23_43.png" : ":/svl/textures/tiles/0_23_44.png"}, Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::ON_GROUND}
+            Tile{{type == 0 ? ":/svl/textures/tiles/0_23_43.png" : ":/svl/textures/tiles/0_23_44.png"},
+                 Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::ON_GROUND}
     };
 }

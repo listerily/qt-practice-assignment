@@ -1,286 +1,302 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>GamePlayWindow</class>
- <widget class="QWidget" name="GamePlayWindow">
-  <property name="enabled">
-   <bool>true</bool>
-  </property>
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>1024</width>
-    <height>720</height>
-   </rect>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>1024</width>
-    <height>720</height>
-   </size>
-  </property>
-  <property name="windowTitle">
-   <string>Form</string>
-  </property>
-  <property name="autoFillBackground">
-   <bool>false</bool>
-  </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
-   <item>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QPushButton" name="button_0">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
+    <class>GamePlayWindow</class>
+    <widget class="QWidget" name="GamePlayWindow">
+        <property name="enabled">
+            <bool>true</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1024</width>
+                <height>720</height>
+            </rect>
+        </property>
+        <property name="minimumSize">
             <size>
-             <width>80</width>
-             <height>80</height>
+                <width>1024</width>
+                <height>720</height>
             </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{border-image: url(:svl/textures/ui/not_selected_slot.png);}</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="button_1">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>80</width>
-             <height>80</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{border-image: url(:svl/textures/ui/not_selected_slot.png);}</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="button_2">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>80</width>
-             <height>80</height>
-            </size>
-           </property>
-           <property name="acceptDrops">
+        </property>
+        <property name="windowTitle">
+            <string>Form</string>
+        </property>
+        <property name="autoFillBackground">
             <bool>false</bool>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{border-image: url(:svl/textures/ui/not_selected_slot.png);}</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="button_3">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>80</width>
-             <height>80</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{border-image: url(:svl/textures/ui/not_selected_slot.png);}</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="button_4">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>80</width>
-             <height>80</height>
-            </size>
-           </property>
-           <property name="autoFillBackground">
-            <bool>false</bool>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{border-image: url(:svl/textures/ui/not_selected_slot.png);}</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="button_5">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>80</width>
-             <height>80</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{border-image: url(:svl/textures/ui/not_selected_slot.png);}</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="button_6">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>80</width>
-             <height>80</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{border-image: url(:svl/textures/ui/not_selected_slot.png);}</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="button_7">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>80</width>
-             <height>80</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{border-image: url(:svl/textures/ui/not_selected_slot.png);}</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="verticalSpacer_2">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeType">
-            <enum>QSizePolicy::Maximum</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>0</width>
-             <height>80</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+                <layout class="QVBoxLayout" name="verticalLayout">
+                    <item>
+                        <layout class="QHBoxLayout" name="horizontalLayout">
+                            <item>
+                                <spacer name="verticalSpacer">
+                                    <property name="orientation">
+                                        <enum>Qt::Vertical</enum>
+                                    </property>
+                                    <property name="sizeHint" stdset="0">
+                                        <size>
+                                            <width>20</width>
+                                            <height>40</height>
+                                        </size>
+                                    </property>
+                                </spacer>
+                            </item>
+                        </layout>
+                    </item>
+                    <item>
+                        <layout class="QHBoxLayout" name="horizontalLayout_2">
+                            <item>
+                                <spacer name="horizontalSpacer_2">
+                                    <property name="orientation">
+                                        <enum>Qt::Horizontal</enum>
+                                    </property>
+                                    <property name="sizeHint" stdset="0">
+                                        <size>
+                                            <width>40</width>
+                                            <height>20</height>
+                                        </size>
+                                    </property>
+                                </spacer>
+                            </item>
+                            <item>
+                                <layout class="QHBoxLayout" name="horizontalLayout_3">
+                                    <item>
+                                        <widget class="QPushButton" name="button_0">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <width>80</width>
+                                                    <height>80</height>
+                                                </size>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">QPushButton{border-image:
+                                                    url(:svl/textures/ui/not_selected_slot.png);}
+                                                </string>
+                                            </property>
+                                            <property name="text">
+                                                <string/>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QPushButton" name="button_1">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <width>80</width>
+                                                    <height>80</height>
+                                                </size>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">QPushButton{border-image:
+                                                    url(:svl/textures/ui/not_selected_slot.png);}
+                                                </string>
+                                            </property>
+                                            <property name="text">
+                                                <string/>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QPushButton" name="button_2">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <width>80</width>
+                                                    <height>80</height>
+                                                </size>
+                                            </property>
+                                            <property name="acceptDrops">
+                                                <bool>false</bool>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">QPushButton{border-image:
+                                                    url(:svl/textures/ui/not_selected_slot.png);}
+                                                </string>
+                                            </property>
+                                            <property name="text">
+                                                <string/>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QPushButton" name="button_3">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <width>80</width>
+                                                    <height>80</height>
+                                                </size>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">QPushButton{border-image:
+                                                    url(:svl/textures/ui/not_selected_slot.png);}
+                                                </string>
+                                            </property>
+                                            <property name="text">
+                                                <string/>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QPushButton" name="button_4">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <width>80</width>
+                                                    <height>80</height>
+                                                </size>
+                                            </property>
+                                            <property name="autoFillBackground">
+                                                <bool>false</bool>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">QPushButton{border-image:
+                                                    url(:svl/textures/ui/not_selected_slot.png);}
+                                                </string>
+                                            </property>
+                                            <property name="text">
+                                                <string/>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QPushButton" name="button_5">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <width>80</width>
+                                                    <height>80</height>
+                                                </size>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">QPushButton{border-image:
+                                                    url(:svl/textures/ui/not_selected_slot.png);}
+                                                </string>
+                                            </property>
+                                            <property name="text">
+                                                <string/>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QPushButton" name="button_6">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <width>80</width>
+                                                    <height>80</height>
+                                                </size>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">QPushButton{border-image:
+                                                    url(:svl/textures/ui/not_selected_slot.png);}
+                                                </string>
+                                            </property>
+                                            <property name="text">
+                                                <string/>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QPushButton" name="button_7">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <width>80</width>
+                                                    <height>80</height>
+                                                </size>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">QPushButton{border-image:
+                                                    url(:svl/textures/ui/not_selected_slot.png);}
+                                                </string>
+                                            </property>
+                                            <property name="text">
+                                                <string/>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <spacer name="verticalSpacer_2">
+                                            <property name="orientation">
+                                                <enum>Qt::Vertical</enum>
+                                            </property>
+                                            <property name="sizeType">
+                                                <enum>QSizePolicy::Maximum</enum>
+                                            </property>
+                                            <property name="sizeHint" stdset="0">
+                                                <size>
+                                                    <width>0</width>
+                                                    <height>80</height>
+                                                </size>
+                                            </property>
+                                        </spacer>
+                                    </item>
+                                </layout>
+                            </item>
+                            <item>
+                                <spacer name="horizontalSpacer">
+                                    <property name="orientation">
+                                        <enum>Qt::Horizontal</enum>
+                                    </property>
+                                    <property name="sizeHint" stdset="0">
+                                        <size>
+                                            <width>40</width>
+                                            <height>20</height>
+                                        </size>
+                                    </property>
+                                </spacer>
+                            </item>
+                        </layout>
+                    </item>
+                </layout>
+            </item>
         </layout>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </item>
-  </layout>
- </widget>
- <resources/>
- <connections/>
+    </widget>
+    <resources/>
+    <connections/>
 </ui>

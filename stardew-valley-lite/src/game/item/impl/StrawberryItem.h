@@ -12,7 +12,7 @@ class StrawberryItem : public Item
 public:
     StrawberryItem();
 
-    const std::string & getTexture() const override;
+    const std::string &getTexture() const override;
 };
 
 

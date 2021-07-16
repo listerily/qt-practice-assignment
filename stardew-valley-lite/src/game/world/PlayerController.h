@@ -8,27 +8,41 @@
 #include "../entity/Player.h"
 
 class GameWorld;
+
 class Inventory;
+
 class Player;
+
 class PlayerController
 {
 private:
-    GameWorld& world;
+    GameWorld &world;
 public:
-    explicit PlayerController(GameWorld&);
+    explicit PlayerController(GameWorld &);
 
     void walk(bool, bool, bool, bool);
+
     void walkUp(double);
+
     void walkDown(double);
+
     void walkLeft(double);
+
     void walkRight(double);
+
     void selectInventorySlot(int);
-    Inventory& getInventory();
-    const Inventory& getInventory() const;
+
+    Inventory &getInventory();
+
+    const Inventory &getInventory() const;
+
     void interact(bool);
+
     void turn(Player::Facing);
+
 private:
     void walk(double, double);
+
     bool isInSilent() const;
 };
 

@@ -8,21 +8,29 @@
 class WorldStatus
 {
 public:
-    enum Status : int {
+    enum Status : int
+    {
         UNSET, PLAYING, SWITCHING_SCENE, SLEEPING
     };
+
     void set(Status);
+
     void tick();
+
     Status get() const;
+
     double getProgress() const;
 
     WorldStatus();
+
 private:
     Status current;
     int time;
 
     bool hasUpTime() const;
+
     int getUpTime() const;
+
     Status getNextStatus() const;
 };
 

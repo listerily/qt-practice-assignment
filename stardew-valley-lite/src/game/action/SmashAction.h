@@ -8,19 +8,23 @@
 #include "Action.h"
 
 class Item;
+
 class TileObject;
+
 class SmashAction : public Action
 {
 private:
-    const Item& tool;
-    const Item& harvest;
-    TileObject& tileObject;
+    const Item &tool;
+    const Item &harvest;
+    TileObject &tileObject;
 public:
-    SmashAction(const Item&, const Item&, TileObject&);
+    SmashAction(const Item &, const Item &, TileObject &);
 
     int getDuration() const override;
+
     void onActionEnd(GameWorld &w, Scene &s, Player &p) override;
-    const Item& getToolItem() const;
+
+    const Item &getToolItem() const;
 };
 
 

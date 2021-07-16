@@ -13,6 +13,7 @@ private:
     std::unordered_map<int, bool> keymap;
 public:
     void keyPressEvent(int key);
+
     void keyReleaseEvent(int key);
 
     bool isKeyPressed(int) const;

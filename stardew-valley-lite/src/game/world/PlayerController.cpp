@@ -8,7 +8,7 @@
 #include "../inventory/Inventory.h"
 #include "WorldStatus.h"
 
-PlayerController::PlayerController(GameWorld & world) : world(world)
+PlayerController::PlayerController(GameWorld &world) : world(world)
 {
 
 }
@@ -50,29 +50,29 @@ const Inventory &PlayerController::getInventory() const
 
 void PlayerController::walk(double dx, double dy)
 {
-    auto& player = world.getPlayer();
-    auto const& position = player.getPosition();
+    auto &player = world.getPlayer();
+    auto const &position = player.getPosition();
     player.turn(dx, dy);
-    if(player.isWalkable(position.first + dx, position.second + dy))
+    if (player.isWalkable(position.first + dx, position.second + dy))
     {
         player.move(dx, dy);
         return;
     }
 
     //Moving Optimization
-    for(auto const& facingPosition : player.getFacingPositions())
+    for (auto const &facingPosition : player.getFacingPositions())
     {
-        if(player.isTileWalkable(facingPosition.first, facingPosition.second))
+        if (player.isTileWalkable(facingPosition.first, facingPosition.second))
         {
             double targetX = facingPosition.first + 0.5;
             double targetY = facingPosition.second + 0.5;
-            if(targetX > position.first && player.isWalkable(position.first + 0.05, position.second))
+            if (targetX > position.first && player.isWalkable(position.first + 0.05, position.second))
                 player.move(0.05, 0.0);
-            if(targetX < position.first && player.isWalkable(position.first - 0.05, position.second))
+            if (targetX < position.first && player.isWalkable(position.first - 0.05, position.second))
                 player.move(-0.05, 0.0);
-            if(targetY > position.second && player.isWalkable(position.first, position.second + 0.05))
+            if (targetY > position.second && player.isWalkable(position.first, position.second + 0.05))
                 player.move(0.0, 0.05);
-            if(targetY < position.second && player.isWalkable(position.first, position.second - 0.05))
+            if (targetY < position.second && player.isWalkable(position.first, position.second - 0.05))
                 player.move(0.0, -0.05);
             break;
         }
@@ -81,7 +81,7 @@ void PlayerController::walk(double dx, double dy)
 
 void PlayerController::walk(bool up, bool down, bool left, bool right)
 {
-    if(isInSilent())
+    if (isInSilent())
         return;
     const double speedNormal = 0.1;
     const double speedDiagonal = 0.07;
@@ -91,9 +91,9 @@ void PlayerController::walk(bool up, bool down, bool left, bool right)
     bool towardsUp = true;
     bool towardsDown = true;
 
-    if(up && down)
+    if (up && down)
         towardsDown = towardsUp = false;
-    if(left && right)
+    if (left && right)
         towardsLeft = towardsRight = false;
 
     towardsUp = towardsUp && up;
@@ -101,34 +101,34 @@ void PlayerController::walk(bool up, bool down, bool left, bool right)
     towardsLeft = towardsLeft && left;
     towardsRight = towardsRight && right;
 
-    if(towardsRight && towardsUp)
+    if (towardsRight && towardsUp)
         walkUp(speedDiagonal), walkRight(speedDiagonal);
-    else if(towardsLeft && towardsUp)
+    else if (towardsLeft && towardsUp)
         walkUp(speedDiagonal), walkLeft(speedDiagonal);
-    else if(towardsRight && towardsDown)
+    else if (towardsRight && towardsDown)
         walkDown(speedDiagonal), walkRight(speedDiagonal);
-    else if(towardsLeft && towardsDown)
+    else if (towardsLeft && towardsDown)
         walkDown(speedDiagonal), walkLeft(speedDiagonal);
-    else if(towardsUp)
+    else if (towardsUp)
         walkUp(speedNormal);
-    else if(towardsDown)
+    else if (towardsDown)
         walkDown(speedNormal);
-    else if(towardsLeft)
+    else if (towardsLeft)
         walkLeft(speedNormal);
-    else if(towardsRight)
+    else if (towardsRight)
         walkRight(speedNormal);
 }
 
 void PlayerController::interact(bool self)
 {
-    if(isInSilent())
+    if (isInSilent())
         return;
     world.getPlayer().interact(world, self);
 }
 
 void PlayerController::turn(Player::Facing facing)
 {
-    if(isInSilent())
+    if (isInSilent())
         return;
     world.getPlayer().facing = facing;
 }
@@ -136,6 +136,6 @@ void PlayerController::turn(Player::Facing facing)
 bool PlayerController::isInSilent() const
 {
     return world.getWorldStatus().get() == WorldStatus::SLEEPING ||
-            world.getWorldStatus().get() == WorldStatus::SWITCHING_SCENE ||
-            world.getPlayer().getCurrentAction() != nullptr;
+           world.getWorldStatus().get() == WorldStatus::SWITCHING_SCENE ||
+           world.getPlayer().getCurrentAction() != nullptr;
 }

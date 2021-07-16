@@ -12,7 +12,7 @@ class AxeItem : public Item
 public:
     AxeItem();
 
-    const std::string & getTexture() const override;
+    const std::string &getTexture() const override;
 };
 
 

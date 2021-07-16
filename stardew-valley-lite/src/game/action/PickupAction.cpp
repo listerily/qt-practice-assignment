@@ -12,7 +12,7 @@ int PickupAction::getDuration() const
     return 15;
 }
 
-PickupAction::PickupAction(const Item & i) : item(i)
+PickupAction::PickupAction(const Item &i) : item(i)
 {
 
 }
@@ -24,7 +24,7 @@ void PickupAction::onActionEnd(GameWorld &w, Scene &s, Player &p)
     p.getInventory().addItemInstance(ItemInstance(&item, 1));
 }
 
-const Item& PickupAction::getItem() const
+const Item &PickupAction::getItem() const
 {
     return item;
 }

@@ -11,16 +11,16 @@
 #include "../config/ConfigLoader.h"
 #include "WorldStatus.h"
 
-GameWorld::GameWorld(GameClient & client) : client(client), playerController(*this)
+GameWorld::GameWorld(GameClient &client) : client(client), playerController(*this)
 {
     player = 0;
     worldStatus = new WorldStatus;
     worldStatus->set(WorldStatus::PLAYING);
 }
 
-void GameWorld::registerNewScene(const SceneMapConfig & config)
+void GameWorld::registerNewScene(const SceneMapConfig &config)
 {
-    if(currentScene.empty())
+    if (currentScene.empty())
         currentScene = config.id;
     auto newDimension = std::make_unique<Scene>(config);
     scenes[config.id] = std::move(newDimension);
@@ -38,18 +38,18 @@ const Scene &GameWorld::getCurrentGameScene() const
 
 Player &GameWorld::getPlayer()
 {
-    return dynamic_cast<Player&>(*entities[player]);
+    return dynamic_cast<Player &>(*entities[player]);
 }
 
 const Player &GameWorld::getPlayer() const
 {
-    return dynamic_cast<const Player&>(*entities[player]);
+    return dynamic_cast<const Player &>(*entities[player]);
 }
 
 void GameWorld::initialize()
 {
-    const auto& dimMaps = client.getConfigLoader().getSceneMaps();
-    for(const auto& dimMap : dimMaps)
+    const auto &dimMaps = client.getConfigLoader().getSceneMaps();
+    for (const auto &dimMap : dimMaps)
         registerNewScene(dimMap);
     initializePlayer();
 }
@@ -59,11 +59,12 @@ void GameWorld::addNewEntity(std::unique_ptr<Entity> newEntity)
     entities.push_back(std::move(newEntity));
 }
 
-void GameWorld::removeEntity(const Entity * entityPointer)
+void GameWorld::removeEntity(const Entity *entityPointer)
 {
-    for(auto iter = entities.begin(); iter != entities.end();)
+    for (auto iter = entities.begin(); iter != entities.end();)
     {
-        iter = std::remove_if(iter, entities.end(),[&entityPointer](const std::unique_ptr<Entity>& ref){
+        iter = std::remove_if(iter, entities.end(), [&entityPointer](const std::unique_ptr<Entity> &ref)
+        {
             return ref.get() == entityPointer;
         });
     }
@@ -76,12 +77,12 @@ void GameWorld::initializePlayer()
     addNewEntity(std::move(thePlayer));
 }
 
-Scene *GameWorld::getSceneByID(const std::string& id)
+Scene *GameWorld::getSceneByID(const std::string &id)
 {
     return scenes.find(id)->second.get();
 }
 
-const Scene *GameWorld::getSceneByID(const std::string& id) const
+const Scene *GameWorld::getSceneByID(const std::string &id) const
 {
     return scenes.find(id)->second.get();
 }
@@ -89,10 +90,13 @@ const Scene *GameWorld::getSceneByID(const std::string& id) const
 void GameWorld::tick()
 {
     worldStatus->tick();
-    std::for_each(scenes.begin(), scenes.end(), [](const std::unordered_map<std::string,std::unique_ptr<Scene>>::value_type& scene){
-        scene.second->tick();
-    });
-    std::for_each(entities.begin(), entities.end(), [this](const std::unique_ptr<Entity>& entity){
+    std::for_each(scenes.begin(), scenes.end(),
+                  [](const std::unordered_map<std::string, std::unique_ptr<Scene>>::value_type &scene)
+                  {
+                      scene.second->tick();
+                  });
+    std::for_each(entities.begin(), entities.end(), [this](const std::unique_ptr<Entity> &entity)
+    {
         entity->tick(*this);
     });
 }
@@ -105,7 +109,7 @@ PlayerController &GameWorld::getPlayerController()
 void GameWorld::changeScene(const std::string &id)
 {
     currentScene = id;
-    const auto& spawn = getCurrentGameScene().getSpawn();
+    const auto &spawn = getCurrentGameScene().getSpawn();
     getPlayer().changeScene(getCurrentGameScene());
     getPlayer().moveTo(spawn.first, spawn.second);
     triggerEvent(WorldEvent::SWITCH_SCENE);
@@ -142,7 +146,9 @@ GameWorld::~GameWorld()
 
 void GameWorld::newDay()
 {
-    std::for_each(scenes.begin(), scenes.end(), [this](const std::unordered_map<std::string,std::unique_ptr<Scene>>::value_type& scene){
-        scene.second->newDay(*this);
-    });
+    std::for_each(scenes.begin(), scenes.end(),
+                  [this](const std::unordered_map<std::string, std::unique_ptr<Scene>>::value_type &scene)
+                  {
+                      scene.second->newDay(*this);
+                  });
 }

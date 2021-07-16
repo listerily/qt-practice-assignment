@@ -19,16 +19,16 @@ void ItemManager::initializeItems()
     lookupMap["axe"] = new AxeItem;
 }
 
-const Item *ItemManager::lookup(const std::string& id) const
+const Item *ItemManager::lookup(const std::string &id) const
 {
-    if(lookupMap.find(id) == lookupMap.end())
+    if (lookupMap.find(id) == lookupMap.end())
         return nullptr;
     return lookupMap.at(id);
 }
 
 ItemManager::~ItemManager()
 {
-    for(const auto& i : lookupMap)
+    for (const auto &i : lookupMap)
         delete i.second;
 }
 

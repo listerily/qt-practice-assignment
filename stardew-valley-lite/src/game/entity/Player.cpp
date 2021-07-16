@@ -12,7 +12,7 @@
 #include "../object/TileObject.h"
 #include "../inventory/Inventory.h"
 
-Player::Player(Scene& s) : Entity(s)
+Player::Player(Scene &s) : Entity(s)
 {
     facing = Facing::DOWN;
     movingVariant = 0;
@@ -38,15 +38,15 @@ void Player::move(double x, double y)
     movingVariant = 3;
 }
 
-void Player::tick(GameWorld& world)
+void Player::tick(GameWorld &world)
 {
     Entity::tick(world);
-    if(movingVariant > 0)
+    if (movingVariant > 0)
         --movingVariant;
-    if(currentAction)
+    if (currentAction)
     {
         currentAction->tick(world, getScene(), *this);
-        if(currentAction->isFinished())
+        if (currentAction->isFinished())
             currentAction = nullptr;
     }
 }
@@ -55,20 +55,20 @@ bool Player::isWalkable(double x, double y) const
 {
     const double collisionBoxRadius = getCollisionBoxRadius();
     return isTileWalkable(floor(x - collisionBoxRadius), floor(y - collisionBoxRadius)) &&
-            isTileWalkable(floor(x + collisionBoxRadius), floor(y + collisionBoxRadius)) &&
-            isTileWalkable(floor(x - collisionBoxRadius), floor(y + collisionBoxRadius)) &&
-            isTileWalkable(floor(x + collisionBoxRadius), floor(y - collisionBoxRadius));
+           isTileWalkable(floor(x + collisionBoxRadius), floor(y + collisionBoxRadius)) &&
+           isTileWalkable(floor(x - collisionBoxRadius), floor(y + collisionBoxRadius)) &&
+           isTileWalkable(floor(x + collisionBoxRadius), floor(y - collisionBoxRadius));
 }
 
 bool Player::isTileWalkable(int x, int y) const
 {
-    const auto& tiles = getScene().getTileSheet().getTilesAt(x, y);
-    if(tiles.empty())
+    const auto &tiles = getScene().getTileSheet().getTilesAt(x, y);
+    if (tiles.empty())
         return true;
     bool able = true;
-    for(const auto& tile : tiles)
+    for (const auto &tile : tiles)
     {
-        switch(tile.tile->walkable)
+        switch (tile.tile->walkable)
         {
             case Tile::WalkableType::FORCED_DISABLE:
                 return false;
@@ -88,13 +88,13 @@ bool Player::isTileWalkable(int x, int y) const
 
 void Player::turn(double x, double y)
 {
-    if(x > 0.0 && y == 0.0)
+    if (x > 0.0 && y == 0.0)
         facing = Facing::RIGHT;
-    if(x < 0.0 && y == 0.0)
+    if (x < 0.0 && y == 0.0)
         facing = Facing::LEFT;
-    if(x == 0.0 && y > 0.0)
+    if (x == 0.0 && y > 0.0)
         facing = Facing::DOWN;
-    if(x == 0.0 && y < 0.0)
+    if (x == 0.0 && y < 0.0)
         facing = Facing::UP;
 }
 
@@ -140,13 +140,17 @@ std::list<std::pair<int, int>> Player::getFacingPositions() const
     switch (getFacing())
     {
         case Facing::UP:
-            return {{floor(x - collisionBoxRadius), floor(y) - 1}, {floor(x + collisionBoxRadius), floor(y) - 1}};
+            return {{floor(x - collisionBoxRadius), floor(y) - 1},
+                    {floor(x + collisionBoxRadius), floor(y) - 1}};
         case Facing::DOWN:
-            return {{floor(x - collisionBoxRadius), floor(y) + 1}, {floor(x + collisionBoxRadius), floor(y) + 1}};
+            return {{floor(x - collisionBoxRadius), floor(y) + 1},
+                    {floor(x + collisionBoxRadius), floor(y) + 1}};
         case Facing::LEFT:
-            return {{floor(x) - 1, floor(y - collisionBoxRadius)}, {floor(x) - 1, floor(y + collisionBoxRadius)}};
+            return {{floor(x) - 1, floor(y - collisionBoxRadius)},
+                    {floor(x) - 1, floor(y + collisionBoxRadius)}};
         case Facing::RIGHT:
-            return {{floor(x) + 1, floor(y - collisionBoxRadius)}, {floor(x) + 1, floor(y + collisionBoxRadius)}};
+            return {{floor(x) + 1, floor(y - collisionBoxRadius)},
+                    {floor(x) + 1, floor(y + collisionBoxRadius)}};
     }
     return {{0, 0}};
 }
@@ -156,28 +160,27 @@ double Player::getCollisionBoxRadius() const
     return 0.3;
 }
 
-void Player::interact(GameWorld&world, bool self)
+void Player::interact(GameWorld &world, bool self)
 {
-    if(getCurrentAction())
+    if (getCurrentAction())
         return;
-    ItemInstance* selectedItem = getInventory().getSelectedItemInstance();
-    if(self && selectedItem)
+    ItemInstance *selectedItem = getInventory().getSelectedItemInstance();
+    if (self && selectedItem)
     {
         auto theAction = selectedItem->item->interact(*this, *selectedItem);
         setAction(std::move(theAction));
-    }
-    else if(!self)
+    } else if (!self)
     {
-        const auto& facingPosition = getFacingPosition();
-        auto& tileObjects = getScene().getTileSheet().getTileObjectsAt(facingPosition.first, facingPosition.second);
-        for(auto tileObject = tileObjects.rbegin(); tileObject != tileObjects.rend(); ++tileObject)
+        const auto &facingPosition = getFacingPosition();
+        auto &tileObjects = getScene().getTileSheet().getTileObjectsAt(facingPosition.first, facingPosition.second);
+        for (auto tileObject = tileObjects.rbegin(); tileObject != tileObjects.rend(); ++tileObject)
         {
-            if((*tileObject)->ableToInteract())
+            if ((*tileObject)->ableToInteract())
             {
                 auto theAction = (*tileObject)->interact(world, selectedItem, *this, getScene(), facingPosition.first,
-                                        facingPosition.second);
+                                                         facingPosition.second);
                 setAction(std::move(theAction));
-                if(selectedItem && !selectedItem->empty())
+                if (selectedItem && !selectedItem->empty())
                     selectedItem->item->onInteract(*this, *selectedItem, **tileObject);
                 break;
             }

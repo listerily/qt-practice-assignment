@@ -22,7 +22,8 @@ const std::list<std::unique_ptr<TileObject>> &Scene::getObjects() const
 
 void Scene::tick()
 {
-    std::for_each(objects.begin(), objects.end(), [this](const std::unique_ptr<TileObject>& object){
+    std::for_each(objects.begin(), objects.end(), [this](const std::unique_ptr<TileObject> &object)
+    {
         object->tick(*this);
     });
 }
@@ -38,11 +39,11 @@ Scene::Scene(const SceneMapConfig &config) : id(config.id)
     initialize(config);
 }
 
-void Scene::initialize(const SceneMapConfig& config)
+void Scene::initialize(const SceneMapConfig &config)
 {
     spawnX = config.spawnX;
     spawnY = config.spawnY;
-    for(const auto& object : config.objects)
+    for (const auto &object : config.objects)
     {
         auto newObject = TileObjectFactory::generateTileObjectByIdAt(object.id, object.posX, object.posY);
         addNewObject(std::move(newObject));
@@ -55,12 +56,13 @@ void Scene::addNewObject(std::unique_ptr<TileObject> newObject)
     objects.insert(objects.end(), std::move(newObject));
 }
 
-void Scene::removeObject(TileObject * target)
+void Scene::removeObject(TileObject *target)
 {
     tileSheet->removeTileObject(*target);
-    objects.remove_if([&target](const std::unique_ptr<TileObject>& object){
-        return object.get() == target;
-    });
+    objects.remove_if([&target](const std::unique_ptr<TileObject> &object)
+                      {
+                          return object.get() == target;
+                      });
 }
 
 const TileSheet &Scene::getTileSheet() const
@@ -83,9 +85,10 @@ std::pair<double, double> Scene::getSpawn() const
     return {spawnX, spawnY};
 }
 
-void Scene::newDay(GameWorld& world)
+void Scene::newDay(GameWorld &world)
 {
-    std::for_each(objects.begin(), objects.end(), [&](std::unique_ptr<TileObject>& tileObject){
+    std::for_each(objects.begin(), objects.end(), [&](std::unique_ptr<TileObject> &tileObject)
+    {
         tileObject->afterNight(world, *this);
     });
 }

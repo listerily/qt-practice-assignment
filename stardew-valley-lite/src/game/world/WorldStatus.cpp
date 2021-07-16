@@ -7,13 +7,13 @@
 void WorldStatus::set(WorldStatus::Status status)
 {
     current = status;
-    if(hasUpTime())
+    if (hasUpTime())
         time = getUpTime();
 }
 
 void WorldStatus::tick()
 {
-    if(time > 0 && --time == 0)
+    if (time > 0 && --time == 0)
         set(getNextStatus());
 }
 
@@ -66,5 +66,5 @@ WorldStatus::WorldStatus()
 
 double WorldStatus::getProgress() const
 {
-    return 1.0 - (double)time / getUpTime();
+    return 1.0 - (double) time / getUpTime();
 }

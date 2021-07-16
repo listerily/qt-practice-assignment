@@ -9,18 +9,21 @@
 #include <unordered_map>
 
 class Item;
+
 class ItemManager
 {
 private:
-    std::unordered_map<std::string, const Item*> lookupMap;
+    std::unordered_map<std::string, const Item *> lookupMap;
 public:
-    const Item* lookup(const std::string& id) const;
+    const Item *lookup(const std::string &id) const;
 
-    static const ItemManager& getInstance();
+    static const ItemManager &getInstance();
 
 private:
     ItemManager();
+
     ~ItemManager();
+
     void initializeItems();
 };
 

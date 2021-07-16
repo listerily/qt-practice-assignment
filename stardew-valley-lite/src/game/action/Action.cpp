@@ -4,15 +4,15 @@
 
 #include "Action.h"
 
-void Action::tick(GameWorld & w, Scene & s, Player & p)
+void Action::tick(GameWorld &w, Scene &s, Player &p)
 {
-    if(!started)
+    if (!started)
     {
         started = true;
         time = getDuration();
         onActionStart(w, s, p);
     }
-    if(time > 0 && --time == 0)
+    if (time > 0 && --time == 0)
         onActionEnd(w, s, p);
 }
 
@@ -33,7 +33,7 @@ int Action::getProgressI() const
 
 double Action::getProgressD() const
 {
-    return (double)getProgressI() / getDuration();
+    return (double) getProgressI() / getDuration();
 }
 
 void Action::onActionStart(GameWorld &w, Scene &s, Player &p)

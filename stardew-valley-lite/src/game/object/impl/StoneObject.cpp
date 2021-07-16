@@ -7,7 +7,8 @@
 StoneObject::StoneObject(int x, int y, int type) : TileObject("stone", x, y)
 {
     tiles = {
-            Tile{{type == 0 ? ":/svl/textures/items/4_7_14.png" : ":/svl/textures/items/4_18_18.png"}, Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::ON_GROUND}
+            Tile{{type == 0 ? ":/svl/textures/items/4_7_14.png" : ":/svl/textures/items/4_18_18.png"},
+                 Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::ON_GROUND}
     };
 }
 

@@ -9,7 +9,8 @@
 BranchObject::BranchObject(int x, int y, int type) : TileObject("branch", x, y)
 {
     tiles = {
-            Tile{{type == 0 ? ":/svl/textures/items/4_6_12.png" : ":/svl/textures/items/4_7_12.png"}, Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::ON_GROUND}
+            Tile{{type == 0 ? ":/svl/textures/items/4_6_12.png" : ":/svl/textures/items/4_7_12.png"},
+                 Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::ON_GROUND}
     };
 }
 
@@ -18,7 +19,7 @@ BranchObject::interact(GameWorld &world, ItemInstance *item, Player &player, Sce
 {
     TileObject::interact(world, item, player, scene, 0, 0);
 
-    if(item && item->itemMatches(ItemInstance("axe")))
+    if (item && item->itemMatches(ItemInstance("axe")))
         return std::make_unique<SmashAction>(*(item->getItem()), *ItemInstance("wood").getItem(), *this);
     return nullptr;
 }

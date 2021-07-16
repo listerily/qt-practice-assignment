@@ -10,7 +10,7 @@
 #include <QJsonDocument>
 #include <QFile>
 
-ConfigLoader::ConfigLoader(QApplication & app) : application(app)
+ConfigLoader::ConfigLoader(QApplication &app) : application(app)
 {
 
 }
@@ -23,23 +23,23 @@ void ConfigLoader::initialize()
 void ConfigLoader::initializeSceneMaps()
 {
     QFile resource(":/svl/text/config/scenes/scenes_manifest.json");
-    if(!resource.open(QFile::ReadOnly))
+    if (!resource.open(QFile::ReadOnly))
         return;
     QJsonDocument document(QJsonDocument::fromJson(resource.readAll()));
     auto worldManifestList = document.object()["scenes"].toArray();
-    for(auto const& manifestItem : worldManifestList)
+    for (auto const &manifestItem : worldManifestList)
     {
         QFile manifestItemResFile(":/svl/text/config/scenes/" + manifestItem.toString());
-        if(!manifestItemResFile.open(QFile::ReadOnly))
+        if (!manifestItemResFile.open(QFile::ReadOnly))
             continue;
         QJsonDocument document_item(QJsonDocument::fromJson(manifestItemResFile.readAll()));
-        const auto& manifestObject = document_item.object();
+        const auto &manifestObject = document_item.object();
         SceneMapConfig newConfig;
         newConfig.id = manifestObject["id"].toString().toStdString();
         newConfig.spawnX = manifestObject["spawn"][0].toDouble();
         newConfig.spawnY = manifestObject["spawn"][1].toDouble();
         auto objects = manifestObject["objects"].toArray();
-        for(const auto& objectItem : objects)
+        for (const auto &objectItem : objects)
         {
             SceneMapConfig::ObjectConfig newObject;
             newObject.posX = objectItem.toObject()["pos"].toArray()[0].toInt();

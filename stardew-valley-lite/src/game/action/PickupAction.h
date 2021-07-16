@@ -8,16 +8,19 @@
 #include "Action.h"
 
 class Item;
+
 class PickupAction : public Action
 {
 private:
-    const Item& item;
+    const Item &item;
 public:
-    explicit PickupAction(const Item&);
+    explicit PickupAction(const Item &);
 
     int getDuration() const override;
+
     void onActionEnd(GameWorld &w, Scene &s, Player &p) override;
-    const Item& getItem() const;
+
+    const Item &getItem() const;
 };
 
 

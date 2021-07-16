@@ -8,7 +8,8 @@
 #include "../entity/Player.h"
 #include "../world/Scene.h"
 
-SmashAction::SmashAction(const Item & tool, const Item & harvest, TileObject& tileObject) : tool(tool), harvest(harvest), tileObject(tileObject)
+SmashAction::SmashAction(const Item &tool, const Item &harvest, TileObject &tileObject) : tool(tool), harvest(harvest),
+                                                                                          tileObject(tileObject)
 {
 
 }

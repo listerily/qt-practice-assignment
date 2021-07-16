@@ -7,20 +7,27 @@
 
 
 class Tile;
+
 class TileObject;
+
 class TileRef
 {
 private:
     int y;
 public:
-    const Tile* tile;
+    const Tile *tile;
 
-    TileRef(const Tile&, const TileObject&);
-    const Tile& operator()()const;
-    bool operator<(const TileRef&) const;
-    bool operator>(const TileRef&) const;
-    bool operator==(const TileRef&) const;
-    bool operator!=(const TileRef&) const;
+    TileRef(const Tile &, const TileObject &);
+
+    const Tile &operator()() const;
+
+    bool operator<(const TileRef &) const;
+
+    bool operator>(const TileRef &) const;
+
+    bool operator==(const TileRef &) const;
+
+    bool operator!=(const TileRef &) const;
 };
 
 

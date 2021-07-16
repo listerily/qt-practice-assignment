@@ -12,7 +12,7 @@ class StoneItem : public Item
 public:
     StoneItem();
 
-    const std::string & getTexture() const override;
+    const std::string &getTexture() const override;
 };
 
 

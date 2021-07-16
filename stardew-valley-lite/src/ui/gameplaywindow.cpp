@@ -13,12 +13,12 @@
 #include <QLabel>
 #include <sstream>
 
-GamePlayWindow::GamePlayWindow(GameClient& client, QWidget *parent) :
-    gameClient(client),
-    QWidget(parent),
-    currentWorld(*client.getCurrentWorld()),
-    inputHandler(client.getInputHandler()),
-    ui(new Ui::GamePlayWindow)
+GamePlayWindow::GamePlayWindow(GameClient &client, QWidget *parent) :
+        gameClient(client),
+        QWidget(parent),
+        currentWorld(*client.getCurrentWorld()),
+        inputHandler(client.getInputHandler()),
+        ui(new Ui::GamePlayWindow)
 {
     ui->setupUi(this);
     setWindowTitle("Stardew Valley Lite");
@@ -26,10 +26,11 @@ GamePlayWindow::GamePlayWindow(GameClient& client, QWidget *parent) :
     painter = new WorldPainter;
     currentSlotID = 0;
 
-    buttons = {ui->button_0, ui->button_1, ui->button_2, ui->button_3, ui->button_4, ui->button_5, ui->button_6, ui->button_7};
-    for(int i = 0; i < 8; ++i)
+    buttons = {ui->button_0, ui->button_1, ui->button_2, ui->button_3, ui->button_4, ui->button_5, ui->button_6,
+               ui->button_7};
+    for (int i = 0; i < 8; ++i)
     {
-        connect(buttons[i], &QPushButton::clicked, this, [=](){this->slotButtonClicked(i);});
+        connect(buttons[i], &QPushButton::clicked, this, [=]() { this->slotButtonClicked(i); });
         buttons[i]->setFocusPolicy(Qt::FocusPolicy::NoFocus);
         labels[i] = new QLabel("", buttons[i]);
         labels[i]->setGeometry(18, 8, labels[i]->width(), labels[i]->height());
@@ -88,14 +89,13 @@ void GamePlayWindow::selectSlot(int id)
 
 void GamePlayWindow::notifyInventoryUpdated(unsigned int slot)
 {
-    const auto& pItemInstance = inventoryUpdates[slot];
-    if(pItemInstance.empty())
+    const auto &pItemInstance = inventoryUpdates[slot];
+    if (pItemInstance.empty())
     {
         buttons[slot]->setIcon(QIcon());
         labels[slot]->setText("");
         labels[slot]->setGeometry(20, 10, labels[slot]->width(), labels[slot]->height());
-    }
-    else
+    } else
     {
         std::stringstream stream;
         stream << pItemInstance.count;
@@ -112,11 +112,11 @@ void GamePlayWindow::notifyInventoryUpdated(unsigned int slot)
 void GamePlayWindow::checkInventoryUpdates()
 {
 
-    const auto& inv = currentWorld.getPlayerController().getInventory();
-    if(inventoryUpdates.size() != inv.size())
+    const auto &inv = currentWorld.getPlayerController().getInventory();
+    if (inventoryUpdates.size() != inv.size())
     {
         inventoryUpdates.resize(inv.size());
-        for(unsigned int i = 0; i < 8; ++i)
+        for (unsigned int i = 0; i < 8; ++i)
         {
             inventoryUpdates[i] = inv.getItemInstances()[i];
             notifyInventoryUpdated(i);
@@ -124,9 +124,9 @@ void GamePlayWindow::checkInventoryUpdates()
         return;
     }
 
-    for(int i = 0; i < inv.size(); ++i)
+    for (int i = 0; i < inv.size(); ++i)
     {
-        if(inv.getItemInstances()[i] != inventoryUpdates[i])
+        if (inv.getItemInstances()[i] != inventoryUpdates[i])
         {
             inventoryUpdates[i] = inv.getItemInstances()[i];
             notifyInventoryUpdated(i);
@@ -143,26 +143,25 @@ void GamePlayWindow::wheelEvent(QWheelEvent *event)
 void GamePlayWindow::mousePressEvent(QMouseEvent *event)
 {
     QWidget::mousePressEvent(event);
-    auto& playerController = currentWorld.getPlayerController();
-    if(event->button() == Qt::LeftButton)
+    auto &playerController = currentWorld.getPlayerController();
+    if (event->button() == Qt::LeftButton)
     {
         double x = event->x();
         double y = event->y();
         double width = this->width();
         double height = this->height() + 15.0;
-        double k = (double)height / width;
-        if(y < k * x && y < height - k * x)
+        double k = (double) height / width;
+        if (y < k * x && y < height - k * x)
             playerController.turn(Player::Facing::UP);
-        else if(y < k * x && y > height - k * x)
+        else if (y < k * x && y > height - k * x)
             playerController.turn(Player::Facing::RIGHT);
-        else if(y > k * x && y > height - k * x)
+        else if (y > k * x && y > height - k * x)
             playerController.turn(Player::Facing::DOWN);
-        else if(y > k * x && y < height - k * x)
+        else if (y > k * x && y < height - k * x)
             playerController.turn(Player::Facing::LEFT);
 
         currentWorld.getPlayerController().interact(false);
-    }
-    else if(event->button() == Qt::RightButton)
+    } else if (event->button() == Qt::RightButton)
     {
         currentWorld.getPlayerController().interact(true);
     }

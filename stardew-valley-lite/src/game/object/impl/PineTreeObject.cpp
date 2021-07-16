@@ -27,6 +27,7 @@ PineTreeObject::PineTreeObject(int x, int y) : TileObject("oak_tree", x, y)
             Tile{{":/svl/textures/tiles/0_11_3.png"}, Tile::WalkableType::ABLE, 0, -2, Tile::DisplayPriority::SKY},
             Tile{{":/svl/textures/tiles/0_12_3.png"}, Tile::WalkableType::ABLE, 1, -2, Tile::DisplayPriority::SKY},
             Tile{{":/svl/textures/tiles/0_11_4.png"}, Tile::WalkableType::ABLE, 0, -1, Tile::DisplayPriority::SKY},
-            Tile{{":/svl/textures/tiles/0_11_5.png"}, Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::ON_GROUND},
+            Tile{{":/svl/textures/tiles/0_11_5.png"}, Tile::WalkableType::DISABLE, 0, 0,
+                 Tile::DisplayPriority::ON_GROUND},
     };
 }

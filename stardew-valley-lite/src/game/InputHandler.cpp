@@ -16,8 +16,8 @@ void InputHandler::keyReleaseEvent(int key)
 
 bool InputHandler::isKeyPressed(int key) const
 {
-    auto const& result = keymap.find(key);
-    if(result == keymap.end())
+    auto const &result = keymap.find(key);
+    if (result == keymap.end())
         return false;
     return result->second;
 }

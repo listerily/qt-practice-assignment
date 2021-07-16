@@ -16,6 +16,7 @@ public:
     explicit SwitchSceneAction(std::string sceneID);
 
     int getDuration() const override;
+
     void onActionEnd(GameWorld &w, Scene &s, Player &p) override;
 };
 

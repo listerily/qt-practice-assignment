@@ -10,7 +10,8 @@
 
 WeedsObject::WeedsObject(int x, int y, int type) : TileObject("weeds", x, y)
 {
-    std::vector<std::string> textures = {":/svl/textures/items/4_2_28.png", ":/svl/textures/items/4_3_28.png", ":/svl/textures/items/4_4_28.png", ":/svl/textures/items/4_5_28.png"};
+    std::vector<std::string> textures = {":/svl/textures/items/4_2_28.png", ":/svl/textures/items/4_3_28.png",
+                                         ":/svl/textures/items/4_4_28.png", ":/svl/textures/items/4_5_28.png"};
     tiles = {
             Tile{{textures[type]}, Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::ON_GROUND}
     };

@@ -17,11 +17,17 @@
 #include "../action/Action.h"
 
 class Item;
+
 class Player;
+
 class Tile;
+
 class Scene;
+
 class GameWorld;
+
 class Action;
+
 class TileObject
 {
 protected:
@@ -30,14 +36,20 @@ protected:
     int positionX, positionY;
 public:
     explicit TileObject(std::string id, int x, int y);
+
     virtual ~TileObject();
 
-    virtual std::list<Tile> const& getAllTiles() const;
+    virtual std::list<Tile> const &getAllTiles() const;
+
     virtual std::unique_ptr<Action>
     interact(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x);
+
     virtual bool ableToInteract() const;
+
     virtual void afterNight(GameWorld &world, Scene &scene);
+
     virtual void tick(Scene &scene);
+
     virtual std::pair<int, int> getPosition() const;
 };
 

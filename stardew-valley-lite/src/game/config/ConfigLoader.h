@@ -11,17 +11,20 @@
 #include "SceneMapConfig.h"
 
 class QApplication;
+
 class ConfigLoader
 {
 private:
-    QApplication& application;
+    QApplication &application;
 
     std::list<SceneMapConfig> sceneInitialMapsList;
 public:
-    explicit ConfigLoader(QApplication&);
+    explicit ConfigLoader(QApplication &);
 
     void initialize();
-    const std::list<SceneMapConfig>& getSceneMaps() const;
+
+    const std::list<SceneMapConfig> &getSceneMaps() const;
+
 private:
     void initializeSceneMaps();
 };

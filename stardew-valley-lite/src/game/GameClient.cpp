@@ -12,7 +12,7 @@
 #include "InputHandler.h"
 #include "src/game/world/WorldStatus.h"
 
-GameClient::GameClient(QApplication& app): app(app)
+GameClient::GameClient(QApplication &app) : app(app)
 {
     gameShouldExit = false;
     currentWorld = nullptr;
@@ -26,9 +26,9 @@ GameClient::GameClient(QApplication& app): app(app)
 
 void GameClient::tick()
 {
-    if(gameShouldExit)
+    if (gameShouldExit)
         return;
-    if(currentWorld)
+    if (currentWorld)
         currentWorld->tick();
     processKeyboardInput();
 }
@@ -74,7 +74,7 @@ const InputHandler &GameClient::getInputHandler() const
 
 void GameClient::processKeyboardInput()
 {
-    if(currentWorld)
+    if (currentWorld)
     {
         const bool up = inputHandler->isKeyPressed(Qt::Key_W) || inputHandler->isKeyPressed(Qt::Key_Up);
         const bool down = inputHandler->isKeyPressed(Qt::Key_S) || inputHandler->isKeyPressed(Qt::Key_Down);

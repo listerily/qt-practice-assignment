@@ -47,9 +47,9 @@ GrassLand::GrassLand(int x, int y, int aux) : TileObject("grass", x, y)
             {":/svl/textures/tiles/0_7_8.png"},
     };
     tiles = {
-           Tile{
-                   textures[aux],
-                   Tile::WalkableType::ABLE, 0, 0, Tile::DisplayPriority::SURFACE_BOTTOM
-           }
+            Tile{
+                    textures[aux],
+                    Tile::WalkableType::ABLE, 0, 0, Tile::DisplayPriority::SURFACE_BOTTOM
+            }
     };
 }

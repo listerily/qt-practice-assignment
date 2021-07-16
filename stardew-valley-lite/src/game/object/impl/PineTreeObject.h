@@ -14,7 +14,8 @@ class PineTreeObject : public TileObject
 public:
     PineTreeObject(int x, int y);
 
-    std::unique_ptr<Action> interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x) override;
+    std::unique_ptr<Action>
+    interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x) override;
 };
 
 #endif //STARDEW_VALLEY_LITE_PINETREEOBJECT_H

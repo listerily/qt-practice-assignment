@@ -6,11 +6,13 @@
 
 WaterBankObject::WaterBankObject(int x, int y, int type) : TileObject("water_bank", x, y)
 {
-    if(type == 0)
+    if (type == 0)
     {
         tiles = {
-                Tile{{":/svl/textures/tiles/0_9_7.png"}, Tile::WalkableType::DISABLE, 0, 0, Tile::DisplayPriority::SURFACE_BOTTOM},
-                Tile{{":/svl/textures/tiles/0_9_8.png", ":/svl/textures/tiles/0_11_9.png"}, Tile::WalkableType::DISABLE, 0, 1, Tile::DisplayPriority::SURFACE_BOTTOM}
+                Tile{{":/svl/textures/tiles/0_9_7.png"}, Tile::WalkableType::DISABLE, 0, 0,
+                     Tile::DisplayPriority::SURFACE_BOTTOM},
+                Tile{{":/svl/textures/tiles/0_9_8.png", ":/svl/textures/tiles/0_11_9.png"}, Tile::WalkableType::DISABLE,
+                     0, 1, Tile::DisplayPriority::SURFACE_BOTTOM}
         };
         return;
     }

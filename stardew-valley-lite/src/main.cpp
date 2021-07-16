@@ -13,16 +13,18 @@ int main(int argc, char *argv[])
     //Startup game Client
     GameClient gameClient(a);
     GamePlayWindow mainWindow(gameClient);
-    std::thread([&gameClient, &mainWindow, &gameShouldExit](){
-        using std::chrono::operator""ms;
-        while(!gameShouldExit) {
-            const auto currentTime = std::chrono::system_clock::now();
-            const auto tillTime = currentTime + 20ms;
-            gameClient.tick();
-            mainWindow.notifyPaintTick();
-            std::this_thread::sleep_until(tillTime);
-        }
-    }).detach();
+    std::thread([&gameClient, &mainWindow, &gameShouldExit]()
+                {
+                    using std::chrono::operator ""ms;
+                    while (!gameShouldExit)
+                    {
+                        const auto currentTime = std::chrono::system_clock::now();
+                        const auto tillTime = currentTime + 20ms;
+                        gameClient.tick();
+                        mainWindow.notifyPaintTick();
+                        std::this_thread::sleep_until(tillTime);
+                    }
+                }).detach();
     //Startup UI
     mainWindow.show();
     int returnValue = QApplication::exec();

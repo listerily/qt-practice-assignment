@@ -8,10 +8,11 @@
 #include <memory>
 
 class TileObject;
+
 class TileObjectFactory
 {
 public:
-    static std::unique_ptr<TileObject> generateTileObjectByIdAt(std::string const& id, int x, int y);
+    static std::unique_ptr<TileObject> generateTileObjectByIdAt(std::string const &id, int x, int y);
 };
 
 

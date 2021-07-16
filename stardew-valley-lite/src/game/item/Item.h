@@ -11,20 +11,29 @@
 #include "../action/Action.h"
 
 class Player;
+
 class TileObject;
+
 class Action;
+
 class ItemInstance;
+
 class Item
 {
 private:
     std::string id;
 public:
     explicit Item(std::string);
+
     virtual ~Item() = default;
-    virtual std::unique_ptr<Action> onInteract(Player&, ItemInstance&, TileObject&) const;
-    virtual std::unique_ptr<Action> interact(Player&, ItemInstance&) const;
+
+    virtual std::unique_ptr<Action> onInteract(Player &, ItemInstance &, TileObject &) const;
+
+    virtual std::unique_ptr<Action> interact(Player &, ItemInstance &) const;
+
     virtual bool hideWhenCarrying() const;
-    virtual const std::string& getTexture()const = 0;
+
+    virtual const std::string &getTexture() const = 0;
 };
 
 

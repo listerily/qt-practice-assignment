@@ -17,6 +17,7 @@ public:
         int posX, posY;
         std::string id;
     };
+
     std::string id;
     double spawnX, spawnY;
     std::list<ObjectConfig> objects;

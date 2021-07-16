@@ -12,32 +12,48 @@
 #include "../object/TileObject.h"
 
 class TileSheet;
+
 class SceneMapConfig;
+
 class TileObject;
+
 class GameWorld;
+
 class Scene
 {
 private:
     std::string id;
     std::list<std::unique_ptr<TileObject>> objects;
-    TileSheet* tileSheet;
+    TileSheet *tileSheet;
     double spawnX{}, spawnY{};
 public:
-    explicit Scene(const SceneMapConfig& config);
+    explicit Scene(const SceneMapConfig &config);
+
     ~Scene();
+
 public:
-    std::list<std::unique_ptr<TileObject>>& getObjects();
-    const std::list<std::unique_ptr<TileObject>>& getObjects() const;
+    std::list<std::unique_ptr<TileObject>> &getObjects();
+
+    const std::list<std::unique_ptr<TileObject>> &getObjects() const;
+
     void tick();
-    const std::string& getID() const;
+
+    const std::string &getID() const;
+
     void addNewObject(std::unique_ptr<TileObject>);
-    void removeObject(TileObject*);
-    const TileSheet& getTileSheet() const;
-    TileSheet& getTileSheet();
+
+    void removeObject(TileObject *);
+
+    const TileSheet &getTileSheet() const;
+
+    TileSheet &getTileSheet();
+
     std::pair<double, double> getSpawn() const;
-    void newDay(GameWorld&);
+
+    void newDay(GameWorld &);
+
 private:
-    void initialize(const SceneMapConfig&);
+    void initialize(const SceneMapConfig &);
 };
 
 

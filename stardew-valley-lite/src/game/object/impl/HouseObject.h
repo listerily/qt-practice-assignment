@@ -14,7 +14,7 @@ class HouseObject : public TileObject
 public:
     HouseObject(int, int);
 
-    void playerInteract(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x) override;
+    std::unique_ptr<Action> interact(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x) override;
 
     bool ableToInteract() const override;
 };

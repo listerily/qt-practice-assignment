@@ -13,7 +13,7 @@ public:
     FruitsBarrel(int, int);
 
     bool ableToInteract() const override;
-    void playerInteract(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x) override;
+    std::unique_ptr<Action> interact(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x) override;
 };
 
 

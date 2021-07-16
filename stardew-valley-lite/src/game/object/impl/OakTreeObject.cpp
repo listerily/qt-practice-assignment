@@ -6,9 +6,11 @@
 #include <src/game/world/GameWorld.h>
 #include "OakTreeObject.h"
 
-void OakTreeObject::playerInteract(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x)
+std::unique_ptr<Action>
+OakTreeObject::interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x)
 {
-    TileObject::playerInteract(world, item, player, scene, 0, 0);
+    TileObject::interact(world, item, player, scene, 0, 0);
+    return nullptr;
 }
 
 OakTreeObject::OakTreeObject(int x, int y) : TileObject("oak_tree", x, y)

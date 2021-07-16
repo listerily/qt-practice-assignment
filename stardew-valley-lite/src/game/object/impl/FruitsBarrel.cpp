@@ -5,6 +5,7 @@
 #include "FruitsBarrel.h"
 
 #include "../../inventory/Inventory.h"
+#include "../../action/PickupAction.h"
 
 FruitsBarrel::FruitsBarrel(int x, int y) : TileObject("fruits_barrel", x ,y)
 {
@@ -18,9 +19,10 @@ bool FruitsBarrel::ableToInteract() const
     return true;
 }
 
-void FruitsBarrel::playerInteract(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x)
+std::unique_ptr<Action>
+FruitsBarrel::interact(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x)
 {
-    TileObject::playerInteract(world, instance, player, scene, y, x);
+    TileObject::interact(world, instance, player, scene, y, x);
 
-    player.getInventory().addItemInstance(ItemInstance("strawberry", 1));
+    return std::make_unique<PickupAction>(*ItemInstance("strawberry").getItem());
 }

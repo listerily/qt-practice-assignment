@@ -4,18 +4,16 @@
 
 #include "Entity.h"
 
-Entity::Entity(GameWorld & gameWorld, Scene & dimension) : world(gameWorld), scene(&dimension)
+Entity::Entity(Scene& scene) : scene(&scene)
 {
     x = y = 0.0;
-    ax = ay = 0.0;
-    vx = vy = 0.0;
     health = 0x7fffffff;
 }
 
 Entity::~Entity()
 = default;
 
-void Entity::tick()
+void Entity::tick(GameWorld&)
 {
 
 }
@@ -32,24 +30,19 @@ void Entity::moveTo(double _x, double _y)
     y = _y;
 }
 
-void Entity::setScene(Scene & newScene)
-{
-    scene = &newScene;
-}
-
 int Entity::getHealth() const
 {
     return health;
 }
 
-void Entity::hurt(int hp)
+void Entity::hurt(GameWorld& world, int hp)
 {
     health -= hp;
     if (health <= 0)
-        onDeath();
+        onDeath(world);
 }
 
-void Entity::onDeath()
+void Entity::onDeath(GameWorld&)
 {
 
 }
@@ -57,6 +50,11 @@ void Entity::onDeath()
 std::pair<double, double> Entity::getPosition() const
 {
     return {x, y};
+}
+
+Scene &Entity::getScene() const
+{
+    return *scene;
 }
 
 void Entity::changeScene(Scene & s)

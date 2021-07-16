@@ -144,30 +144,27 @@ void GamePlayWindow::mousePressEvent(QMouseEvent *event)
 {
     QWidget::mousePressEvent(event);
     auto& playerController = currentWorld.getPlayerController();
-    if(playerController.getInventory().getSelectedItemInstance())
+    if(event->button() == Qt::LeftButton)
     {
-        if(event->button() == Qt::LeftButton)
-        {
-            double x = event->x();
-            double y = event->y();
-            double width = this->width();
-            double height = this->height() + 15.0;
-            double k = (double)height / width;
-            if(y < k * x && y < height - k * x)
-                playerController.turn(Player::Facing::UP);
-            else if(y < k * x && y > height - k * x)
-                playerController.turn(Player::Facing::RIGHT);
-            else if(y > k * x && y > height - k * x)
-                playerController.turn(Player::Facing::DOWN);
-            else if(y > k * x && y < height - k * x)
-                playerController.turn(Player::Facing::LEFT);
+        double x = event->x();
+        double y = event->y();
+        double width = this->width();
+        double height = this->height() + 15.0;
+        double k = (double)height / width;
+        if(y < k * x && y < height - k * x)
+            playerController.turn(Player::Facing::UP);
+        else if(y < k * x && y > height - k * x)
+            playerController.turn(Player::Facing::RIGHT);
+        else if(y > k * x && y > height - k * x)
+            playerController.turn(Player::Facing::DOWN);
+        else if(y > k * x && y < height - k * x)
+            playerController.turn(Player::Facing::LEFT);
 
-            currentWorld.getPlayerController().interact(false);
-        }
-        else if(event->button() == Qt::RightButton)
-        {
-            currentWorld.getPlayerController().interact(true);
-        }
+        currentWorld.getPlayerController().interact(false);
+    }
+    else if(event->button() == Qt::RightButton)
+    {
+        currentWorld.getPlayerController().interact(true);
     }
 }
 

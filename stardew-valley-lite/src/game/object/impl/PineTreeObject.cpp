@@ -4,9 +4,11 @@
 
 #include "PineTreeObject.h"
 
-void PineTreeObject::playerInteract(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x)
+std::unique_ptr<Action>
+PineTreeObject::interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x)
 {
-    TileObject::playerInteract(world, item, player, scene, 0, 0);
+    TileObject::interact(world, item, player, scene, 0, 0);
+    return nullptr;
 }
 
 PineTreeObject::PineTreeObject(int x, int y) : TileObject("oak_tree", x, y)

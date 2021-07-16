@@ -17,14 +17,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c86275c9-5238-4720-b4c0-25a7e974a34a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/game/entity/PlayerStatus.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/entity/PlayerStatus.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/item/impl/StrawberryItem.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/item/impl/StrawberryItem.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/world/WorldEvent.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/world/WorldEvent.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/world/WorldStatus.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/world/WorldStatus.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/action/Action.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/action/Action.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/action/PickupAction.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/action/PickupAction.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/action/SmashAction.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/action/SmashAction.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/action/SwitchSceneAction.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/action/SwitchSceneAction.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/item/impl/AxeItem.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/item/impl/AxeItem.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../image-cropper/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../image-cropper/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../image-cropper/output_images/5_0_0.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../image-cropper/output_images/5_0_1.png" beforeDir="false" />
@@ -268,16 +270,14 @@
       <change beforePath="$PROJECT_DIR$/../image-cropper/output_images/5_9_9.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/scenes/farm.json" beforeDir="false" afterPath="$PROJECT_DIR$/res/scenes/farm.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/scenes/home.json" beforeDir="false" afterPath="$PROJECT_DIR$/res/scenes/home.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/GameClient.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameClient.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/GameClient.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameClient.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entity/Entity.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Entity.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entity/Entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Entity.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entity/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Player.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entity/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entity/Player.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/inventory/Inventory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/inventory/Inventory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/inventory/ItemInstance.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/inventory/ItemInstance.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entity/PlayerStatus.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entity/PlayerStatus.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/item/Item.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/item/Item.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/item/Item.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/item/Item.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/item/ItemManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/item/ItemManager.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/object/TileObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/TileObject.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/object/TileObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/TileObject.h" afterDir="false" />
@@ -306,15 +306,10 @@
       <change beforePath="$PROJECT_DIR$/src/game/object/impl/WeedsObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/WeedsObject.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/object/impl/WeedsObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/object/impl/WeedsObject.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/world/GameWorld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/GameWorld.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/GameWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/GameWorld.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/world/PlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/PlayerController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/PlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/PlayerController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/Scene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/Scene.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/world/Scene.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/world/Scene.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/gameplaywindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/gameplaywindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/gameplaywindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/gameplaywindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/painter/GamePainter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/painter/WorldPainter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/painter/GamePainter.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/painter/WorldPainter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/painter/WorldPainter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/painter/WorldPainter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/painter/WorldPainter.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/painter/WorldPainter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../world-generator/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../world-generator/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -360,8 +355,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/game/world" />
       <recent name="$PROJECT_DIR$/src/game" />
+      <recent name="$PROJECT_DIR$/src/game/world" />
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.stardew-valley-lite">
@@ -405,7 +400,7 @@
       <workItem from="1626238391535" duration="32355000" />
       <workItem from="1626273841614" duration="968000" />
       <workItem from="1626328697797" duration="20606000" />
-      <workItem from="1626354063248" duration="1912000" />
+      <workItem from="1626354063248" duration="19650000" />
     </task>
     <servers />
   </component>
@@ -426,5 +421,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="typeid(playerAction)" language="ObjectiveC" />
+        <watch expression="typeid(const PickupAction*)" language="ObjectiveC" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

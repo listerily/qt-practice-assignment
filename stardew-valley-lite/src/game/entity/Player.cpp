@@ -11,19 +11,13 @@
 #include "../item/Item.h"
 #include "../object/TileObject.h"
 #include "../inventory/Inventory.h"
-#include "PlayerStatus.h"
 
-std::string Player::getID() const
-{
-    return "player";
-}
-
-Player::Player(GameWorld & world, Scene & scene) : Entity(world, scene)
+Player::Player(Scene& s) : Entity(s)
 {
     facing = Facing::DOWN;
     movingVariant = 0;
     inventory = new Inventory(8);
-    playerStatus = new PlayerStatus;
+    currentAction = nullptr;
 
     addInitialItemsToInventory();
 }
@@ -44,11 +38,17 @@ void Player::move(double x, double y)
     movingVariant = 3;
 }
 
-void Player::tick()
+void Player::tick(GameWorld& world)
 {
-    Entity::tick();
+    Entity::tick(world);
     if(movingVariant > 0)
         --movingVariant;
+    if(currentAction)
+    {
+        currentAction->tick(world, getScene(), *this);
+        if(currentAction->isFinished())
+            currentAction = nullptr;
+    }
 }
 
 bool Player::isWalkable(double x, double y) const
@@ -62,7 +62,7 @@ bool Player::isWalkable(double x, double y) const
 
 bool Player::isTileWalkable(int x, int y) const
 {
-    const auto& tiles = scene->getTileSheet().getTilesAt(x, y);
+    const auto& tiles = getScene().getTileSheet().getTilesAt(x, y);
     if(tiles.empty())
         return true;
     bool able = true;
@@ -111,14 +111,11 @@ const Inventory &Player::getInventory() const
 Player::~Player()
 {
     delete inventory;
-    delete playerStatus;
 }
 
 void Player::addInitialItemsToInventory()
 {
-    inventory->addItemInstance(ItemInstance("wood", 22));
-    inventory->addItemInstance(ItemInstance("weeds", 1));
-    inventory->addItemInstance(ItemInstance("stone", 1));
+    inventory->addItemInstance(ItemInstance("axe", 1));
 }
 
 std::pair<int, int> Player::getFacingPosition() const
@@ -154,40 +151,46 @@ std::list<std::pair<int, int>> Player::getFacingPositions() const
     return {{0, 0}};
 }
 
-double Player::getCollisionBoxRadius()
+double Player::getCollisionBoxRadius() const
 {
     return 0.3;
 }
 
-void Player::interact(bool self)
+void Player::interact(GameWorld&world, bool self)
 {
+    if(getCurrentAction())
+        return;
     ItemInstance* selectedItem = getInventory().getSelectedItemInstance();
     if(self && selectedItem)
-        selectedItem->item->playerInteract(*this, *selectedItem);
-    else
+    {
+        auto theAction = selectedItem->item->interact(*this, *selectedItem);
+        setAction(std::move(theAction));
+    }
+    else if(!self)
     {
         const auto& facingPosition = getFacingPosition();
-        auto& tileObjects = scene->getTileSheet().getTileObjectsAt(facingPosition.first, facingPosition.second);
+        auto& tileObjects = getScene().getTileSheet().getTileObjectsAt(facingPosition.first, facingPosition.second);
         for(auto tileObject = tileObjects.rbegin(); tileObject != tileObjects.rend(); ++tileObject)
         {
             if((*tileObject)->ableToInteract())
             {
-                (*tileObject)->playerInteract(world, selectedItem, *this, *scene, facingPosition.first,
-                                              facingPosition.second);
-                if(selectedItem && !selectedItem->empty() && selectedItem->item->isOnObjectAbleToInteract())
-                    selectedItem->item->playerInteract(*this, *selectedItem, **tileObject);
+                auto theAction = (*tileObject)->interact(world, selectedItem, *this, getScene(), facingPosition.first,
+                                        facingPosition.second);
+                setAction(std::move(theAction));
+                if(selectedItem && !selectedItem->empty())
+                    selectedItem->item->onInteract(*this, *selectedItem, **tileObject);
                 break;
             }
         }
     }
 }
 
-PlayerStatus &Player::getPlayerStatus()
+const Action *Player::getCurrentAction() const
 {
-    return *playerStatus;
+    return currentAction.get();
 }
 
-const PlayerStatus &Player::getPlayerStatus() const
+void Player::setAction(std::unique_ptr<Action> action)
 {
-    return *playerStatus;
+    currentAction = std::move(action);
 }

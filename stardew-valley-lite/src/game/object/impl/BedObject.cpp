@@ -23,9 +23,11 @@ bool BedObject::ableToInteract() const
     return true;
 }
 
-void BedObject::playerInteract(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x)
+std::unique_ptr<Action>
+BedObject::interact(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x)
 {
-    TileObject::playerInteract(world, instance, player, scene, y, x);
+    TileObject::interact(world, instance, player, scene, y, x);
 
     world.triggerEvent(WorldEvent::SLEEP);
+    return nullptr;
 }

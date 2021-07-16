@@ -6,9 +6,13 @@
 #define STARDEW_VALLEY_LITE_ITEM_H
 
 #include <string>
+#include <memory>
+
+#include "../action/Action.h"
 
 class Player;
 class TileObject;
+class Action;
 class ItemInstance;
 class Item
 {
@@ -17,10 +21,9 @@ private:
 public:
     explicit Item(std::string);
     virtual ~Item() = default;
-    virtual void playerInteract(Player&, ItemInstance&, TileObject&) const;
-    virtual void playerInteract(Player&, ItemInstance&) const;
-    virtual bool isSelfAbleToInteract() const;
-    virtual bool isOnObjectAbleToInteract() const;
+    virtual std::unique_ptr<Action> onInteract(Player&, ItemInstance&, TileObject&) const;
+    virtual std::unique_ptr<Action> interact(Player&, ItemInstance&) const;
+    virtual bool hideWhenCarrying() const;
     virtual const std::string& getTexture()const = 0;
 };
 

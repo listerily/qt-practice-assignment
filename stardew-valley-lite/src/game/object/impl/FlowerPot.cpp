@@ -5,6 +5,7 @@
 #include "FlowerPot.h"
 
 #include "../../inventory/Inventory.h"
+#include "../../action/PickupAction.h"
 
 FlowerPot::FlowerPot(int x, int y, int aux) : TileObject("flower_pot", x, y)
 {
@@ -17,9 +18,10 @@ bool FlowerPot::ableToInteract() const
     return true;
 }
 
-void FlowerPot::playerInteract(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x)
+std::unique_ptr<Action>
+FlowerPot::interact(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x)
 {
-    TileObject::playerInteract(world, instance, player, scene, y, x);
+    TileObject::interact(world, instance, player, scene, y, x);
 
     if(type == 1 && instance && instance->itemMatches(ItemInstance("weeds")))
     {
@@ -29,10 +31,11 @@ void FlowerPot::playerInteract(GameWorld &world, ItemInstance *instance, Player 
     }
     else if(type == 0)
     {
-        player.getInventory().addItemInstance(ItemInstance("weeds", 1));
         type = 1;
         regenerateTiles();
+        return std::make_unique<PickupAction>(*ItemInstance("weeds").getItem());
     }
+    return nullptr;
 }
 
 void FlowerPot::regenerateTiles()

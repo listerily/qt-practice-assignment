@@ -8,6 +8,7 @@
 #include "./impl/WeedsItem.h"
 #include "./impl/StoneItem.h"
 #include "./impl/StrawberryItem.h"
+#include "./impl/AxeItem.h"
 
 void ItemManager::initializeItems()
 {
@@ -15,6 +16,7 @@ void ItemManager::initializeItems()
     lookupMap["weeds"] = new WeedsItem;
     lookupMap["stone"] = new StoneItem;
     lookupMap["strawberry"] = new StrawberryItem;
+    lookupMap["axe"] = new AxeItem;
 }
 
 const Item *ItemManager::lookup(const std::string& id) const

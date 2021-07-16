@@ -9,22 +9,17 @@ Item::Item(std::string id) : id(std::move(id))
 
 }
 
-void Item::playerInteract(Player &, ItemInstance &, TileObject &) const
+std::unique_ptr<Action> Item::onInteract(Player &, ItemInstance &, TileObject &) const
 {
-
+    return nullptr;
 }
 
-void Item::playerInteract(Player &, ItemInstance &) const
+std::unique_ptr<Action> Item::interact(Player &, ItemInstance &) const
 {
-
+    return nullptr;
 }
 
-bool Item::isSelfAbleToInteract() const
+bool Item::hideWhenCarrying() const
 {
-    return false;
-}
-
-bool Item::isOnObjectAbleToInteract() const
-{
-    return false;
+    return true;
 }

@@ -8,8 +8,10 @@
 #include "Entity.h"
 
 #include <list>
+#include <memory>
 
-class PlayerStatus;
+#include "../action/Action.h"
+
 class Inventory;
 class Player : public Entity
 {
@@ -21,28 +23,27 @@ private:
     int movingVariant;
     Facing facing;
     Inventory* inventory;
-    PlayerStatus* playerStatus;
+    std::unique_ptr<Action> currentAction;
 public:
-    Player(GameWorld&, Scene&);
+    Player(Scene&);
     ~Player() override;
-    std::string getID() const override;
     Facing getFacing() const;
     bool isMoving() const;
     void move(double, double) override;
-    void tick() override;
+    void tick(GameWorld&) override;
     Inventory& getInventory();
     const Inventory& getInventory() const;
     std::pair<int, int> getFacingPosition() const;
     std::list<std::pair<int, int>> getFacingPositions() const;
-    void interact(bool);
-    PlayerStatus& getPlayerStatus();
-    const PlayerStatus& getPlayerStatus() const;
-private:
+    void interact(GameWorld&, bool);
+    const Action* getCurrentAction() const;
+    void setAction(std::unique_ptr<Action>);
+protected:
+    void addInitialItemsToInventory();
     bool isWalkable(double, double) const;
     bool isTileWalkable(int, int) const;
     void turn(double, double);
-    void addInitialItemsToInventory();
-    static double getCollisionBoxRadius();
+    double getCollisionBoxRadius() const;
 
     friend class PlayerController;
 };

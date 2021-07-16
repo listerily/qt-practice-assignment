@@ -7,7 +7,6 @@
 #include "../entity/Player.h"
 #include "../inventory/Inventory.h"
 #include "WorldStatus.h"
-#include "../entity/PlayerStatus.h"
 
 PlayerController::PlayerController(GameWorld & world) : world(world)
 {
@@ -124,7 +123,7 @@ void PlayerController::interact(bool self)
 {
     if(isInSilent())
         return;
-    world.getPlayer().interact(self);
+    world.getPlayer().interact(world, self);
 }
 
 void PlayerController::turn(Player::Facing facing)
@@ -138,5 +137,5 @@ bool PlayerController::isInSilent() const
 {
     return world.getWorldStatus().get() == WorldStatus::SLEEPING ||
             world.getWorldStatus().get() == WorldStatus::SWITCHING_SCENE ||
-            world.getPlayer().getPlayerStatus().isInStatus();
+            world.getPlayer().getCurrentAction() != nullptr;
 }

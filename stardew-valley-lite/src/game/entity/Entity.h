@@ -13,25 +13,22 @@ class Entity
 {
 protected:
     double x, y;
-    double ax, ay;
-    double vx, vy;
-    GameWorld& world;
-    Scene* scene;
     int health;
+    Scene* scene;
 public:
-    Entity(GameWorld&, Scene&);
+    explicit Entity(Scene&);
     virtual ~Entity();
 
-    virtual void tick();
+    virtual void tick(GameWorld&);
     virtual void move(double, double);
     virtual void moveTo(double, double);
-    virtual std::string getID() const = 0;
-    virtual void setScene(Scene&);
     virtual int getHealth() const;
-    virtual void hurt(int);
-    virtual void onDeath();
+    virtual void hurt(GameWorld&, int);
+    virtual void onDeath(GameWorld&);
     virtual std::pair<double, double> getPosition() const;
     virtual void changeScene(Scene&);
+protected:
+    virtual Scene& getScene() const;
 };
 
 

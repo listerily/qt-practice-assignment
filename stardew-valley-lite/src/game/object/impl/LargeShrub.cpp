@@ -4,9 +4,11 @@
 
 #include "LargeShrub.h"
 
-void LargeShrub::playerInteract(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x)
+std::unique_ptr<Action>
+LargeShrub::interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x)
 {
-    TileObject::playerInteract(world, item, player, scene, 0, 0);
+    TileObject::interact(world, item, player, scene, 0, 0);
+    return nullptr;
 }
 
 LargeShrub::LargeShrub(int x, int y) : TileObject("large_shrub", x, y)

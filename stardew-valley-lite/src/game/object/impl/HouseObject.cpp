@@ -74,9 +74,11 @@ HouseObject::HouseObject(int x, int y) : TileObject("house", x, y)
     };
 }
 
-void HouseObject::playerInteract(GameWorld &world, ItemInstance *instance, Player &p, Scene &scene, int y, int x)
+std::unique_ptr<Action>
+HouseObject::interact(GameWorld &world, ItemInstance *instance, Player &p, Scene &scene, int y, int x)
 {
-    TileObject::playerInteract(world, instance, p, scene, 0, 0);
+    TileObject::interact(world, instance, p, scene, 0, 0);
 
     world.changeScene("home");
+    return nullptr;
 }

@@ -16,12 +16,14 @@ WeedsObject::WeedsObject(int x, int y, int type) : TileObject("weeds", x, y)
     };
 }
 
-void WeedsObject::playerInteract(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x)
+std::unique_ptr<Action>
+WeedsObject::interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x)
 {
-    TileObject::playerInteract(world, item, player, scene, 0, 0);
+    TileObject::interact(world, item, player, scene, 0, 0);
 
     player.getInventory().addItemInstance(ItemInstance("weeds", 1));
     scene.removeObject(this);
+    return nullptr;
 }
 
 bool WeedsObject::ableToInteract() const

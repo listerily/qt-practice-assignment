@@ -8,17 +8,20 @@
 
 #include <list>
 #include <string>
+#include <memory>
 #include <src/game/inventory/ItemInstance.h>
 #include <src/game/world/Scene.h>
 #include <src/game/world/GameWorld.h>
 
 #include "Tile.h"
+#include "../action/Action.h"
 
 class Item;
 class Player;
 class Tile;
 class Scene;
 class GameWorld;
+class Action;
 class TileObject
 {
 protected:
@@ -30,7 +33,8 @@ public:
     virtual ~TileObject();
 
     virtual std::list<Tile> const& getAllTiles() const;
-    virtual void playerInteract(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x);
+    virtual std::unique_ptr<Action>
+    interact(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x);
     virtual bool ableToInteract() const;
     virtual void afterNight(GameWorld &world, Scene &scene);
     virtual void tick(Scene &scene);

@@ -20,9 +20,10 @@ const std::list<Tile> &TileObject::getAllTiles() const
     return tiles;
 }
 
-void TileObject::playerInteract(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x)
+std::unique_ptr<Action>
+TileObject::interact(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x)
 {
-
+    return nullptr;
 }
 
 void TileObject::afterNight(GameWorld &world, Scene &scene)

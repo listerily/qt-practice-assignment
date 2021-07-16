@@ -16,9 +16,11 @@ bool HomeStairsObject::ableToInteract() const
     return true;
 }
 
-void HomeStairsObject::playerInteract(GameWorld &world, ItemInstance *instance, Player &p, Scene &scene, int y, int x)
+std::unique_ptr<Action>
+HomeStairsObject::interact(GameWorld &world, ItemInstance *instance, Player &p, Scene &scene, int y, int x)
 {
-    TileObject::playerInteract(world, instance, p, scene, 0, 0);
+    TileObject::interact(world, instance, p, scene, 0, 0);
 
     world.changeScene("farm");
+    return nullptr;
 }

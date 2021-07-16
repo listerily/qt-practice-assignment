@@ -12,7 +12,7 @@ class OakTreeObject : public TileObject
 public:
     OakTreeObject(int x, int y);
 
-    void playerInteract(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x) override;
+    std::unique_ptr<Action> interact(GameWorld &world, ItemInstance *item, Player &player, Scene &scene, int y, int x) override;
 };
 
 

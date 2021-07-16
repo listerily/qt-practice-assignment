@@ -14,7 +14,8 @@ class BranchObject : public TileObject
 public:
     BranchObject(int, int, int);
 
-    void playerInteract(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x) override;
+    bool ableToInteract() const override;
+    std::unique_ptr<Action> interact(GameWorld &world, ItemInstance *instance, Player &player, Scene &scene, int y, int x) override;
 };
 
 

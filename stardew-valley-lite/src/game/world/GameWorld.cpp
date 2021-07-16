@@ -71,7 +71,7 @@ void GameWorld::removeEntity(const Entity * entityPointer)
 
 void GameWorld::initializePlayer()
 {
-    auto thePlayer = std::make_unique<Player>(*this, getCurrentGameScene());
+    auto thePlayer = std::make_unique<Player>(getCurrentGameScene());
     thePlayer->moveTo(getCurrentGameScene().getSpawn().first, getCurrentGameScene().getSpawn().second);
     addNewEntity(std::move(thePlayer));
 }
@@ -92,8 +92,8 @@ void GameWorld::tick()
     std::for_each(scenes.begin(), scenes.end(), [](const std::unordered_map<std::string,std::unique_ptr<Scene>>::value_type& scene){
         scene.second->tick();
     });
-    std::for_each(entities.begin(), entities.end(), [](const std::unique_ptr<Entity>& entity){
-        entity->tick();
+    std::for_each(entities.begin(), entities.end(), [this](const std::unique_ptr<Entity>& entity){
+        entity->tick(*this);
     });
 }
 
@@ -105,10 +105,9 @@ PlayerController &GameWorld::getPlayerController()
 void GameWorld::changeScene(const std::string &id)
 {
     currentScene = id;
-    getPlayer().changeScene(getCurrentGameScene());
     const auto& spawn = getCurrentGameScene().getSpawn();
+    getPlayer().changeScene(getCurrentGameScene());
     getPlayer().moveTo(spawn.first, spawn.second);
-
     triggerEvent(WorldEvent::SWITCH_SCENE);
 }
 

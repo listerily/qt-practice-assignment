@@ -7,14 +7,15 @@
 #include <QtMultimedia/QMediaPlaylist>
 
 GameStartWindow::GameStartWindow(GameClient &client, QWidget *parent)
-        : client(client),
-          QWidget(parent),
-          ui(new Ui::GameStartWindow)
+        : QWidget(parent),
+          ui(new Ui::GameStartWindow),
+          client(client)
+
 {
     ui->setupUi(this);
     setWindowTitle("Stardew Valley Lite");
     mediaPlaylist = new QMediaPlaylist;
-    mediaPlaylist->addMedia(QMediaContent(QUrl("qrc:/svl/audio/audio/0000014f.wav")));
+    mediaPlaylist->addMedia(QMediaContent(QUrl("qrc:/svl/audio/audio/0000014f.mp3")));
     mediaPlaylist->setPlaybackMode(QMediaPlaylist::CurrentItemInLoop);
     mediaPlayer = new QMediaPlayer(this);
     mediaPlayer->setPlaylist(mediaPlaylist);

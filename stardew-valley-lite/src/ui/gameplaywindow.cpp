@@ -43,7 +43,7 @@ GamePlayWindow::GamePlayWindow(GameClient &client, QWidget *parent) :
     selectSlot(0);
 
     mediaPlaylist = new QMediaPlaylist;
-    mediaPlaylist->addMedia(QMediaContent(QUrl("qrc:/svl/audio/audio/0000005b.wav")));
+    mediaPlaylist->addMedia(QMediaContent(QUrl("qrc:/svl/audio/audio/0000005b.mp3")));
     mediaPlaylist->setPlaybackMode(QMediaPlaylist::CurrentItemInLoop);
     mediaPlayer = new QMediaPlayer(this);
     mediaPlayer->setPlaylist(mediaPlaylist);

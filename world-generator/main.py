@@ -51,32 +51,40 @@ import json
 #
 # print(input)
 
-answer = ""
-for x in range(-16, 48):
-    for y in range(-16, 48):
-        if x < -1 or y < -1 or x > 32 or y > 32:
-            rand = random.randint(0,6)
-            if rand == 0:
-                answer += ",{\"id\":\"border_9\",\"pos\":[" + str(x) + "," + str(y) + "]}"
-            elif rand == 1:
-                answer += ",{\"id\":\"border_10\",\"pos\":[" + str(x) + "," + str(y) + "]}"
-            else:
-                answer += ",{\"id\":\"border_8\",\"pos\":[" + str(x) + "," + str(y) + "]}"
+# answer = ""
+# for x in range(-16, 48):
+#     for y in range(-16, 48):
+#         if x < -1 or y < -1 or x > 32 or y > 32:
+#             rand = random.randint(0,6)
+#             if rand == 0:
+#                 answer += ",{\"id\":\"border_9\",\"pos\":[" + str(x) + "," + str(y) + "]}"
+#             elif rand == 1:
+#                 answer += ",{\"id\":\"border_10\",\"pos\":[" + str(x) + "," + str(y) + "]}"
+#             else:
+#                 answer += ",{\"id\":\"border_8\",\"pos\":[" + str(x) + "," + str(y) + "]}"
+#
+#         elif x == -1 and y == -1:
+#             answer += ",{\"id\":\"border_0\",\"pos\":[" + str(x) + "," + str(y) + "]}"
+#         elif x == 31 and y == -1:
+#             answer += ",{\"id\":\"border_2\",\"pos\":[" + str(x) + "," + str(y) + "]}"
+#         elif x == 31 and y == 31:
+#             answer += ",{\"id\":\"border_4\",\"pos\":[" + str(x) + "," + str(y) + "]}"
+#         elif x == -1 and y == 31:
+#             answer += ",{\"id\":\"border_6\",\"pos\":[" + str(x) + "," + str(y) + "]}"
+#         elif x == -1 and ((y % 2) + 2) % 2 == 1:
+#             answer += ",{\"id\":\"border_7\",\"pos\":[" + str(x) + "," + str(y) + "]}"
+#         elif x == 31 and ((y % 2) + 2) % 2 == 1:
+#             answer += ",{\"id\":\"border_3\",\"pos\":[" + str(x) + "," + str(y) + "]}"
+#         elif y == -1 and ((x % 2) + 2) % 2 == 1:
+#             answer += ",{\"id\":\"border_1\",\"pos\":[" + str(x) + "," + str(y) + "]}"
+#         elif y == 31 and ((x % 2) + 2) % 2 == 1:
+#             answer += ",{\"id\":\"border_5\",\"pos\":[" + str(x) + "," + str(y) + "]}"
+# print(answer)
 
-        elif x == -1 and y == -1:
-            answer += ",{\"id\":\"border_0\",\"pos\":[" + str(x) + "," + str(y) + "]}"
-        elif x == 31 and y == -1:
-            answer += ",{\"id\":\"border_2\",\"pos\":[" + str(x) + "," + str(y) + "]}"
-        elif x == 31 and y == 31:
-            answer += ",{\"id\":\"border_4\",\"pos\":[" + str(x) + "," + str(y) + "]}"
-        elif x == -1 and y == 31:
-            answer += ",{\"id\":\"border_6\",\"pos\":[" + str(x) + "," + str(y) + "]}"
-        elif x == -1 and ((y % 2) + 2) % 2 == 1:
-            answer += ",{\"id\":\"border_7\",\"pos\":[" + str(x) + "," + str(y) + "]}"
-        elif x == 31 and ((y % 2) + 2) % 2 == 1:
-            answer += ",{\"id\":\"border_3\",\"pos\":[" + str(x) + "," + str(y) + "]}"
-        elif y == -1 and ((x % 2) + 2) % 2 == 1:
-            answer += ",{\"id\":\"border_1\",\"pos\":[" + str(x) + "," + str(y) + "]}"
-        elif y == 31 and ((x % 2) + 2) % 2 == 1:
-            answer += ",{\"id\":\"border_5\",\"pos\":[" + str(x) + "," + str(y) + "]}"
+answer = ""
+for x in range(-16, 16 + 11):
+    for y in range(-16, 16 + 11):
+        if x < 0 or y < 0 or x > 11 or y > 10 or (x == 11 and y == 0):
+            answer += ",{\"id\":\"home_border\",\"pos\":[" + str(x) + "," + str(y) + "]}"
+
 print(answer)

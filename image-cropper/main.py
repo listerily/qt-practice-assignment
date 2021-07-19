@@ -3,7 +3,7 @@ from PIL import Image
 
 # Fill these variable before running this tool
 image_path = r"./crops.png"
-image_id = 1
+image_id = 7
 image = Image.open(image_path)
 
 os.mkdir(r'./output_images')
@@ -30,4 +30,4 @@ for i in range(0, image.width // 16):
             pixels[i * 16 + 15, j * 16 + x] = (255, 255, 255, 255)
             pixels[i * 16 + x, j * 16 + 15] = (255, 255, 255, 255)
             # Draw number for this block
-image.save(open(r'processed_source.png', 'wb'))
+image.save(open(r'proc_crops_tiles.png', 'wb'))
